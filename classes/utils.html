@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramses Utils API &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ramses Changelog" href="../changelog_ref.html" />
+    <link rel="prev" title="Ramses Logic API" href="logic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#list-of-all-logic-examples">List of all logic examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Class Index</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html">Ramses Core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="renderer.html">Ramses Rendeer API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html">Ramses Text API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">Ramses Logic API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ramses Utils API</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Class Index</a></li>
+      <li class="breadcrumb-item active">Ramses Utils API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/classes/utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ramses-utils-api">
+<h1>Ramses Utils API<a class="headerlink" href="#ramses-utils-api" title="Permalink to this heading"></a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtilsE">
+<span id="_CPPv3N6ramses11RamsesUtilsE"></span><span id="_CPPv2N6ramses11RamsesUtilsE"></span><span id="ramses::RamsesUtils"></span><span class="target" id="classramses_1_1RamsesUtils"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RamsesUtils</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtilsE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ramses-utils.h&gt;</em></div>
+<p>Temporary functions for convenience. All of these can be implemented on top of the RAMSES Client API, but are offered here as convenience. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN6ramses11RamsesUtils10TryConvertEPK1TRK12RamsesObject">
+<span id="_CPPv3I0EN6ramses11RamsesUtils10TryConvertERK12RamsesObject"></span><span id="_CPPv2I0EN6ramses11RamsesUtils10TryConvertERK12RamsesObject"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classramses_1_1RamsesUtils_1a050dba42e10ca953b5bb51f61600cd8c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN6ramses11RamsesUtils10TryConvertEPK1TRK12RamsesObject" title="ramses::RamsesUtils::TryConvert::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">TryConvert</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses12RamsesObjectE" title="ramses::RamsesObject"><span class="n"><span class="pre">RamsesObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ramses11RamsesUtils10TryConvertEPK1TRK12RamsesObject" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Converts object to a compatible object type. Object can be converted to any of its base classes. Eg. <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">MeshNode</span></a> can be converted to <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">Node</span></a>, <a class="reference internal" href="core.html#classramses_1_1SceneObject"><span class="std std-ref">SceneObject</span></a>, <a class="reference internal" href="core.html#classramses_1_1ClientObject"><span class="std std-ref">ClientObject</span></a> or <a class="reference internal" href="core.html#classramses_1_1RamsesObject"><span class="std std-ref">RamsesObject</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> – <strong>[in]</strong> <a class="reference internal" href="core.html#classramses_1_1RamsesObject"><span class="std std-ref">RamsesObject</span></a> to convert. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pointer to an object of a specific type, NULL if object type is not compatible with desired object class. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN6ramses11RamsesUtils10TryConvertEP1TR12RamsesObject">
+<span id="_CPPv3I0EN6ramses11RamsesUtils10TryConvertER12RamsesObject"></span><span id="_CPPv2I0EN6ramses11RamsesUtils10TryConvertER12RamsesObject"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classramses_1_1RamsesUtils_1a2c906c47e2a01098e5eb759d87e1caa7"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN6ramses11RamsesUtils10TryConvertEP1TR12RamsesObject" title="ramses::RamsesUtils::TryConvert::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">TryConvert</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="core.html#_CPPv4N6ramses12RamsesObjectE" title="ramses::RamsesObject"><span class="n"><span class="pre">RamsesObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ramses11RamsesUtils10TryConvertEP1TR12RamsesObject" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Converts object to a compatible object type. Object can be converted to any of its base classes. Eg. <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">MeshNode</span></a> can be converted to <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">Node</span></a>, <a class="reference internal" href="core.html#classramses_1_1SceneObject"><span class="std std-ref">SceneObject</span></a>, <a class="reference internal" href="core.html#classramses_1_1ClientObject"><span class="std std-ref">ClientObject</span></a> or <a class="reference internal" href="core.html#classramses_1_1RamsesObject"><span class="std std-ref">RamsesObject</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> – <strong>[in]</strong> <a class="reference internal" href="core.html#classramses_1_1RamsesObject"><span class="std std-ref">RamsesObject</span></a> to convert. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pointer to an object of a specific type, NULL if object type is not compatible with desired object class. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils28CreateTextureResourceFromPngEPKcR5SceneRK14TextureSwizzleNSt11string_viewE">
+<span id="_CPPv3N6ramses11RamsesUtils28CreateTextureResourceFromPngEPKcR5SceneRK14TextureSwizzleNSt11string_viewE"></span><span id="_CPPv2N6ramses11RamsesUtils28CreateTextureResourceFromPngEPKcR5SceneRK14TextureSwizzleNSt11string_viewE"></span><span id="ramses::RamsesUtils::CreateTextureResourceFromPng__cCP.SceneR.TextureSwizzleCR.std::string_view"></span><span class="target" id="classramses_1_1RamsesUtils_1a604b2d88579e185d33e7e82b679b2907"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses9Texture2DE" title="ramses::Texture2D"><span class="n"><span class="pre">Texture2D</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">CreateTextureResourceFromPng</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pngFilePath</span></span>, <a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scene</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses14TextureSwizzleE" title="ramses::TextureSwizzle"><span class="n"><span class="pre">TextureSwizzle</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">swizzle</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils28CreateTextureResourceFromPngEPKcR5SceneRK14TextureSwizzleNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a Texture from the given png file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pngFilePath</strong> – <strong>[in]</strong> Path to the png file to load </p></li>
+<li><p><strong>scene</strong> – <strong>[in]</strong> <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> the texture object is to be created in </p></li>
+<li><p><strong>swizzle</strong> – <strong>[in]</strong> Swizzling of texture color channels </p></li>
+<li><p><strong>name</strong> – <strong>[in]</strong> Name for the created texture </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Created texture object or nullptr on error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils34CreateTextureResourceFromPngBufferERKNSt6vectorIhEER5SceneRK14TextureSwizzleNSt11string_viewE">
+<span id="_CPPv3N6ramses11RamsesUtils34CreateTextureResourceFromPngBufferERKNSt6vectorIhEER5SceneRK14TextureSwizzleNSt11string_viewE"></span><span id="_CPPv2N6ramses11RamsesUtils34CreateTextureResourceFromPngBufferERKNSt6vectorIhEER5SceneRK14TextureSwizzleNSt11string_viewE"></span><span id="ramses::RamsesUtils::CreateTextureResourceFromPngBuffer__std::vector:unsigned-c:CR.SceneR.TextureSwizzleCR.std::string_view"></span><span class="target" id="classramses_1_1RamsesUtils_1ad6c47bc101d92c04b54cef64b5996064"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses9Texture2DE" title="ramses::Texture2D"><span class="n"><span class="pre">Texture2D</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">CreateTextureResourceFromPngBuffer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pngData</span></span>, <a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scene</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses14TextureSwizzleE" title="ramses::TextureSwizzle"><span class="n"><span class="pre">TextureSwizzle</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">swizzle</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils34CreateTextureResourceFromPngBufferERKNSt6vectorIhEER5SceneRK14TextureSwizzleNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a Texture from the given png memory buffer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pngData</strong> – <strong>[in]</strong> Buffer with PNG data to load </p></li>
+<li><p><strong>scene</strong> – <strong>[in]</strong> <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> the texture object is to be created in </p></li>
+<li><p><strong>swizzle</strong> – <strong>[in]</strong> Swizzling of texture color channels </p></li>
+<li><p><strong>name</strong> – <strong>[in]</strong> Name for the created texture </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Created texture object or nullptr on error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils24GenerateMipMapsTexture2DE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t">
+<span id="_CPPv3N6ramses11RamsesUtils24GenerateMipMapsTexture2DE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t"></span><span id="_CPPv2N6ramses11RamsesUtils24GenerateMipMapsTexture2DE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t"></span><span id="ramses::RamsesUtils::GenerateMipMapsTexture2D__uint32_t.uint32_t.uint8_t.uint8_tP.sR"></span><span class="target" id="classramses_1_1RamsesUtils_1a6b4e9e1e0ed55acfa6ba78d9627c709b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses12MipLevelDataE" title="ramses::MipLevelData"><span class="n"><span class="pre">MipLevelData</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">GenerateMipMapsTexture2D</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bytesPerPixel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mipMapCount</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils24GenerateMipMapsTexture2DE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Generate mip maps from original texture 2D data. You obtain ownership of all the data returned in the mip map data object. Note, that the original texture data gets copied and represents the first mip map level. </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#classramses_1_1RamsesUtils_1ad757c8ec0441ccde95ad00d467d1dc5a"><span class="std std-ref">DeleteGeneratedMipMaps</span></a> for deleting generated mip maps. </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – <strong>[in]</strong> Width of the original texture. </p></li>
+<li><p><strong>height</strong> – <strong>[in]</strong> Height of the original texture. </p></li>
+<li><p><strong>bytesPerPixel</strong> – <strong>[in]</strong> Number of bytes stored per pixel in the original texture data. </p></li>
+<li><p><strong>data</strong> – <strong>[in]</strong> Original texture data. </p></li>
+<li><p><strong>mipMapCount</strong> – <strong>[out]</strong> Number of generated mip map levels. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generated mip map data. In case width or height are not values to the power of two, only the original mip map level is part of the result. You are responsible to destroy the generated data, e.g. by using <a class="reference internal" href="#classramses_1_1RamsesUtils_1ad757c8ec0441ccde95ad00d467d1dc5a"><span class="std std-ref">RamsesUtils::DeleteGeneratedMipMaps</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERKNSt6vectorI7uint8_tEE8uint32_t8uint32_t">
+<span id="_CPPv3N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERKNSt6vectorI7uint8_tEE8uint32_t8uint32_t"></span><span id="_CPPv2N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERKNSt6vectorI7uint8_tEE8uint32_t8uint32_t"></span><span id="ramses::RamsesUtils::SaveImageBufferToPng__ssCR.std::vector:uint8_t:CR.uint32_t.uint32_t"></span><span class="target" id="classramses_1_1RamsesUtils_1ab516bb29af11563ab71ac9d796f5d893"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SaveImageBufferToPng</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePath</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">imageData</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERKNSt6vectorI7uint8_tEE8uint32_t8uint32_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a png from image data, e.g. data generated by RamsesClientService::readPixels. The image data is expected to be in the format rgba8. Width x Height x 4 (rgba8) have to exactly match the size of the image buffer, otherwise no png will be created. Also width * height cannot exceed the size 268435455 or png creation will fail. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filePath</strong> – <strong>[in]</strong> Path where the png will be saved </p></li>
+<li><p><strong>imageData</strong> – <strong>[in]</strong> Buffer with rgba8 image data that should be saved to png </p></li>
+<li><p><strong>width</strong> – <strong>[in]</strong> Width of the image </p></li>
+<li><p><strong>height</strong> – <strong>[in]</strong> Height of the image </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Success of png creation </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERNSt6vectorI7uint8_tEE8uint32_t8uint32_tb">
+<span id="_CPPv3N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERNSt6vectorI7uint8_tEE8uint32_t8uint32_tb"></span><span id="_CPPv2N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERNSt6vectorI7uint8_tEE8uint32_t8uint32_tb"></span><span id="ramses::RamsesUtils::SaveImageBufferToPng__ssCR.std::vector:uint8_t:R.uint32_t.uint32_t.b"></span><span class="target" id="classramses_1_1RamsesUtils_1a180f272347115d28653c979c82975c59"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SaveImageBufferToPng</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePath</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">imageData</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">flipImageBufferVertically</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils20SaveImageBufferToPngERKNSt6stringERNSt6vectorI7uint8_tEE8uint32_t8uint32_tb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a png from image data, e.g. data generated by RamsesClientService::readPixels. The image data is expected to be in the format rgba8. Width x Height x 4 (rgba8) have to exactly match the size of the image buffer, otherwise no png will be created. Also width * height cannot exceed the size 268435455 or png creation will fail. The image data can be flipped vertically, as the data coming from a function like RamsesClientService::readPixels gets the data from OpenGL which has the origin in the lower left corner, whereas png has the origin in the upper left corner. So to capture what you see on screen you have to set the flag flipImageBufferVertically to true. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filePath</strong> – <strong>[in]</strong> Path where the png will be saved </p></li>
+<li><p><strong>imageData</strong> – <strong>[in]</strong> Buffer with rgba8 image data that should be saved to png </p></li>
+<li><p><strong>width</strong> – <strong>[in]</strong> Width of the image </p></li>
+<li><p><strong>height</strong> – <strong>[in]</strong> Height of the image </p></li>
+<li><p><strong>flipImageBufferVertically</strong> – <strong>[in]</strong> Vertical Flipping of image data </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Success of png creation </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils26GenerateMipMapsTextureCubeE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t">
+<span id="_CPPv3N6ramses11RamsesUtils26GenerateMipMapsTextureCubeE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t"></span><span id="_CPPv2N6ramses11RamsesUtils26GenerateMipMapsTextureCubeE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t"></span><span id="ramses::RamsesUtils::GenerateMipMapsTextureCube__uint32_t.uint32_t.uint8_t.uint8_tP.sR"></span><span class="target" id="classramses_1_1RamsesUtils_1a174a21de5857a71f327fb6684d19932d"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses16CubeMipLevelDataE" title="ramses::CubeMipLevelData"><span class="n"><span class="pre">CubeMipLevelData</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">GenerateMipMapsTextureCube</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">faceWidth</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">faceHeight</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bytesPerPixel</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mipMapCount</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils26GenerateMipMapsTextureCubeE8uint32_t8uint32_t7uint8_tP7uint8_tR6size_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Generate mip maps from original texture cube data. You obtain ownership of all the data returned in the mip map data object. Note, that the original texture data gets copied and represents the first mip map level. </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#classramses_1_1RamsesUtils_1ad757c8ec0441ccde95ad00d467d1dc5a"><span class="std std-ref">DeleteGeneratedMipMaps</span></a> for deleting generated mip maps. </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>faceWidth</strong> – <strong>[in]</strong> Width of the original texture. </p></li>
+<li><p><strong>faceHeight</strong> – <strong>[in]</strong> Height of the original texture. </p></li>
+<li><p><strong>bytesPerPixel</strong> – <strong>[in]</strong> Number of bytes stored per pixel in the original texture data. </p></li>
+<li><p><strong>data</strong> – <strong>[in]</strong> Original texture data. Face data is expected in order [PX, NX, PY, NY, PZ, NZ] </p></li>
+<li><p><strong>mipMapCount</strong> – <strong>[out]</strong> Number of generated mip map levels. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generated mip map data. In case width or height are not values to the power of two, only the original mip map level is part of the result. You are responsible to destroy the generated data, e.g. using <a class="reference internal" href="#classramses_1_1RamsesUtils_1ad757c8ec0441ccde95ad00d467d1dc5a"><span class="std std-ref">RamsesUtils::DeleteGeneratedMipMaps</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP12MipLevelData6size_t">
+<span id="_CPPv3N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP12MipLevelData6size_t"></span><span id="_CPPv2N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP12MipLevelData6size_t"></span><span id="ramses::RamsesUtils::DeleteGeneratedMipMaps__MipLevelDataPR.s"></span><span class="target" id="classramses_1_1RamsesUtils_1ad757c8ec0441ccde95ad00d467d1dc5a"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DeleteGeneratedMipMaps</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="core.html#_CPPv4N6ramses12MipLevelDataE" title="ramses::MipLevelData"><span class="n"><span class="pre">MipLevelData</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mipMapCount</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP12MipLevelData6size_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Deletes mip map data created with <a class="reference internal" href="#classramses_1_1RamsesUtils_1a6b4e9e1e0ed55acfa6ba78d9627c709b"><span class="std std-ref">RamsesUtils::GenerateMipMapsTexture2D</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – <strong>[inout]</strong> Generated mip map data. </p></li>
+<li><p><strong>mipMapCount</strong> – <strong>[in]</strong> Number of mip map levels in the generated data. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP16CubeMipLevelData6size_t">
+<span id="_CPPv3N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP16CubeMipLevelData6size_t"></span><span id="_CPPv2N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP16CubeMipLevelData6size_t"></span><span id="ramses::RamsesUtils::DeleteGeneratedMipMaps__CubeMipLevelDataPR.s"></span><span class="target" id="classramses_1_1RamsesUtils_1a7eb3c33de4a73f61a59a3ad4c2d5b50c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DeleteGeneratedMipMaps</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="core.html#_CPPv4N6ramses16CubeMipLevelDataE" title="ramses::CubeMipLevelData"><span class="n"><span class="pre">CubeMipLevelData</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mipMapCount</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils22DeleteGeneratedMipMapsERP16CubeMipLevelData6size_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Deletes mip map data created with <a class="reference internal" href="#classramses_1_1RamsesUtils_1a174a21de5857a71f327fb6684d19932d"><span class="std std-ref">RamsesUtils::GenerateMipMapsTextureCube</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – <strong>[inout]</strong> Generated mip map data. </p></li>
+<li><p><strong>mipMapCount</strong> – <strong>[in]</strong> Number of mip map levels in the generated data. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils9GetNodeIdERK4Node">
+<span id="_CPPv3N6ramses11RamsesUtils9GetNodeIdERK4Node"></span><span id="_CPPv2N6ramses11RamsesUtils9GetNodeIdERK4Node"></span><span id="ramses::RamsesUtils::GetNodeId__NodeCR"></span><span class="target" id="classramses_1_1RamsesUtils_1ae0050ae9df367cb84fa76d34f03b59ea"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">nodeId_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetNodeId</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses4NodeE" title="ramses::Node"><span class="n"><span class="pre">Node</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">node</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils9GetNodeIdERK4Node" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns the identifier of a node, which is printed in the renderer logs. The identifier is guaranteed to be unique within a <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> until the <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">Node</span></a> is destroyed. If a <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">Node</span></a> is destroyed, a newly created <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">Node</span></a> can get the identifier of the destroyed <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">Node</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>node</strong> – <strong>[in]</strong> The node </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the identifier of the given node. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils40SetPerspectiveCameraFrustumToDataObjectsEffffR10DataObjectR10DataObject">
+<span id="_CPPv3N6ramses11RamsesUtils40SetPerspectiveCameraFrustumToDataObjectsEffffR10DataObjectR10DataObject"></span><span id="_CPPv2N6ramses11RamsesUtils40SetPerspectiveCameraFrustumToDataObjectsEffffR10DataObjectR10DataObject"></span><span id="ramses::RamsesUtils::SetPerspectiveCameraFrustumToDataObjects__float.float.float.float.DataObjectR.DataObjectR"></span><span class="target" id="classramses_1_1RamsesUtils_1aaafbea976e8c01671f46b845406d59b9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetPerspectiveCameraFrustumToDataObjects</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fov</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">aspectRatio</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">nearPlane</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">farPlane</span></span>, <a class="reference internal" href="core.html#_CPPv4N6ramses10DataObjectE" title="ramses::DataObject"><span class="n"><span class="pre">DataObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frustumPlanesData</span></span>, <a class="reference internal" href="core.html#_CPPv4N6ramses10DataObjectE" title="ramses::DataObject"><span class="n"><span class="pre">DataObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">nearFarPlanesData</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils40SetPerspectiveCameraFrustumToDataObjectsEffffR10DataObjectR10DataObject" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Convenience method to set perspective camera frustum using FOV and aspect ratio (like in <a class="reference internal" href="core.html#classramses_1_1PerspectiveCamera_1aea24c939692f0a046b473cf6d0e16267"><span class="std std-ref">ramses::PerspectiveCamera::setFrustum</span></a>) to two <a class="reference internal" href="core.html#classramses_1_1DataObject"><span class="std std-ref">ramses::DataObject</span></a> instances which are or will be bound to a <a class="reference internal" href="core.html#classramses_1_1PerspectiveCamera"><span class="std std-ref">ramses::PerspectiveCamera</span></a> using <a class="reference internal" href="core.html#classramses_1_1Camera_1a4fb52bd18e8e7c8919ab7c3d751c5db7"><span class="std std-ref">ramses::Camera::bindFrustumPlanes</span></a>. </p>
+<p>Use case example: just create the two data objects, bind them to one or more cameras and then simply use this method whenever projection parameters need to change. If not all parameters need to be modified, simply query the parameter you want to keep unchanged from the camera (e.g. <a class="reference internal" href="core.html#classramses_1_1PerspectiveCamera_1ad1b1b7f5adb65db8513e7c858f9dc76c"><span class="std std-ref">ramses::PerspectiveCamera::getAspectRatio</span></a>) and use the same value here.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fov</strong> – <strong>[in]</strong> The vertical field of view to be set, must be &gt; 0. This is the full vertical opening angle in degrees. </p></li>
+<li><p><strong>aspectRatio</strong> – <strong>[in]</strong> Ratio between frustum width and height, must be &gt; 0. This value is generally independent from the viewport width and height but typically matches the viewport aspect ratio. </p></li>
+<li><p><strong>nearPlane</strong> – <strong>[in]</strong> Near plane of the camera frustum, must be &gt; 0. </p></li>
+<li><p><strong>farPlane</strong> – <strong>[in]</strong> Far plane of the camera frustum, must be &gt; nearPlane. </p></li>
+<li><p><strong>frustumPlanesData</strong> – <strong>[in]</strong> Data object where resulting first 4 frustum planes will be set to, must be created with ramses::EDataType::Vector4F. </p></li>
+<li><p><strong>nearFarPlanesData</strong> – <strong>[in]</strong> Data object where resulting near/far frustum planes will be set to, must be created with ramses::EDataType::Vector2F. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True for success, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils19LoadSceneFromMemoryER12RamsesClientNSt10unique_ptrIA_hEE6size_tb">
+<span id="_CPPv3N6ramses11RamsesUtils19LoadSceneFromMemoryER12RamsesClientNSt10unique_ptrIA_hEE6size_tb"></span><span id="_CPPv2N6ramses11RamsesUtils19LoadSceneFromMemoryER12RamsesClientNSt10unique_ptrIA_hEE6size_tb"></span><span id="ramses::RamsesUtils::LoadSceneFromMemory__RamsesClientR.std::unique_ptr:unsigned-cA:.s.b"></span><span class="target" id="classramses_1_1RamsesUtils_1a6a3f874ecfb883354b54e55c16873364"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">LoadSceneFromMemory</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><span class="n"><span class="pre">RamsesClient</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">client</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">localOnly</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils19LoadSceneFromMemoryER12RamsesClientNSt10unique_ptrIA_hEE6size_tb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Convenience wrapper for <a class="reference internal" href="core.html#classramses_1_1RamsesClient_1af50725b54bda2d49f6516de9933d177a"><span class="std std-ref">RamsesClient::loadSceneFromMemory</span></a> with automatic deleter. </p>
+<p>For details refer to <a class="reference internal" href="core.html#classramses_1_1RamsesClient_1af50725b54bda2d49f6516de9933d177a"><span class="std std-ref">ramses::RamsesClient::loadSceneFromMemory</span></a>. This helper function automatically adds a deleter to the provided unique_ptr that is compiled into caller side and uses the caller heap. This methods can be used on all platforms as a convenience helper for memory that was allocated with new[].</p>
+<p>On Windows this allows safe passing of ownership from caller into ramses when ramses is used as dll. This method should not be used when memory was not allocated with new[]. A custom deleter should also be provided when used on windows and the memory originates from yet another dll than the direct caller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – <strong>[in]</strong> The ramses client to use for loading the scene </p></li>
+<li><p><strong>data</strong> – <strong>[in]</strong> Memory buffer with scene data. </p></li>
+<li><p><strong>size</strong> – <strong>[in]</strong> Size in bytes of the scene data within data buffer </p></li>
+<li><p><strong>localOnly</strong> – <strong>[in]</strong> Mark for local only optimization </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The loaded ramses <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> or nullptr on error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils26DumpUnrequiredSceneObjectsERK5Scene">
+<span id="_CPPv3N6ramses11RamsesUtils26DumpUnrequiredSceneObjectsERK5Scene"></span><span id="_CPPv2N6ramses11RamsesUtils26DumpUnrequiredSceneObjectsERK5Scene"></span><span id="ramses::RamsesUtils::DumpUnrequiredSceneObjects__SceneCR"></span><span class="target" id="classramses_1_1RamsesUtils_1a31d0e6f7d317e4e4f8b2db8c43caf3ad"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DumpUnrequiredSceneObjects</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scene</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils26DumpUnrequiredSceneObjectsERK5Scene" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Dumps all objects of a scene which do not contribute to the visual appearance of the scene on screen. This includes disabled RenderPass-es, invisible MeshNode-s, client resources which are not used by the scene, and so on. The output is in text form, starts with a list of all unrequired objects and their names and concludes with a statistic (number of unrequired objects out of all objects of that type) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scene</strong> – <strong>[in]</strong> the source scene </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11RamsesUtils32DumpUnrequiredSceneObjectsToFileERK5SceneRNSt7ostreamE">
+<span id="_CPPv3N6ramses11RamsesUtils32DumpUnrequiredSceneObjectsToFileERK5SceneRNSt7ostreamE"></span><span id="_CPPv2N6ramses11RamsesUtils32DumpUnrequiredSceneObjectsToFileERK5SceneRNSt7ostreamE"></span><span id="ramses::RamsesUtils::DumpUnrequiredSceneObjectsToFile__SceneCR.osR"></span><span class="target" id="classramses_1_1RamsesUtils_1a0c6fbbe65d4374a13d0fa487a3193d04"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DumpUnrequiredSceneObjectsToFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scene</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11RamsesUtils32DumpUnrequiredSceneObjectsToFileERK5SceneRNSt7ostreamE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>As <a class="reference internal" href="#classramses_1_1RamsesUtils_1a31d0e6f7d317e4e4f8b2db8c43caf3ad"><span class="std std-ref">DumpUnrequiredSceneObjects</span></a> but write to given stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scene</strong> – <strong>[in]</strong> the source scene </p></li>
+<li><p><strong>out</strong> – <strong>[out]</strong> stream to write to </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="logic.html" class="btn btn-neutral float-left" title="Ramses Logic API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../changelog_ref.html" class="btn btn-neutral float-right" title="Ramses Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

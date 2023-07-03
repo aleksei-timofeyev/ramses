@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramses Logic API &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ramses Utils API" href="utils.html" />
+    <link rel="prev" title="Ramses Text API" href="text.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#list-of-all-logic-examples">List of all logic examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Class Index</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html">Ramses Core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="renderer.html">Ramses Rendeer API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html">Ramses Text API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ramses Logic API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Ramses Utils API</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Class Index</a></li>
+      <li class="breadcrumb-item active">Ramses Logic API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/classes/logic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ramses-logic-api">
+<h1>Ramses Logic API<a class="headerlink" href="#ramses-logic-api" title="Permalink to this heading"></a></h1>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngineE">
+<span id="_CPPv3N6ramses11LogicEngineE"></span><span id="_CPPv2N6ramses11LogicEngineE"></span><span id="ramses::LogicEngine"></span><span class="target" id="classramses_1_1LogicEngine"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogicEngine</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngineE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;LogicEngine.h&gt;</em></div>
+<p>Central object which creates and manages the lifecycle and execution of scripts, bindings, and all other objects supported by the Ramses Logic library. All objects created by this class’ methods must be destroyed with <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a>!</p>
+<p><ul class="simple">
+<li><p>Use the create[Type] methods to create various objects, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy()</span></a> to delete them.</p></li>
+<li><p>Use <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a> and <a class="reference internal" href="#classramses_1_1LogicEngine_1a028229b7d3e3fe1f0ab3c1d3a60d6cef"><span class="std std-ref">unlink</span></a> to connect data properties between these objects</p></li>
+<li><p>use <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update()</span></a> to trigger the execution of all objects </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine11LogicEngineEN6ramses13EFeatureLevelE">
+<span id="_CPPv3N6ramses11LogicEngine11LogicEngineEN6ramses13EFeatureLevelE"></span><span id="_CPPv2N6ramses11LogicEngine11LogicEngineEN6ramses13EFeatureLevelE"></span><span id="ramses::LogicEngine::LogicEngine__ramses::EFeatureLevel"></span><span class="target" id="classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogicEngine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EFeatureLevel</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">featureLevel</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine11LogicEngineEN6ramses13EFeatureLevelE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Constructor of <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> with a feature level specified. See ramses::EFeatureLevel for more details what features are available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>featureLevel</strong> – Feature level to activate in this <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> instance. A feature level always includes a previous feature level if any, e.g. a feature level released after base level will contain all features from base level, however base level will include only base level features and none from a newer feature level. Use ramses::EFeatureLevel_Latest to get all available features. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngineD0Ev">
+<span id="_CPPv3N6ramses11LogicEngineD0Ev"></span><span id="_CPPv2N6ramses11LogicEngineD0Ev"></span><span id="ramses::LogicEngine::~LogicEngine"></span><span class="target" id="classramses_1_1LogicEngine_1a3e74557a3315434a916044c4c32b11cc"></span><span class="sig-name descname"><span class="n"><span class="pre">~LogicEngine</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngineD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Destructor of <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine15getFeatureLevelEv">
+<span id="_CPPv3NK6ramses11LogicEngine15getFeatureLevelEv"></span><span id="_CPPv2NK6ramses11LogicEngine15getFeatureLevelEv"></span><span id="ramses::LogicEngine::getFeatureLevelC"></span><span class="target" id="classramses_1_1LogicEngine_1a4f799baed94215557426ded3c3ca45e6"></span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EFeatureLevel</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFeatureLevel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine15getFeatureLevelEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns the feature level this <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> instance was configured to use when created. See <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine(ramses::EFeatureLevel)</span></a> and ramses::EFeatureLevel for more details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>feature level this <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> instance was configured to use </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK6ramses11LogicEngine13getCollectionE10CollectionI1TEv">
+<span id="_CPPv3I0ENK6ramses11LogicEngine13getCollectionEv"></span><span id="_CPPv2I0ENK6ramses11LogicEngine13getCollectionEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classramses_1_1LogicEngine_1ac5a86260f4aa8fd31a596e4f3eea4620"></span><span class="n"><span class="pre">Collection</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK6ramses11LogicEngine13getCollectionE10CollectionI1TEv" title="ramses::LogicEngine::getCollection::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK6ramses11LogicEngine13getCollectionE10CollectionI1TEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns an iterable ramses::Collection of all instances of <code class="docutils literal notranslate"><span class="pre">T</span></code> created by this <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a>. <code class="docutils literal notranslate"><span class="pre">T</span></code> must be a concrete logic object type (e.g. ramses::LuaScript) or ramses::LogicObject which will retrieve all logic objects created with this <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> (see ramses::LogicObject::as&lt;Type&gt; to convert to concrete type).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an iterable ramses::Collection with all instances of <code class="docutils literal notranslate"><span class="pre">T</span></code> created by this <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK6ramses11LogicEngine10findByNameEPK1TNSt11string_viewE">
+<span id="_CPPv3I0ENK6ramses11LogicEngine10findByNameENSt11string_viewE"></span><span id="_CPPv2I0ENK6ramses11LogicEngine10findByNameENSt11string_viewE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classramses_1_1LogicEngine_1af6f00adaa1a0be6688b05fb969f793c1"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0ENK6ramses11LogicEngine10findByNameEPK1TNSt11string_viewE" title="ramses::LogicEngine::findByName::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">findByName</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK6ramses11LogicEngine10findByNameEPK1TNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns a pointer to the first occurrence of an object with a given <code class="docutils literal notranslate"><span class="pre">name</span></code> of the type <code class="docutils literal notranslate"><span class="pre">T</span></code>. <code class="docutils literal notranslate"><span class="pre">T</span></code> must be a concrete logic object type (e.g. ramses::LuaScript) or ramses::LogicObject which will search any object with given name regardless of its type (see ramses::LogicObject::as&lt;Type&gt; to convert to concrete type).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – the name of the logic object to search for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the logic object, or nullptr if none was found </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN6ramses11LogicEngine10findByNameEP1TNSt11string_viewE">
+<span id="_CPPv3I0EN6ramses11LogicEngine10findByNameENSt11string_viewE"></span><span id="_CPPv2I0EN6ramses11LogicEngine10findByNameENSt11string_viewE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classramses_1_1LogicEngine_1a3e4d97ab985dcd667995f0e25a54c7ec"></span><a class="reference internal" href="#_CPPv4I0EN6ramses11LogicEngine10findByNameEP1TNSt11string_viewE" title="ramses::LogicEngine::findByName::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">findByName</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ramses11LogicEngine10findByNameEP1TNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns a pointer to the first occurrence of an object with a given <code class="docutils literal notranslate"><span class="pre">name</span></code> of the type <code class="docutils literal notranslate"><span class="pre">T</span></code>. <code class="docutils literal notranslate"><span class="pre">T</span></code> must be a concrete logic object type (e.g. ramses::LuaScript) or ramses::LogicObject which will search any object with given name regardless of its type (see ramses::LogicObject::as&lt;Type&gt; to convert to concrete type).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – the name of the logic object to search for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the logic object, or nullptr if none was found </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine19findLogicObjectByIdE8uint64_t">
+<span id="_CPPv3NK6ramses11LogicEngine19findLogicObjectByIdE8uint64_t"></span><span id="_CPPv2NK6ramses11LogicEngine19findLogicObjectByIdE8uint64_t"></span><span id="ramses::LogicEngine::findLogicObjectById__uint64_tC"></span><span class="target" id="classramses_1_1LogicEngine_1adb7165db6d3b23bde9f95c9c8f43e707"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LogicObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">findLogicObjectById</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine19findLogicObjectByIdE8uint64_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns a pointer to the first occurrence of an object with a given <code class="docutils literal notranslate"><span class="pre">id</span></code> regardless of its type. To convert the object to a concrete type (e.g. LuaScript) use ramses::LogicObject::as&lt;Type&gt;() e.g.: auto myLuaScript = logicEngine.findLogicObjectById(1u)-&gt;as&lt;LuaScript&gt;()); Be aware that this function behaves as <code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> and will return nullptr (without error) if given type doesn’t match the objects type. This can later lead to crash if ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – the id of the logic object to search for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the logic object, or nullptr if none was found </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine19findLogicObjectByIdE8uint64_t">
+<span id="_CPPv3N6ramses11LogicEngine19findLogicObjectByIdE8uint64_t"></span><span id="_CPPv2N6ramses11LogicEngine19findLogicObjectByIdE8uint64_t"></span><span id="ramses::LogicEngine::findLogicObjectById__uint64_t"></span><span class="target" id="classramses_1_1LogicEngine_1a1b8c2fe63365ec0e9484358f650f04ba"></span><span class="n"><span class="pre">LogicObject</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">findLogicObjectById</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine19findLogicObjectByIdE8uint64_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns a pointer to the first occurrence of an object with a given <code class="docutils literal notranslate"><span class="pre">id</span></code> regardless of its type. To convert the object to a concrete type (e.g. LuaScript) use ramses::LogicObject::as&lt;Type&gt;() e.g.: auto myLuaScript = logicEngine.findLogicObjectById(1u)-&gt;as&lt;LuaScript&gt;()); Be aware that this function behaves as <code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> and will return nullptr (without error) if given type doesn’t match the objects type. This can later lead to crash if ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – the id of the logic object to search for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the logic object, or nullptr if none was found </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine15createLuaScriptENSt11string_viewERK9LuaConfigNSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine15createLuaScriptENSt11string_viewERK9LuaConfigNSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine15createLuaScriptENSt11string_viewERK9LuaConfigNSt11string_viewE"></span><span id="ramses::LogicEngine::createLuaScript__std::string_view.LuaConfigCR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a693e9e38767beb5a2787720ba8e0a3d1"></span><span class="n"><span class="pre">LuaScript</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createLuaScript</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LuaConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scriptName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine15createLuaScriptENSt11string_viewERK9LuaConfigNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new Lua script from a source string. Refer to the ramses::LuaScript class for requirements which Lua scripts must fulfill in order to be added to the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a>. You can optionally provide Lua module dependencies via the <code class="docutils literal notranslate"><span class="pre">config</span></code>, they will be accessible under their configured alias name for use by the script. The provided module dependencies must exactly match the declared dependencies in source code (see <a class="reference internal" href="#classramses_1_1LogicEngine_1a55e54beca83d209aed4fa51a60d0d097"><span class="std std-ref">extractLuaDependencies</span></a>).</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – the Lua source code </p></li>
+<li><p><strong>config</strong> – configuration options, e.g. for module dependencies </p></li>
+<li><p><strong>scriptName</strong> – name to assign to the script once it’s created </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The script can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewERK9LuaConfig">
+<span id="_CPPv3N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewERK9LuaConfig"></span><span id="_CPPv2N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewERK9LuaConfig"></span><span id="ramses::LogicEngine::createLuaInterface__std::string_view.std::string_view.LuaConfigCR"></span><span class="target" id="classramses_1_1LogicEngine_1af9ac6a16854a068f230ecf7f2825d32d"></span><span class="n"><span class="pre">LuaInterface</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createLuaInterface</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">interfaceName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LuaConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewERK9LuaConfig" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new Lua interface from a source string. Refer to the ramses::LuaInterface class for requirements which Lua interface must fulfill in order to be added to the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a>. Note: interfaces must have a non-empty name. ramses::LuaInterface can be created with any non-empty name but if two or more instances share same name there will be a warning during validation (<a class="reference internal" href="#classramses_1_1LogicEngine_1a0f301cbb388025232fc03ba53363a56c"><span class="std std-ref">validate</span></a>) as it is advised for every Lua interface to have a unique name for clear identification from application logic. You can optionally provide Lua module dependencies via the <code class="docutils literal notranslate"><span class="pre">config</span></code>, they will be accessible under their configured alias name for use in the interface source. The provided module dependencies must exactly match the declared dependencies in source code (see <a class="reference internal" href="#classramses_1_1LogicEngine_1a55e54beca83d209aed4fa51a60d0d097"><span class="std std-ref">extractLuaDependencies</span></a>).</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – the Lua source code </p></li>
+<li><p><strong>interfaceName</strong> – name to assign to the interface once it’s created. This name must be unique! </p></li>
+<li><p><strong>config</strong> – configuration options, e.g. for module dependencies </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The interface can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewE"></span><span id="ramses::LogicEngine::createLuaInterface__std::string_view.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a2e55246241abef33e2336ab1999347e5"></span><span class="n"><span class="pre">LuaInterface</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createLuaInterface</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">interfaceName</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine18createLuaInterfaceENSt11string_viewENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Deprecated! Use <a class="reference internal" href="#classramses_1_1LogicEngine_1af9ac6a16854a068f230ecf7f2825d32d"><span class="std std-ref">createLuaInterface(std::string_view, std::string_view, const LuaConfig&amp;)</span></a> instead.</p>
+<p>Same as <a class="reference internal" href="#classramses_1_1LogicEngine_1af9ac6a16854a068f230ecf7f2825d32d"><span class="std std-ref">createLuaInterface(std::string_view, std::string_view, const LuaConfig&amp;)</span></a> but without support for using ramses::LuaModule in the interface, also will ignore any <code class="docutils literal notranslate"><span class="pre">modules</span></code> declaration within the provided interface source.</p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd></dd></dl>
+
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – the Lua source code </p></li>
+<li><p><strong>interfaceName</strong> – name to assign to the interface once it’s created. This name must be unique! </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The interface can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine15createLuaModuleENSt11string_viewERK9LuaConfigNSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine15createLuaModuleENSt11string_viewERK9LuaConfigNSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine15createLuaModuleENSt11string_viewERK9LuaConfigNSt11string_viewE"></span><span id="ramses::LogicEngine::createLuaModule__std::string_view.LuaConfigCR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1ac1362a582fb3119806803c07b445e7c4"></span><span class="n"><span class="pre">LuaModule</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createLuaModule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LuaConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">moduleName</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine15createLuaModuleENSt11string_viewERK9LuaConfigNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::LuaModule from Lua source code. LuaModules can be used to share code and data constants across scripts or other modules. See also <a class="reference internal" href="#classramses_1_1LogicEngine_1a693e9e38767beb5a2787720ba8e0a3d1"><span class="std std-ref">createLuaScript</span></a> and ramses::LuaConfig for details. You can optionally provide Lua module dependencies via the <code class="docutils literal notranslate"><span class="pre">config</span></code>, they will be accessible under their configured alias name for use by the module. The provided module dependencies must exactly match the declared dependencies in source code (see <a class="reference internal" href="#classramses_1_1LogicEngine_1a55e54beca83d209aed4fa51a60d0d097"><span class="std std-ref">extractLuaDependencies</span></a>).</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – module source code </p></li>
+<li><p><strong>config</strong> – configuration options, e.g. for module dependencies </p></li>
+<li><p><strong>moduleName</strong> – name to assign to the module once it’s created </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The script can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine22extractLuaDependenciesENSt11string_viewERKNSt8functionIFvRKNSt6stringEEEE">
+<span id="_CPPv3N6ramses11LogicEngine22extractLuaDependenciesENSt11string_viewERKNSt8functionIFvRKNSt6stringEEEE"></span><span id="_CPPv2N6ramses11LogicEngine22extractLuaDependenciesENSt11string_viewERKNSt8functionIFvRKNSt6stringEEEE"></span><span class="target" id="classramses_1_1LogicEngine_1a55e54beca83d209aed4fa51a60d0d097"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extractLuaDependencies</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">callbackFunc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine22extractLuaDependenciesENSt11string_viewERKNSt8functionIFvRKNSt6stringEEEE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Extracts dependencies from a Lua script, module or interface source code so that the corresponding modules can be provided when creating ramses::LuaScript, ramses::LuaModule or ramses::LuaInterface.</p>
+<p>Any ramses::LuaScript, ramses::LuaModule or ramses::LuaInterface which has a module dependency, i.e. it requires another ramses::LuaModule for it to work, must explicitly declare these dependencies directly in their source code by calling function ‘modules’ in global space and pass list of module names it depends on, for example: <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">modules</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span><span class="n">OUT</span><span class="p">)</span>
+  <span class="n">OUT</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">foo</span><span class="p">.</span><span class="n">myType</span><span class="p">()</span>
+<span class="kr">end</span>
+<span class="kr">function</span> <span class="nf">run</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span><span class="n">OUT</span><span class="p">)</span>
+  <span class="n">OUT</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">bar</span><span class="p">.</span><span class="n">doSth</span><span class="p">()</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+ The ‘modules’ function does not affect any other part of the source code in any way, it is used only for the purpose of explicit declaration and extraction of its dependencies.</p>
+<p>Please note that script runtime errors are ignored during extraction. In case a runtime error prevents the ‘modules’ function to be called, this method will still succeed but will not extract any modules, i.e. will not call <code class="docutils literal notranslate"><span class="pre">callbackFunc</span></code>. It is therefore highly recommended to put the modules declaration always at the beginning of every script before any other code so it will get executed even if there is runtime error later in the code.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – source code of module or script to parse for dependencies </p></li>
+<li><p><strong>callbackFunc</strong> – function callback will be called for each dependency found </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if extraction succeeded (also if no dependencies found) or <code class="docutils literal notranslate"><span class="pre">false</span></code> if something went wrong. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine23createRamsesNodeBindingERN6ramses4NodeEN6ramses13ERotationTypeENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine23createRamsesNodeBindingERN6ramses4NodeEN6ramses13ERotationTypeENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine23createRamsesNodeBindingERN6ramses4NodeEN6ramses13ERotationTypeENSt11string_viewE"></span><span id="ramses::LogicEngine::createRamsesNodeBinding__ramses::NodeR.ramses::ERotationType.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a64324dad4c7fe882a2bae4f58d776f41"></span><span class="n"><span class="pre">RamsesNodeBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createRamsesNodeBinding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses4NodeE" title="ramses::Node"><span class="n"><span class="pre">Node</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ramsesNode</span></span>, <span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ERotationType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rotationType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ERotationType</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Euler_XYZ</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine23createRamsesNodeBindingERN6ramses4NodeEN6ramses13ERotationTypeENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::RamsesNodeBinding which can be used to set the properties of a Ramses <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">Node</span></a> object. The initial values of the binding’s properties are loaded from the <code class="docutils literal notranslate"><span class="pre">ramsesNode</span></code>. Rotation values are taken over from the <code class="docutils literal notranslate"><span class="pre">ramsesNode</span></code> only if the conventions are compatible (see <a class="reference internal" href="core.html#group__CoreAPI_1ga8ec8f343aeb648bd5ad90d5c6b4e5a68"><span class="std std-ref">ramses::ERotationType</span></a>).</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ramsesNode</strong> – the <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">ramses::Node</span></a> object to control with the binding. </p></li>
+<li><p><strong>rotationType</strong> – the type of rotation to use (will affect the ‘rotation’ property semantics and type). </p></li>
+<li><p><strong>name</strong> – a name for the new ramses::RamsesNodeBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine29createRamsesAppearanceBindingERN6ramses10AppearanceENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine29createRamsesAppearanceBindingERN6ramses10AppearanceENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine29createRamsesAppearanceBindingERN6ramses10AppearanceENSt11string_viewE"></span><span id="ramses::LogicEngine::createRamsesAppearanceBinding__ramses::AppearanceR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a5670d12664d0bd9fc8e46d54345da3c3"></span><span class="n"><span class="pre">RamsesAppearanceBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createRamsesAppearanceBinding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses10AppearanceE" title="ramses::Appearance"><span class="n"><span class="pre">Appearance</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ramsesAppearance</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine29createRamsesAppearanceBindingERN6ramses10AppearanceENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::RamsesAppearanceBinding which can be used to set the properties of a Ramses <a class="reference internal" href="core.html#classramses_1_1Appearance"><span class="std std-ref">Appearance</span></a> object.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ramsesAppearance</strong> – the <a class="reference internal" href="core.html#classramses_1_1Appearance"><span class="std std-ref">ramses::Appearance</span></a> object to control with the binding. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::RamsesAppearanceBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine25createRamsesCameraBindingERN6ramses6CameraENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine25createRamsesCameraBindingERN6ramses6CameraENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine25createRamsesCameraBindingERN6ramses6CameraENSt11string_viewE"></span><span id="ramses::LogicEngine::createRamsesCameraBinding__ramses::CameraR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1aeedb6b1487a73442777e5f32f2a87ebc"></span><span class="n"><span class="pre">RamsesCameraBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createRamsesCameraBinding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses6CameraE" title="ramses::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ramsesCamera</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine25createRamsesCameraBindingERN6ramses6CameraENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::RamsesCameraBinding which can be used to set the properties of a Ramses <a class="reference internal" href="core.html#classramses_1_1Camera"><span class="std std-ref">Camera</span></a> object.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ramsesCamera</strong> – the <a class="reference internal" href="core.html#classramses_1_1Camera"><span class="std std-ref">ramses::Camera</span></a> object to control with the binding. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::RamsesCameraBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine42createRamsesCameraBindingWithFrustumPlanesERN6ramses6CameraENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine42createRamsesCameraBindingWithFrustumPlanesERN6ramses6CameraENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine42createRamsesCameraBindingWithFrustumPlanesERN6ramses6CameraENSt11string_viewE"></span><span id="ramses::LogicEngine::createRamsesCameraBindingWithFrustumPlanes__ramses::CameraR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a70997b152b7aef7cd77b7b5095492edb"></span><span class="n"><span class="pre">RamsesCameraBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createRamsesCameraBindingWithFrustumPlanes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses6CameraE" title="ramses::Camera"><span class="n"><span class="pre">Camera</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ramsesCamera</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine42createRamsesCameraBindingWithFrustumPlanesERN6ramses6CameraENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Same as <a class="reference internal" href="#classramses_1_1LogicEngine_1aeedb6b1487a73442777e5f32f2a87ebc"><span class="std std-ref">createRamsesCameraBinding</span></a> but the created ramses::RamsesCameraBinding will have an input property for each frustum plane also for perspective camera. See ramses::RamsesCameraBinding for details. Note that <a class="reference internal" href="core.html#classramses_1_1OrthographicCamera"><span class="std std-ref">ramses::OrthographicCamera</span></a> binding will always have frustum planes as properties whether <a class="reference internal" href="#classramses_1_1LogicEngine_1aeedb6b1487a73442777e5f32f2a87ebc"><span class="std std-ref">createRamsesCameraBinding</span></a> or <a class="reference internal" href="#classramses_1_1LogicEngine_1a70997b152b7aef7cd77b7b5095492edb"><span class="std std-ref">createRamsesCameraBindingWithFrustumPlanes</span></a> is used to create it.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ramsesCamera</strong> – the <a class="reference internal" href="core.html#classramses_1_1Camera"><span class="std std-ref">ramses::Camera</span></a> object to control with the binding. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::RamsesCameraBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine29createRamsesRenderPassBindingERN6ramses10RenderPassENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine29createRamsesRenderPassBindingERN6ramses10RenderPassENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine29createRamsesRenderPassBindingERN6ramses10RenderPassENSt11string_viewE"></span><span id="ramses::LogicEngine::createRamsesRenderPassBinding__ramses::RenderPassR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1af7a5beedc7425c0822a8d8210764befe"></span><span class="n"><span class="pre">RamsesRenderPassBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createRamsesRenderPassBinding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses10RenderPassE" title="ramses::RenderPass"><span class="n"><span class="pre">RenderPass</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ramsesRenderPass</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine29createRamsesRenderPassBindingERN6ramses10RenderPassENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::RamsesRenderPassBinding which can be used to set the properties of a <a class="reference internal" href="core.html#classramses_1_1RenderPass"><span class="std std-ref">ramses::RenderPass</span></a> object.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ramsesRenderPass</strong> – the <a class="reference internal" href="core.html#classramses_1_1RenderPass"><span class="std std-ref">ramses::RenderPass</span></a> object to control with the binding. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::RamsesRenderPassBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine30createRamsesRenderGroupBindingERN6ramses11RenderGroupERK32RamsesRenderGroupBindingElementsNSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine30createRamsesRenderGroupBindingERN6ramses11RenderGroupERK32RamsesRenderGroupBindingElementsNSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine30createRamsesRenderGroupBindingERN6ramses11RenderGroupERK32RamsesRenderGroupBindingElementsNSt11string_viewE"></span><span id="ramses::LogicEngine::createRamsesRenderGroupBinding__ramses::RenderGroupR.RamsesRenderGroupBindingElementsCR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1ad3d305fe771d7eee7a7422ab9276f4f7"></span><span class="n"><span class="pre">RamsesRenderGroupBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createRamsesRenderGroupBinding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses11RenderGroupE" title="ramses::RenderGroup"><span class="n"><span class="pre">RenderGroup</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ramsesRenderGroup</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RamsesRenderGroupBindingElements</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">elements</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine30createRamsesRenderGroupBindingERN6ramses11RenderGroupERK32RamsesRenderGroupBindingElementsNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::RamsesRenderGroupBinding which can be used to control some properties of a <a class="reference internal" href="core.html#classramses_1_1RenderGroup"><span class="std std-ref">ramses::RenderGroup</span></a> object. ramses::RamsesRenderGroupBinding can be used to control render order of elements it contains on Ramses side - <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">ramses::MeshNode</span></a> or <a class="reference internal" href="core.html#classramses_1_1RenderGroup"><span class="std std-ref">ramses::RenderGroup</span></a>, the elements to control must be provided explicitly at creation time, see ramses::RamsesRenderGroupBindingElements and ramses::RamsesRenderGroupBinding to learn how these elements form the binding’s input properties.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ramsesRenderGroup</strong> – the <a class="reference internal" href="core.html#classramses_1_1RenderGroup"><span class="std std-ref">ramses::RenderGroup</span></a> object to control with the binding. </p></li>
+<li><p><strong>elements</strong> – collection of elements (<a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">MeshNode</span></a> or <a class="reference internal" href="core.html#classramses_1_1RenderGroup"><span class="std std-ref">RenderGroup</span></a>) to control with this ramses::RamsesRenderGroupBinding. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::RamsesRenderGroupBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine27createRamsesMeshNodeBindingERN6ramses8MeshNodeENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine27createRamsesMeshNodeBindingERN6ramses8MeshNodeENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine27createRamsesMeshNodeBindingERN6ramses8MeshNodeENSt11string_viewE"></span><span id="ramses::LogicEngine::createRamsesMeshNodeBinding__ramses::MeshNodeR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1afa4fc5a69790f5b67c64c59f0d88b75d"></span><span class="n"><span class="pre">RamsesMeshNodeBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createRamsesMeshNodeBinding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses8MeshNodeE" title="ramses::MeshNode"><span class="n"><span class="pre">MeshNode</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ramsesMeshNode</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine27createRamsesMeshNodeBindingERN6ramses8MeshNodeENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::RamsesMeshNodeBinding which can be used to control some properties of a <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">ramses::MeshNode</span></a> object.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ramsesMeshNode</strong> – the <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">ramses::MeshNode</span></a> object to control with the binding. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::RamsesMeshNodeBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine17createSkinBindingERKNSt6vectorIPK17RamsesNodeBindingEERKNSt6vectorI9matrix44fEER23RamsesAppearanceBindingRKN6ramses12UniformInputENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine17createSkinBindingERKNSt6vectorIPK17RamsesNodeBindingEERKNSt6vectorI9matrix44fEER23RamsesAppearanceBindingRKN6ramses12UniformInputENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine17createSkinBindingERKNSt6vectorIPK17RamsesNodeBindingEERKNSt6vectorI9matrix44fEER23RamsesAppearanceBindingRKN6ramses12UniformInputENSt11string_viewE"></span><span id="ramses::LogicEngine::createSkinBinding__std::vector:RamsesNodeBindingCP:CR.std::vector:matrix44f:CR.RamsesAppearanceBindingR.ramses::UniformInputCR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a0309473ee32619fc088fbe778df83218"></span><span class="n"><span class="pre">SkinBinding</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createSkinBinding</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">RamsesNodeBinding</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">joints</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">matrix44f</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inverseBindMatrices</span></span>, <span class="n"><span class="pre">RamsesAppearanceBinding</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">appearanceBinding</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses12UniformInputE" title="ramses::UniformInput"><span class="n"><span class="pre">UniformInput</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">jointMatInput</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine17createSkinBindingERKNSt6vectorIPK17RamsesNodeBindingEERKNSt6vectorI9matrix44fEER23RamsesAppearanceBindingRKN6ramses12UniformInputENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::SkinBinding which can be used for vertex skinning (bone animations). Refer to ramses::SkinBinding and examples for all the information needed how to use this object.</p>
+<p>These conditions must be met in order for the creation to succeed:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">joints</span></code> must contain at least 1 joint and no null pointers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inverseBindMatrices</span></code> must be of equal size as <code class="docutils literal notranslate"><span class="pre">joints</span></code> (i.e. matrix per joint)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jointMatInput</span></code> must point to a valid uniform input of the <a class="reference internal" href="core.html#classramses_1_1Effect"><span class="std std-ref">ramses::Effect</span></a> used in <code class="docutils literal notranslate"><span class="pre">appearanceBinding</span></code></p></li>
+<li><p>the shader uniform that <code class="docutils literal notranslate"><span class="pre">jointMatInput</span></code> points to must be of type array of ramses::EDataType::Matrix44F with number of elements matching number of joints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jointMatInput</span></code> must not be bound to any data object in its Ramses appearance Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>joints</strong> – bindings to Ramses nodes which will act as skeleton nodes. </p></li>
+<li><p><strong>inverseBindMatrices</strong> – inverse transformation matrices (one for each joint node), values are expected ordered in column-major fashion. </p></li>
+<li><p><strong>appearanceBinding</strong> – binding to Ramses appearance which specifies the effect/shader for vertex skinning. </p></li>
+<li><p><strong>jointMatInput</strong> – Ramses appearance uniform input for the resulting joint matrices to be set. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::SkinBinding. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The binding can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN6ramses11LogicEngine15createDataArrayEP9DataArrayRKNSt6vectorI1TEENSt11string_viewE">
+<span id="_CPPv3I0EN6ramses11LogicEngine15createDataArrayERKNSt6vectorI1TEENSt11string_viewE"></span><span id="_CPPv2I0EN6ramses11LogicEngine15createDataArrayERKNSt6vectorI1TEENSt11string_viewE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classramses_1_1LogicEngine_1aef92c77251df678efc8ef7269f72d9c9"></span><span class="n"><span class="pre">DataArray</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createDataArray</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN6ramses11LogicEngine15createDataArrayEP9DataArrayRKNSt6vectorI1TEENSt11string_viewE" title="ramses::LogicEngine::createDataArray::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN6ramses11LogicEngine15createDataArrayEP9DataArrayRKNSt6vectorI1TEENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::DataArray to store data which can be used with animations. Provided data must not be empty otherwise creation will fail. See ramses::CanPropertyTypeBeStoredInDataArray and ramses::PropertyTypeToEnum to determine supported types that can be used to create a ramses::DataArray. When using std::vector&lt;float&gt; as element data type (corresponds to ramses::EPropertyType::Array), the sizes of all the elements (std::vector&lt;float&gt; instances) must be equal, otherwise creation will fail.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – source data to move into ramses::DataArray, must not be empty. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::DataArray. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine19createAnimationNodeERK19AnimationNodeConfigNSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine19createAnimationNodeERK19AnimationNodeConfigNSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine19createAnimationNodeERK19AnimationNodeConfigNSt11string_viewE"></span><span id="ramses::LogicEngine::createAnimationNode__AnimationNodeConfigCR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a18ba924278e8aba4618125ece82d25f2"></span><span class="n"><span class="pre">AnimationNode</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createAnimationNode</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">AnimationNodeConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine19createAnimationNodeERK19AnimationNodeConfigNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::AnimationNode for animating properties. Refer to ramses::AnimationNode for more information about its use. There must be at least one channel provided in the ramses::AnimationNodeConfig, please see ramses::AnimationChannel requirements for all the data.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> – list of animation channels to be animated with this animation node and other configuration flags. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::AnimationNode. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine15createTimerNodeENSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine15createTimerNodeENSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine15createTimerNodeENSt11string_viewE"></span><span id="ramses::LogicEngine::createTimerNode__std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a8c8119d84e2245d3f51a246c5b614571"></span><span class="n"><span class="pre">TimerNode</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createTimerNode</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine15createTimerNodeENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::TimerNode for generate and/or propagate timing information. Refer to ramses::TimerNode for more information about its use.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – a name for the the new ramses::TimerNode. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine17createAnchorPointER17RamsesNodeBindingR19RamsesCameraBindingNSt11string_viewE">
+<span id="_CPPv3N6ramses11LogicEngine17createAnchorPointER17RamsesNodeBindingR19RamsesCameraBindingNSt11string_viewE"></span><span id="_CPPv2N6ramses11LogicEngine17createAnchorPointER17RamsesNodeBindingR19RamsesCameraBindingNSt11string_viewE"></span><span id="ramses::LogicEngine::createAnchorPoint__RamsesNodeBindingR.RamsesCameraBindingR.std::string_view"></span><span class="target" id="classramses_1_1LogicEngine_1a930da556f00c9de1dde6ad51eaf68caf"></span><span class="n"><span class="pre">AnchorPoint</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">createAnchorPoint</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">RamsesNodeBinding</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">nodeBinding</span></span>, <span class="n"><span class="pre">RamsesCameraBinding</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cameraBinding</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine17createAnchorPointER17RamsesNodeBindingR19RamsesCameraBindingNSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new ramses::AnchorPoint that can be used to calculate projected coordinates of given <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">ramses::Node</span></a> when viewed using given <a class="reference internal" href="core.html#classramses_1_1Camera"><span class="std std-ref">ramses::Camera</span></a>. See ramses::AnchorPoint for more details and usage of this special purpose logic node.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeBinding</strong> – binding referencing <a class="reference internal" href="core.html#classramses_1_1Node"><span class="std std-ref">ramses::Node</span></a> to use for model transformation when calculating projected coordinates. </p></li>
+<li><p><strong>cameraBinding</strong> – binding referencing <a class="reference internal" href="core.html#classramses_1_1Camera"><span class="std std-ref">ramses::Camera</span></a> to use for view and projection transformation when calculating projected coordinates. </p></li>
+<li><p><strong>name</strong> – a name for the the new ramses::AnchorPoint. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a pointer to the created object or nullptr if something went wrong during creation. In that case, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. The ramses::AnchorPoint can be destroyed by calling the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"><span class="std std-ref">destroy</span></a> method </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine6updateEv">
+<span id="_CPPv3N6ramses11LogicEngine6updateEv"></span><span id="_CPPv2N6ramses11LogicEngine6updateEv"></span><span id="ramses::LogicEngine::update"></span><span class="target" id="classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine6updateEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Updates all ramses::LogicNode’s which were created by this <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> instance. The order in which ramses::LogicNode’s are executed is determined by the links created between them (see <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a> and <a class="reference internal" href="#classramses_1_1LogicEngine_1a028229b7d3e3fe1f0ab3c1d3a60d6cef"><span class="std std-ref">unlink</span></a>). ramses::LogicNode’s which don’t have any links between then are executed in arbitrary order, but the order is always the same between two invocations of <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> without any calls to <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a> or <a class="reference internal" href="#classramses_1_1LogicEngine_1a028229b7d3e3fe1f0ab3c1d3a60d6cef"><span class="std std-ref">unlink</span></a> between them. As an optimization ramses::LogicNode’s are only updated, if at least one input of a ramses::LogicNode has changed since the last call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. If the links between logic nodes create a loop, this method will fail with an error and will not execute any of the logic nodes.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the update was successful, false otherwise In case of an error, use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> to obtain errors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine18enableUpdateReportEb">
+<span id="_CPPv3N6ramses11LogicEngine18enableUpdateReportEb"></span><span id="_CPPv2N6ramses11LogicEngine18enableUpdateReportEb"></span><span id="ramses::LogicEngine::enableUpdateReport__b"></span><span class="target" id="classramses_1_1LogicEngine_1a3d8d3c5c45c4150de603d24928d9b824"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enableUpdateReport</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine18enableUpdateReportEb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enables collecting of statistics during call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> which can be obtained using <a class="reference internal" href="#classramses_1_1LogicEngine_1ab0c6cd4da8a2a69d241514deb630dfc6"><span class="std std-ref">getLastUpdateReport</span></a>. Once enabled every subsequent call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> will be instructed to collect various statistical data which can be useful for profiling and optimizing the network of logic nodes. Note that when enabled there is a slight performance overhead to collect the data, it is recommended to use this only during a development phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable</strong> – true or false to enable or disable update reports. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine19getLastUpdateReportEv">
+<span id="_CPPv3NK6ramses11LogicEngine19getLastUpdateReportEv"></span><span id="_CPPv2NK6ramses11LogicEngine19getLastUpdateReportEv"></span><span id="ramses::LogicEngine::getLastUpdateReportC"></span><span class="target" id="classramses_1_1LogicEngine_1ab0c6cd4da8a2a69d241514deb630dfc6"></span><span class="n"><span class="pre">LogicEngineReport</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLastUpdateReport</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine19getLastUpdateReportEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns collection of statistics from last call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> if reporting is enabled (<a class="reference internal" href="#classramses_1_1LogicEngine_1a3d8d3c5c45c4150de603d24928d9b824"><span class="std std-ref">enableUpdateReport</span></a>). The report contains lists of logic nodes that were executed and not executed and other useful data collected during last <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. See ramses::LogicEngineReport for details. The report data is generated only if previously enabled using <a class="reference internal" href="#classramses_1_1LogicEngine_1a3d8d3c5c45c4150de603d24928d9b824"><span class="std std-ref">enableUpdateReport</span></a> and is empty otherwise. The data is only relevant for the last <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> and is overwritten during next <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. Note that if <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> fails the report contents are undefined.</p>
+<p>Attention! The ramses::LogicEngineReport is returned by value and owns all the reported data. Make sure to keep the object as long as its data is referenced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>collected statistics from last <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine24setStatisticsLoggingRateE6size_t">
+<span id="_CPPv3N6ramses11LogicEngine24setStatisticsLoggingRateE6size_t"></span><span id="_CPPv2N6ramses11LogicEngine24setStatisticsLoggingRateE6size_t"></span><span id="ramses::LogicEngine::setStatisticsLoggingRate__s"></span><span class="target" id="classramses_1_1LogicEngine_1a54f78ef7d1f21061f6a604e135e0192f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setStatisticsLoggingRate</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">loggingRate</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine24setStatisticsLoggingRateE6size_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Set the logging rate, i.e. how often statistics will be logged. Logging rate of <code class="docutils literal notranslate"><span class="pre">N</span></code> means every <code class="docutils literal notranslate"><span class="pre">Nth</span></code> call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> statistics will be logged. Whether the the logs are actually logged is also influenced by the statistics log level that can be set with <a class="reference internal" href="#classramses_1_1LogicEngine_1ae6731a1b2a7e6a62c04747d793b5c8ca"><span class="std std-ref">setStatisticsLogLevel</span></a>. The logging rate also determines how many collected sets will be used to calculate min/max and average. These statistics include:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Time</span></code> since last log in seconds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Update</span></code> execution time in microseconds (Avg, Min, Max)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Time</span></code> between <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> calls in microseconds (Avg, Min, Max)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> of nodes executed in percentage of total count (Avg, Min, Max)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Links</span></code> activated (Avg, Min, Max) When loggingRate is set to 0 the logging of statistics is disabled. Note that there is a slight performance overhead for collecting the statistics data, however on most platforms this should be marginal. To get more detailed information about update execution timings see <a class="reference internal" href="#classramses_1_1LogicEngine_1ab0c6cd4da8a2a69d241514deb630dfc6"><span class="std std-ref">getLastUpdateReport</span></a>.</p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>loggingRate</strong> – rate of <code class="docutils literal notranslate"><span class="pre">N</span></code> means statistics will be logged every <code class="docutils literal notranslate"><span class="pre">Nth</span></code> call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. By default loggingRate is 60. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine21setStatisticsLogLevelE9ELogLevel">
+<span id="_CPPv3N6ramses11LogicEngine21setStatisticsLogLevelE9ELogLevel"></span><span id="_CPPv2N6ramses11LogicEngine21setStatisticsLogLevelE9ELogLevel"></span><span id="ramses::LogicEngine::setStatisticsLogLevel__ELogLevel"></span><span class="target" id="classramses_1_1LogicEngine_1ae6731a1b2a7e6a62c04747d793b5c8ca"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setStatisticsLogLevel</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ELogLevel</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">logLevel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine21setStatisticsLogLevelE9ELogLevel" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Update statistics default logLevel is ELogLevel::Debug. For the statistics to be logged the logLevel has to be &lt;= then the result returned from ramses::Logger::GetLogVerbosityLimit. For example if ramses::Logger::GetLogVerbosityLimit returns ELogLevel::Info you have to set statistics logLevel to ELogLevel::Info or a smaller level (e.g. ELogLevel::Warn) to display statistics. Note that setting the statistics log level only influences the periodic statistic logs. All other logs are not influenced by this method. To control the rate after how many updates a log is produced refer to <a class="reference internal" href="#classramses_1_1LogicEngine_1a54f78ef7d1f21061f6a604e135e0192f"><span class="std std-ref">setStatisticsLoggingRate</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logLevel</strong> – the logLevel of statistics messages </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine4linkERK8PropertyRK8Property">
+<span id="_CPPv3N6ramses11LogicEngine4linkERK8PropertyRK8Property"></span><span id="_CPPv2N6ramses11LogicEngine4linkERK8PropertyRK8Property"></span><span id="ramses::LogicEngine::link__PropertyCR.PropertyCR"></span><span class="target" id="classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">link</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sourceProperty</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">targetProperty</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine4linkERK8PropertyRK8Property" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Links a property of a ramses::LogicNode to another ramses::Property of another ramses::LogicNode. After linking, calls to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> will propagate the value of <code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code> to the <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code>. Creating links influences the order in which scripts are executed - if node A provides data to node B, then node A will be executed before node B. A single output property (<code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code>) can be linked to any number of input properties (<code class="docutils literal notranslate"><span class="pre">targetProperty</span></code>), but any input property can have at most one link to an output property (links are directional and support a 1-to-N relationships).</p>
+<p>The <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link()</span></a> method will fail when:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code> and <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code> belong to the same ramses::LogicNode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code> is not an output (see ramses::LogicNode::getOutputs())</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">targetProperty</span></code> is not an input (see ramses::LogicNode::getInputs())</p></li>
+<li><p>either <code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code> or <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code> is not a primitive property (you have to link sub-properties of structs and arrays individually)</p></li>
+</ul>
+</p>
+<p>Creating links which form a cycle in the node dependency graph will not fail right away but during the next call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update()</span></a>. Links are directional, it is OK to have A-&gt;B, A-&gt;C and B-&gt;C, but is not OK to have A-&gt;B-&gt;C-&gt;A. Cycles are allowed only under special conditions when using a weak link (see <a class="reference internal" href="#classramses_1_1LogicEngine_1af77015ad763fd7d56e8949e996459ac5"><span class="std std-ref">linkWeak</span></a>).</p>
+<p>After calling <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a>, the value of the <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code> will not change until the next call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. Creating and destroying links generally has no effect until <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> is called.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sourceProperty</strong> – the output property which will provide data for <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code></p></li>
+<li><p><strong>targetProperty</strong> – the target property which will receive its value from <code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if linking was successful, false otherwise. To get more detailed error information use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine8linkWeakERK8PropertyRK8Property">
+<span id="_CPPv3N6ramses11LogicEngine8linkWeakERK8PropertyRK8Property"></span><span id="_CPPv2N6ramses11LogicEngine8linkWeakERK8PropertyRK8Property"></span><span id="ramses::LogicEngine::linkWeak__PropertyCR.PropertyCR"></span><span class="target" id="classramses_1_1LogicEngine_1af77015ad763fd7d56e8949e996459ac5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linkWeak</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sourceProperty</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">targetProperty</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine8linkWeakERK8PropertyRK8Property" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A weak link is for the most part equivalent to <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a> - it has the same requirements and data propagation behavior, but with one crucial difference. Weak link is not considered for node dependency graph (logic node topology) which determines the order of nodes execution during <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. This allows to form a cycle using weak link within the dependency graph, which can be helpful when some feedback data is required (e.g. a controller node managing a worker node using normal links, worker node reports progress back to controller via weak link). However there are important things to consider to avoid unexpected problems:<ol class="lowerroman simple">
+<li><p>The value propagated from a weak link is old, it is the value that was calculated in previous <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a>. Example: consider A-&gt;B-&gt;C using normal links and a back loop C-&gt;A using weak link. When <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> is called, the nodes are executed exactly in the order defined by normal link dependency: A, B, C (remember that weak links are not considered for execution order). This means however that when A is executed its input value from weak linked C is only from previous update because C is executed last.</p></li>
+<li><p>During first update (after creation or load from file) there is no value applied from weak link, instead the initial input property value will be used at the weak link target. This is a logical consequence of the limitation described above - during first update there was no previous update and therefore no value from weak link.</p></li>
+<li><p>Avoid infinite update loops - <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> has an optimization to execute only nodes with modified inputs, this can greatly simplify update of complex node hierarchies. When using weak links there is a risk that there will be a never ending need of executions of nodes involved in a node graph cycle. Consider the last node providing new value via weak link to first node, which then generates again new value propagated to the last node, this will result in the need to execute those nodes in all upcoming <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> calls. Try to avoid such case and if it is not possible at least try to limit this update loop to a minimum of nodes.</p></li>
+</ol>
+</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sourceProperty</strong> – the output property which will provide data for <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code></p></li>
+<li><p><strong>targetProperty</strong> – the target property which will receive its value from <code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if linking was successful, false otherwise. To get more detailed error information use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine6unlinkERK8PropertyRK8Property">
+<span id="_CPPv3N6ramses11LogicEngine6unlinkERK8PropertyRK8Property"></span><span id="_CPPv2N6ramses11LogicEngine6unlinkERK8PropertyRK8Property"></span><span id="ramses::LogicEngine::unlink__PropertyCR.PropertyCR"></span><span class="target" id="classramses_1_1LogicEngine_1a028229b7d3e3fe1f0ab3c1d3a60d6cef"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unlink</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sourceProperty</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">targetProperty</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine6unlinkERK8PropertyRK8Property" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Unlinks two properties which were linked with <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a>. After a link is destroyed, calls to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> will no longer propagate the output value from the <code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code> to the input value of the <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code>. The value of the <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code> will remain as it was after the last call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update</span></a> - it will <strong>not</strong> be restored to a default value or to any value which was set manually with calls to ramses::Property::set().</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sourceProperty</strong> – the output property which is currently linked to <code class="docutils literal notranslate"><span class="pre">targetProperty</span></code></p></li>
+<li><p><strong>targetProperty</strong> – the property which will no longer receive the value from <code class="docutils literal notranslate"><span class="pre">sourceProperty</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if unlinking was successful, false otherwise. To get more detailed error information use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine8isLinkedERK9LogicNode">
+<span id="_CPPv3NK6ramses11LogicEngine8isLinkedERK9LogicNode"></span><span id="_CPPv2NK6ramses11LogicEngine8isLinkedERK9LogicNode"></span><span id="ramses::LogicEngine::isLinked__LogicNodeCRC"></span><span class="target" id="classramses_1_1LogicEngine_1a35ed78aa1abadfcf232de6ff77311034"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isLinked</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LogicNode</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">logicNode</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine8isLinkedERK9LogicNode" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Checks if an input or output of a given LogicNode is linked to another LogicNode </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logicNode</strong> – the node to check for linkage. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if the given LogicNode is linked to any other LogicNode, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine16getPropertyLinksEv">
+<span id="_CPPv3NK6ramses11LogicEngine16getPropertyLinksEv"></span><span id="_CPPv2NK6ramses11LogicEngine16getPropertyLinksEv"></span><span id="ramses::LogicEngine::getPropertyLinksC"></span><span class="target" id="classramses_1_1LogicEngine_1a666bc52bb4a2afcd82d8504f7a029aec"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6ramses12PropertyLinkE" title="ramses::PropertyLink"><span class="n"><span class="pre">PropertyLink</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPropertyLinks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine16getPropertyLinksEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Collect and retrieve all existing links between properties of logic nodes. There will be a <a class="reference internal" href="#structramses_1_1PropertyLink"><span class="std std-ref">ramses::PropertyLink</span></a> in the returned container for every existing link created (using <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a> or <a class="reference internal" href="#classramses_1_1LogicEngine_1af77015ad763fd7d56e8949e996459ac5"><span class="std std-ref">linkWeak</span></a>).</p>
+<p>Note that the returned container will not be modified (even if new links are created or unlinked in <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a>) until <a class="reference internal" href="#classramses_1_1LogicEngine_1a666bc52bb4a2afcd82d8504f7a029aec"><span class="std std-ref">getPropertyLinks</span></a> is called again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>all existing links between properties of logic nodes. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine9getErrorsEv">
+<span id="_CPPv3NK6ramses11LogicEngine9getErrorsEv"></span><span id="_CPPv2NK6ramses11LogicEngine9getErrorsEv"></span><span id="ramses::LogicEngine::getErrorsC"></span><span class="target" id="classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ErrorData</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getErrors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine9getErrorsEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Returns the list of all errors which occurred during the last API call to a <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> method or any other method of its subclasses (scripts, bindings etc). Note that errors get wiped by all mutable methods of the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a>.</p>
+<p>This method can be used in two different ways:<ul class="simple">
+<li><p>To debug the correct usage of the Logic Engine API (e.g. by wrapping all API calls with a check for their return value and using this method to find out the cause of the error)</p></li>
+<li><p>To check for runtime errors of scripts which come from a dynamic source, e.g. by calling the method after an unsuccessful call to <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">update()</span></a> with a faulty script</p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list of errors </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine8validateEv">
+<span id="_CPPv3NK6ramses11LogicEngine8validateEv"></span><span id="_CPPv2NK6ramses11LogicEngine8validateEv"></span><span id="ramses::LogicEngine::validateC"></span><span class="target" id="classramses_1_1LogicEngine_1a0f301cbb388025232fc03ba53363a56c"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">WarningData</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">validate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine8validateEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Performs a (potentially slow!) validation of the <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> content and reports a list of warnings for things which could be fixed/changed for better performance, consistency or resource usage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list of warnings </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine7destroyER11LogicObject">
+<span id="_CPPv3N6ramses11LogicEngine7destroyER11LogicObject"></span><span id="_CPPv2N6ramses11LogicEngine7destroyER11LogicObject"></span><span id="ramses::LogicEngine::destroy__LogicObjectR"></span><span class="target" id="classramses_1_1LogicEngine_1a5e7197527cd5be60d3e9d9ba330d373f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">destroy</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">LogicObject</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">object</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine7destroyER11LogicObject" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Destroys an instance of an object created with <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a>. All objects created using <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> derive from a base class ramses::LogicObject and can be destroyed using this method.</p>
+<p>In case of a ramses::LogicNode and its derived classes, if any links are connected to this ramses::LogicNode, they will be destroyed too. Note that after this call, the execution order of ramses::LogicNode may change! See the docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">link</span></a> and <a class="reference internal" href="#classramses_1_1LogicEngine_1a028229b7d3e3fe1f0ab3c1d3a60d6cef"><span class="std std-ref">unlink</span></a> for more information.</p>
+<p>In case of a ramses::DataArray, destroy will fail if it is used in any ramses::AnimationNode’s ramses::AnimationChannel.</p>
+<p>In case of a ramses::LuaModule, destroy will fail if it is used in any ramses::LuaScript.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>object</strong> – the object instance to destroy </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if object destroyed, false otherwise. Call <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a> for error details upon failure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine10saveToFileENSt11string_viewERK14SaveFileConfig">
+<span id="_CPPv3N6ramses11LogicEngine10saveToFileENSt11string_viewERK14SaveFileConfig"></span><span id="_CPPv2N6ramses11LogicEngine10saveToFileENSt11string_viewERK14SaveFileConfig"></span><span id="ramses::LogicEngine::saveToFile__std::string_view.SaveFileConfigCR"></span><span class="target" id="classramses_1_1LogicEngine_1ae4b618ac07587cf116219d824322ba67"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">saveToFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filename</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">SaveFileConfig</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine10saveToFileENSt11string_viewERK14SaveFileConfig" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Writes the whole <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> and all of its objects to a binary file with the given filename. The RAMSES scene potentially referenced by ramses::RamsesBinding objects is not saved - that is left to the application. <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> saves the references to those object, and restores them after loading. Thus, deleting Ramses objects which are being referenced from within the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> will result in errors if the Logic Engine is loaded from the file again. Note that it is not sufficient to have objects with the same name, they have to be the exact same objects as during saving! For more in-depth information regarding saving and loading, refer to the online documentation at <a class="reference external" href="https://ramses-logic.readthedocs.io/en/latest/api.html#saving-loading-from-file">https://ramses-logic.readthedocs.io/en/latest/api.html#saving-loading-from-file</a></p>
+<p>Note: The method reports error and aborts if the ramses::RamsesBinding objects reference more than one Ramses scene (this is acceptable during runtime, but not for saving to file).</p>
+<p>Note: This method fails and reports error if validation failed and was not disabled by calling ramses::SaveFileConfig::setValidationEnabled with false</p>
+<p>Note: This method fails and reports error if there is any Lua script or module with debug log functions, (see ramses::LuaConfig::enableDebugLogFunctions), these must be destroyed before saving to file.</p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – path to file to save the data (relative or absolute). The file will be created or overwritten if it exists! </p></li>
+<li><p><strong>config</strong> – optional configuration object with exporter and asset metadata info, see ramses::SaveFileConfig for details </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if saving was successful, false otherwise. To get more detailed error information use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine12loadFromFileENSt11string_viewEPN6ramses5SceneEb">
+<span id="_CPPv3N6ramses11LogicEngine12loadFromFileENSt11string_viewEPN6ramses5SceneEb"></span><span id="_CPPv2N6ramses11LogicEngine12loadFromFileENSt11string_viewEPN6ramses5SceneEb"></span><span id="ramses::LogicEngine::loadFromFile__std::string_view.ramses::SceneP.b"></span><span class="target" id="classramses_1_1LogicEngine_1aef08b891e424444ef0ea2cdf47cfe892"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadFromFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filename</span></span>, <span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ramsesScene</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enableMemoryVerification</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine12loadFromFileENSt11string_viewEPN6ramses5SceneEb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Loads the whole <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> data from the given file. See also <a class="reference internal" href="#classramses_1_1LogicEngine_1ae4b618ac07587cf116219d824322ba67"><span class="std std-ref">saveToFile()</span></a>. After loading, the previous state of the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> will be overwritten with the contents loaded from the file, i.e. all previously created objects (scripts, bindings, etc.) will be deleted and pointers to them will be invalid. The (optionally) provided ramsesScene will be used to resolve potential ramses::RamsesBinding objects which point to Ramses objects. You can provide a nullptr if you know for sure that the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> loaded from the file has no ramses::RamsesBinding objects which point to a Ramses scene object. Otherwise, the call to <a class="reference internal" href="#classramses_1_1LogicEngine_1aef08b891e424444ef0ea2cdf47cfe892"><span class="std std-ref">loadFromFile</span></a> will fail with an error. In case of errors, the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> may be left in an inconsistent state. For more in-depth information regarding saving and loading, refer to the online documentation at <a class="reference external" href="https://ramses-logic.readthedocs.io/en/latest/api.html#saving-loading-from-file">https://ramses-logic.readthedocs.io/en/latest/api.html#saving-loading-from-file</a></p>
+<p>Attention! This method clears all previous errors! See also docs of <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – path to file from which to load content (relative or absolute) </p></li>
+<li><p><strong>ramsesScene</strong> – pointer to the Ramses <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> which holds the objects referenced in the Ramses Logic file </p></li>
+<li><p><strong>enableMemoryVerification</strong> – flag to enable memory verifier (a flatbuffers feature which checks bounds and ranges). Disable this only if the file comes from a trusted source and performance is paramount. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if deserialization was successful, false otherwise. To get more detailed error information use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine22loadFromFileDescriptorEi6size_t6size_tPN6ramses5SceneEb">
+<span id="_CPPv3N6ramses11LogicEngine22loadFromFileDescriptorEi6size_t6size_tPN6ramses5SceneEb"></span><span id="_CPPv2N6ramses11LogicEngine22loadFromFileDescriptorEi6size_t6size_tPN6ramses5SceneEb"></span><span id="ramses::LogicEngine::loadFromFileDescriptor__i.s.s.ramses::SceneP.b"></span><span class="target" id="classramses_1_1LogicEngine_1a3f80fe08f1ec685793eaed10567309e8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadFromFileDescriptor</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fd</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span>, <span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ramsesScene</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enableMemoryVerification</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine22loadFromFileDescriptorEi6size_t6size_tPN6ramses5SceneEb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Loads the whole <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> data from the given file descriptor. This method is equivalent to <a class="reference internal" href="#classramses_1_1LogicEngine_1aef08b891e424444ef0ea2cdf47cfe892"><span class="std std-ref">loadFromFile()</span></a>.</p>
+<p>The file descriptor must be opened for read access and must support seeking. It will be in closed state after this call.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fd</strong> – <strong>[in]</strong> Open and readable filedescriptor. </p></li>
+<li><p><strong>offset</strong> – <strong>[in]</strong> Absolute starting position of <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> data within fd. </p></li>
+<li><p><strong>length</strong> – <strong>[in]</strong> Size of the data within fd. </p></li>
+<li><p><strong>ramsesScene</strong> – pointer to the Ramses <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> which holds the objects referenced in the Ramses Logic file </p></li>
+<li><p><strong>enableMemoryVerification</strong> – flag to enable memory verifier (a flatbuffers feature which checks bounds and ranges). Disable this only if the file comes from a trusted source and performance is paramount. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if deserialization was successful, false otherwise. To get more detailed error information use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine14loadFromBufferEPKv6size_tPN6ramses5SceneEb">
+<span id="_CPPv3N6ramses11LogicEngine14loadFromBufferEPKv6size_tPN6ramses5SceneEb"></span><span id="_CPPv2N6ramses11LogicEngine14loadFromBufferEPKv6size_tPN6ramses5SceneEb"></span><span id="ramses::LogicEngine::loadFromBuffer__voidCP.s.ramses::SceneP.b"></span><span class="target" id="classramses_1_1LogicEngine_1ab16e957c0774605c67e52bdb31e9ab43"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadFromBuffer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rawBuffer</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bufferSize</span></span>, <span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ramsesScene</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enableMemoryVerification</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine14loadFromBufferEPKv6size_tPN6ramses5SceneEb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Loads the whole <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> data from the given memory buffer. This method is equivalent to <a class="reference internal" href="#classramses_1_1LogicEngine_1aef08b891e424444ef0ea2cdf47cfe892"><span class="std std-ref">loadFromFile</span></a> but allows to have the file-opening logic done by the user and only pass the data as a buffer. The logic engine only reads the data, does not take ownership of it and does not modify it. The memory can be freed or modified after the call returns, the <a class="reference internal" href="#classramses_1_1LogicEngine_1a5b540f9039bc1e1a229beeb32dd5c9e5"><span class="std std-ref">LogicEngine</span></a> keeps no references to it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rawBuffer</strong> – pointer to the raw data in memory </p></li>
+<li><p><strong>bufferSize</strong> – size of the data (bytes) </p></li>
+<li><p><strong>ramsesScene</strong> – pointer to the Ramses <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> which holds the objects referenced in the Ramses Logic file </p></li>
+<li><p><strong>enableMemoryVerification</strong> – flag to enable memory verifier (a flatbuffers feature which checks bounds and ranges). Disable this only if the file comes from a trusted source and performance is paramount. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if deserialization was successful, false otherwise. To get more detailed error information use <a class="reference internal" href="#classramses_1_1LogicEngine_1a95676dba763018481bab450dee90c565"><span class="std std-ref">getErrors()</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses11LogicEngine22getTotalSerializedSizeE14ELuaSavingMode">
+<span id="_CPPv3NK6ramses11LogicEngine22getTotalSerializedSizeE14ELuaSavingMode"></span><span id="_CPPv2NK6ramses11LogicEngine22getTotalSerializedSizeE14ELuaSavingMode"></span><span id="ramses::LogicEngine::getTotalSerializedSize__ELuaSavingModeC"></span><span class="target" id="classramses_1_1LogicEngine_1ad858d6d632c039a102284ffc8a44f693"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTotalSerializedSize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ELuaSavingMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">luaSavingMode</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">ELuaSavingMode</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SourceAndByteCode</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses11LogicEngine22getTotalSerializedSizeE14ELuaSavingMode" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Calculates the serialized size of all objects contained in this <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> instance. Note that the returned size will differ from actual size when saved to a file but the difference should be no more than several bytes (file header, meta information, etc.). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>luaSavingMode</strong> – calculate with Lua code saved as source string, binary or both, see ramses::SaveFileConfig::setLuaSavingMode), default is ramses::ELuaSavingMode::SourceAndByteCode. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>size in bytes of the serialized <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK6ramses11LogicEngine17getSerializedSizeE6size_t14ELuaSavingMode">
+<span id="_CPPv3I0ENK6ramses11LogicEngine17getSerializedSizeE14ELuaSavingMode"></span><span id="_CPPv2I0ENK6ramses11LogicEngine17getSerializedSizeE14ELuaSavingMode"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classramses_1_1LogicEngine_1a5f05175800528fdbbba464fa86673d1b"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSerializedSize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">ELuaSavingMode</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">luaSavingMode</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">ELuaSavingMode</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">SourceAndByteCode</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK6ramses11LogicEngine17getSerializedSizeE6size_t14ELuaSavingMode" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Calculates the serialized size of all objects of a specific type in this <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> instance. <code class="docutils literal notranslate"><span class="pre">T</span></code> must be a concrete logic object type (e.g. ramses::LuaScript). For the logic type LogicObject the size of all logic objects will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – Logic object type to calculate size for </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>luaSavingMode</strong> – calculate with Lua code saved as source string, binary or both, see ramses::SaveFileConfig::setLuaSavingMode), default is ramses::ELuaSavingMode::SourceAndByteCode (relevant only for object types containing Lua code). </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>size in bytes of the serialized objects. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine11LogicEngineERK11LogicEngine">
+<span id="_CPPv3N6ramses11LogicEngine11LogicEngineERK11LogicEngine"></span><span id="_CPPv2N6ramses11LogicEngine11LogicEngineERK11LogicEngine"></span><span id="ramses::LogicEngine::LogicEngine__LogicEngineCR"></span><span class="target" id="classramses_1_1LogicEngine_1a906f6a99780efaaa0c23218f979aedc7"></span><span class="sig-name descname"><span class="n"><span class="pre">LogicEngine</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses11LogicEngine11LogicEngineERK11LogicEngine" title="ramses::LogicEngine::LogicEngine"><span class="n"><span class="pre">LogicEngine</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine11LogicEngineERK11LogicEngine" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Copy Constructor of <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> is deleted because logic engines hold named resources and are not supposed to be copied</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – logic engine to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine11LogicEngineERR11LogicEngine">
+<span id="_CPPv3N6ramses11LogicEngine11LogicEngineERR11LogicEngine"></span><span id="_CPPv2N6ramses11LogicEngine11LogicEngineERR11LogicEngine"></span><span id="ramses::LogicEngine::LogicEngine__LogicEngineRR"></span><span class="target" id="classramses_1_1LogicEngine_1ab479ca1dcd0cfe6d2a1cdb19e851d876"></span><span class="sig-name descname"><span class="n"><span class="pre">LogicEngine</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ramses11LogicEngine11LogicEngineERR11LogicEngine" title="ramses::LogicEngine::LogicEngine"><span class="n"><span class="pre">LogicEngine</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine11LogicEngineERR11LogicEngine" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Move Constructor of <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – logic engine to move from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngineaSERK11LogicEngine">
+<span id="_CPPv3N6ramses11LogicEngineaSERK11LogicEngine"></span><span id="_CPPv2N6ramses11LogicEngineaSERK11LogicEngine"></span><span id="ramses::LogicEngine::assign-operator__LogicEngineCR"></span><span class="target" id="classramses_1_1LogicEngine_1a8656053dfe720b5a47fb9fdb16051737"></span><a class="reference internal" href="#_CPPv4N6ramses11LogicEngineE" title="ramses::LogicEngine"><span class="n"><span class="pre">LogicEngine</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses11LogicEngineE" title="ramses::LogicEngine"><span class="n"><span class="pre">LogicEngine</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngineaSERK11LogicEngine" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Assignment operator of <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a> is deleted because logic engines hold named resources and are not supposed to be copied</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – logic engine to assign from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngineaSERR11LogicEngine">
+<span id="_CPPv3N6ramses11LogicEngineaSERR11LogicEngine"></span><span id="_CPPv2N6ramses11LogicEngineaSERR11LogicEngine"></span><span id="ramses::LogicEngine::assign-operator__LogicEngineRR"></span><span class="target" id="classramses_1_1LogicEngine_1a3ac4905dbb5e5aa3215c446e9429985f"></span><a class="reference internal" href="#_CPPv4N6ramses11LogicEngineE" title="ramses::LogicEngine"><span class="n"><span class="pre">LogicEngine</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6ramses11LogicEngineE" title="ramses::LogicEngine"><span class="n"><span class="pre">LogicEngine</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngineaSERR11LogicEngine" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Move assignment operator of <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – logic engine to move from </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine6m_implE">
+<span id="_CPPv3N6ramses11LogicEngine6m_implE"></span><span id="_CPPv2N6ramses11LogicEngine6m_implE"></span><span id="ramses::LogicEngine::m_impl__std::unique_ptr:internal::LogicEngineImpl:"></span><span class="target" id="classramses_1_1LogicEngine_1abcec208986ab126a434786b486f17778"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">internal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">LogicEngineImpl</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_impl</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine6m_implE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Implementation detail of <a class="reference internal" href="#classramses_1_1LogicEngine"><span class="std std-ref">LogicEngine</span></a></p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine23GetFeatureLevelFromFileENSt11string_viewERN6ramses13EFeatureLevelE">
+<span id="_CPPv3N6ramses11LogicEngine23GetFeatureLevelFromFileENSt11string_viewERN6ramses13EFeatureLevelE"></span><span id="_CPPv2N6ramses11LogicEngine23GetFeatureLevelFromFileENSt11string_viewERN6ramses13EFeatureLevelE"></span><span id="ramses::LogicEngine::GetFeatureLevelFromFile__std::string_view.ramses::EFeatureLevelR"></span><span class="target" id="classramses_1_1LogicEngine_1aeb1fc3c743d72f1f6421a90112d5c2fd"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetFeatureLevelFromFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filename</span></span>, <span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EFeatureLevel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">detectedFeatureLevel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine23GetFeatureLevelFromFileENSt11string_viewERN6ramses13EFeatureLevelE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempts to parse feature level from a Ramses Logic file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – <strong>[in]</strong> file path to Ramses Logic file </p></li>
+<li><p><strong>detectedFeatureLevel</strong> – <strong>[out]</strong> feature level detected in given file (valid only if parsing successful!) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if parsing was successful, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LogicEngine25GetFeatureLevelFromBufferENSt11string_viewEPKv6size_tRN6ramses13EFeatureLevelE">
+<span id="_CPPv3N6ramses11LogicEngine25GetFeatureLevelFromBufferENSt11string_viewEPKv6size_tRN6ramses13EFeatureLevelE"></span><span id="_CPPv2N6ramses11LogicEngine25GetFeatureLevelFromBufferENSt11string_viewEPKv6size_tRN6ramses13EFeatureLevelE"></span><span id="ramses::LogicEngine::GetFeatureLevelFromBuffer__std::string_view.voidCP.s.ramses::EFeatureLevelR"></span><span class="target" id="classramses_1_1LogicEngine_1a7a1151efca8655ecaf6c7098a74bb94f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetFeatureLevelFromBuffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">logname</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">buffer</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bufferSize</span></span>, <span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">EFeatureLevel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">detectedFeatureLevel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11LogicEngine25GetFeatureLevelFromBufferENSt11string_viewEPKv6size_tRN6ramses13EFeatureLevelE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempts to parse feature level from a Ramses Logic buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logname</strong> – <strong>[in]</strong> additional name for errors logging (e.g. Ramses Logic file name) </p></li>
+<li><p><strong>buffer</strong> – <strong>[in]</strong> data buffer with Ramses Logic file content </p></li>
+<li><p><strong>bufferSize</strong> – <strong>[in]</strong> size of the data buffer </p></li>
+<li><p><strong>detectedFeatureLevel</strong> – <strong>[out]</strong> feature level detected in given file (valid only if parsing successful!) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if parsing was successful, false otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12PropertyLinkE">
+<span id="_CPPv3N6ramses12PropertyLinkE"></span><span id="_CPPv2N6ramses12PropertyLinkE"></span><span id="ramses::PropertyLink"></span><span class="target" id="structramses_1_1PropertyLink"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PropertyLink</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12PropertyLinkE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;PropertyLink.h&gt;</em></div>
+<p><a class="reference internal" href="#structramses_1_1PropertyLink"><span class="std std-ref">PropertyLink</span></a> describes a data link between two properties, each belonging to a ramses::LogicNode. Data flows always from <code class="docutils literal notranslate"><span class="pre">source</span></code> (some ramses::LogicNode’s output) to <code class="docutils literal notranslate"><span class="pre">target</span></code> (another ramses::LogicNode’s input), see <a class="reference internal" href="#classramses_1_1LogicEngine_1a65104738c8f7fe075f79c46a92bf031f"><span class="std std-ref">ramses::LogicEngine::link</span></a> and <a class="reference internal" href="#classramses_1_1LogicEngine_1a20620fd45f01a954eac7317b4b4f3a12"><span class="std std-ref">ramses::LogicEngine::update</span></a> for more details. PropertLink can be obtained using ramses::Property::getIncomingLink, ramses::Property::getOutgoingLink or <a class="reference internal" href="#classramses_1_1LogicEngine_1a666bc52bb4a2afcd82d8504f7a029aec"><span class="std std-ref">ramses::LogicEngine::getPropertyLinks</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12PropertyLink6sourceE">
+<span id="_CPPv3N6ramses12PropertyLink6sourceE"></span><span id="_CPPv2N6ramses12PropertyLink6sourceE"></span><span id="ramses::PropertyLink::source__PropertyCP"></span><span class="target" id="structramses_1_1PropertyLink_1ac1eb85e67e4c12de15cc509528f4cd77"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">source</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N6ramses12PropertyLink6sourceE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>data flow source (some ramses::LogicNode’s output) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12PropertyLink6targetE">
+<span id="_CPPv3N6ramses12PropertyLink6targetE"></span><span id="_CPPv2N6ramses12PropertyLink6targetE"></span><span id="ramses::PropertyLink::target__PropertyCP"></span><span class="target" id="structramses_1_1PropertyLink_1a5ee5e0002812c2f33948be3f267692f3"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Property</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">target</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N6ramses12PropertyLink6targetE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>data flow target (another ramses::LogicNode’s input) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12PropertyLink10isWeakLinkE">
+<span id="_CPPv3N6ramses12PropertyLink10isWeakLinkE"></span><span id="_CPPv2N6ramses12PropertyLink10isWeakLinkE"></span><span id="ramses::PropertyLink::isWeakLink__b"></span><span class="target" id="structramses_1_1PropertyLink_1ac730842dd75f2f78ddf87f06dbfc1d60"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isWeakLink</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N6ramses12PropertyLink10isWeakLinkE" title="Permalink to this definition"></a><br /></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if this is a weak link - see <a class="reference internal" href="#classramses_1_1LogicEngine_1af77015ad763fd7d56e8949e996459ac5"><span class="std std-ref">ramses::LogicEngine::linkWeak</span></a></p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="text.html" class="btn btn-neutral float-left" title="Ramses Text API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utils.html" class="btn btn-neutral float-right" title="Ramses Utils API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

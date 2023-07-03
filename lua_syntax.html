@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick start &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ramses-logic-viewer" href="viewer.html" />
+    <link rel="prev" title="MeshNodeBinding example" href="examples/logic/15_meshnodebinding.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#list-of-all-logic-examples">List of all logic examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-lua-modules">Using Lua modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#standard-modules">Standard modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-modules">Custom modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#additional-lua-syntax-specifics">Additional Lua syntax specifics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#userdata-vs-table">Userdata vs. table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vec2-3-4-types">Vec2/3/4 types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numerics">Numerics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reading-error-stack-traces">Reading error stack traces</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classes/index.html">Class Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quick start</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lua_syntax.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start">
+<h1>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> uses an extended Lua syntax to declare what should happen with the attached Ramses scene when application
+inputs/signals/configuration changes. If you prefer learning by example and/or have previous experience with scripting languages,
+you could have a look at the <a class="reference external" href="https://github.com/bmwcarit/ramses-composer-docs">Ramses Composer examples</a> and come back to these docs for details.
+If not, we suggest reading through the docs and trying out the presented concepts on your own in a freshly
+created <a class="reference external" href="https://github.com/bmwcarit/ramses-composer">Ramses Composer</a> project.
+Just create a new LuaScript object (right-clicking the resource menu), set its URI to a file on your local machine, and start jamming!</p>
+<p>Alternatively, if you have a C++ compiler/IDE, you can use some of the <a class="reference internal" href="core.html#list-of-all-examples"><span class="std std-ref">examples</span></a>, e.g. <a class="reference internal" href="examples/logic/01b_struct_properties.html#example-with-structured-properties"><span class="std std-ref">the structs example</span></a>
+as a sandbox to compile and try out the code presented here.</p>
+</section>
+<section id="basics-of-lua">
+<h1>Basics of Lua<a class="headerlink" href="#basics-of-lua" title="Permalink to this heading"></a></h1>
+<p>Lua is a scripting language designed to be efficient, easily extensible, and highly portable. These properties are also the reason
+we chose it over Python, C# and other popular languages for gaming/3D development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Lua community has two camps - those who use the latest version
+(5.4) and those who use 5.1 (there have been major changes since 5.1 which split the community to an extent).
+We use a subset of the 5.1 version of Lua, although there are no major differences from a syntax point of view.</p>
+</div>
+<p>You can have a look at the official docs of Lua <a class="reference external" href="https://www.lua.org/manual/5.1/">here</a> for the full language specification. A basic script in Lua looks
+like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Comments start with `--`</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;forty two&quot;</span>
+<span class="c1">-- Lua is dynamically typed!</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="c1">-- equivalent to &quot;add = function(a, b)...&quot;</span>
+<span class="kr">function</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="c1">-- adding &#39;local&#39; here makes the variable only visible in the function</span>
+    <span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="kr">return</span> <span class="n">result</span>
+<span class="kr">end</span>
+
+<span class="c1">-- Complex data is stored in `tables`, i.e. unsorted key-value pairs with no specific order</span>
+<span class="n">user_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">user_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span>
+    <span class="n">user_age</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="n">add_function</span> <span class="o">=</span> <span class="n">add</span>
+<span class="p">}</span>
+
+<span class="c1">-- Can also use user_data[&quot;user_name&quot;]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">user_data</span><span class="p">.</span><span class="n">user_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> provides full support for the Lua 5.1 language, with some restrictions and some enhancements.
+The restrictions are necessary to ensure the safety of applications running the scripts, while the enhancements are
+needed to enable a seamless integration with the outside world (other scripts, Ramses, the
+<a class="reference external" href="https://github.com/bmwcarit/ramses-composer">Ramses Composer</a>). Let’s get a closer look!</p>
+</section>
+<section id="declaring-an-interface-and-a-run-function">
+<h1>Declaring an interface() and a run() function<a class="headerlink" href="#declaring-an-interface-and-a-run-function" title="Permalink to this heading"></a></h1>
+<p>All scripts in the <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> are required to have two special functions - <code class="docutils literal notranslate"><span class="pre">interface()</span></code> and <code class="docutils literal notranslate"><span class="pre">run()</span></code>. These functions
+should not accept any parameters and should not return values. The <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function is used to declare what inputs a script accepts and
+what outputs it may produce. The <code class="docutils literal notranslate"><span class="pre">run()</span></code> function, which is executed whenever any of the inputs is changed, defines
+how the outputs’ data shall be computed based on the current values of the inputs.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function is the place where script inputs and outputs are declared. It accepts two arguments,
+one to declare inputs and one to declare outputs of the script (the order is important - inputs are always the first argument!).
+The <code class="docutils literal notranslate"><span class="pre">run()</span></code> function also accepts two arguments, one for inputs and one for outputs. It can access the values of inputs and may set
+the values of outputs. We will name these arguments <code class="docutils literal notranslate"><span class="pre">IN</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> in the documents below, but you can give them any other name
+you want, as long as you keep the order (inputs first, outputs second). As per standard Lua syntax, any extra arguments will be set to nil.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function can declare inputs and outputs by adding properties to <code class="docutils literal notranslate"><span class="pre">IN</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> as
+if they were standard <code class="docutils literal notranslate"><span class="pre">Lua</span></code> tables. For example:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+    <span class="n">IN</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">String</span><span class="p">()</span>
+    <span class="n">IN</span><span class="p">.</span><span class="n">hungry</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Bool</span><span class="p">()</span>
+
+    <span class="n">OUT</span><span class="p">.</span><span class="n">coala</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">String</span><span class="p">(),</span>
+        <span class="n">coalafications</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">bear</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Bool</span><span class="p">(),</span>
+            <span class="n">bamboo_eaten</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Int32</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+<p>In the above script, we declare two inputs (name and hungry) of type String and Bool respectively. We also define one output
+of type Struct (coala) which has two nested properties - name and coalifications.
+Coalifications is itself a struct (nested in coala).</p>
+<p>The exact syntax for interface properties is:</p>
+<ul>
+<li><p>the key has to be a string (not a number or anything else) so that it can be shown as a human-readable property in the
+<a class="reference external" href="https://github.com/bmwcarit/ramses-composer">Ramses Composer</a></p></li>
+<li><p>the value has to be one of the following</p>
+<blockquote>
+<div><ul>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> value type declared with <code class="docutils literal notranslate"><span class="pre">Type:T()</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> can be one of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Int32</span></code>, <code class="docutils literal notranslate"><span class="pre">Int64</span></code>, <code class="docutils literal notranslate"><span class="pre">Float</span></code>, <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Bool</span></code> (primitive values)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Vec2f</span></code>, <code class="docutils literal notranslate"><span class="pre">Vec3f</span></code>, <code class="docutils literal notranslate"><span class="pre">Vec4f</span></code> (fixed vector of Float)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Vec2i</span></code>, <code class="docutils literal notranslate"><span class="pre">Vec3i</span></code>, <code class="docutils literal notranslate"><span class="pre">Vec4i</span></code> (fixed vector of Int32)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Type:Struct(T)</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is a Lua table which properties obey the same rules (string keys and values declared with <code class="docutils literal notranslate"><span class="pre">Type:&lt;T&gt;()</span></code>)</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">Type:Array(N,</span> <span class="pre">T)</span></code> where 1 &lt;= <code class="docutils literal notranslate"><span class="pre">N</span></code> &lt;= 255 and <code class="docutils literal notranslate"><span class="pre">T</span></code> is another type declared with <code class="docutils literal notranslate"><span class="pre">Type:&lt;T&gt;()</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>as a shortcut for typing <code class="docutils literal notranslate"><span class="pre">Type:Struct(T)</span></code> you can also type <code class="docutils literal notranslate"><span class="pre">T</span></code> directly (tables get converted to <code class="docutils literal notranslate"><span class="pre">Type:Struct</span></code> automatically)</p></li>
+</ul>
+<p>Here is another example, this time with arrays:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+    <span class="n">IN</span><span class="p">.</span><span class="n">bamboo_coordinates</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Array</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Type</span><span class="p">:</span><span class="n">Vec3f</span><span class="p">())</span>
+    <span class="n">IN</span><span class="p">.</span><span class="n">bamboo_sizes</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Array</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Type</span><span class="p">:</span><span class="n">Float</span><span class="p">())</span>
+
+    <span class="n">OUT</span><span class="p">.</span><span class="n">located_bamboo</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Array</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">{</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Vec3f</span><span class="p">(),</span>
+        <span class="n">not_eaten_yet</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Bool</span><span class="p">()</span>
+    <span class="p">})</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+<p>In the example above, <code class="docutils literal notranslate"><span class="pre">IN.bamboo_coordinates</span></code> is an input array of 10 elements, each of type <code class="docutils literal notranslate"><span class="pre">Vec3f</span></code>. <code class="docutils literal notranslate"><span class="pre">OUT.located_bamboo</span></code> is an output
+array with a <cite>Struct</cite> type - each of the 10 elements has a <code class="docutils literal notranslate"><span class="pre">position</span></code> and a <code class="docutils literal notranslate"><span class="pre">not_eaten_yet</span></code> property.</p>
+<p>You can mix and match array and struct containers in various ways. For example you can also declare multi-
+dimensional arrays like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">coalaStruct</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Struct</span><span class="p">({</span><span class="n">name</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">String</span><span class="p">()})</span>
+    <span class="c1">-- 100 x 100 array (2 dimensions), element type is a struct</span>
+    <span class="n">OUT</span><span class="p">.</span><span class="n">coala_army</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">Type</span><span class="p">:</span><span class="n">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">coalaStruct</span><span class="p">))</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">run</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+    <span class="kr">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="kr">in</span> <span class="n">rl_ipairs</span><span class="p">(</span><span class="n">OUT</span><span class="p">.</span><span class="n">coala_army</span><span class="p">)</span> <span class="kr">do</span>
+        <span class="kr">for</span> <span class="n">j</span><span class="p">,</span><span class="n">coala</span> <span class="kr">in</span> <span class="n">rl_ipairs</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="kr">do</span>
+            <span class="n">coala</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;soldier &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">..</span> <span class="s2">&quot;-&quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+        <span class="kr">end</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+<p>Even though the <code class="docutils literal notranslate"><span class="pre">IN</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> objects are used by both <code class="docutils literal notranslate"><span class="pre">interface()</span></code> and <code class="docutils literal notranslate"><span class="pre">run()</span></code> functions,
+they have different semantics in each function. The <code class="docutils literal notranslate"><span class="pre">interface</span></code> function only <strong>declares</strong> the interface
+of the script, thus properties declared there can <strong>only have a type</strong>, they don’t have a <strong>value</strong> yet -
+similar to function signatures in programming languages.</p>
+<p>In contrast to the <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function, the <code class="docutils literal notranslate"><span class="pre">run()</span></code> function can’t declare new properties any more,
+but the properties have a value which can be read and written. Like in this example</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+    <span class="n">IN</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">String</span><span class="p">()</span>
+    <span class="n">IN</span><span class="p">.</span><span class="n">hungry</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Bool</span><span class="p">()</span>
+
+    <span class="n">OUT</span><span class="p">.</span><span class="n">coala</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">String</span><span class="p">(),</span>
+        <span class="n">coalafications</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">bear</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Bool</span><span class="p">(),</span>
+            <span class="n">bamboo_eaten</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Int32</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">run</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">coala_name</span> <span class="o">=</span> <span class="n">IN</span><span class="p">.</span><span class="n">name</span> <span class="o">..</span> <span class="s2">&quot; the Coala&quot;</span>
+    <span class="kd">local</span> <span class="n">bamboos_fed</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="kr">if</span> <span class="n">IN</span><span class="p">.</span><span class="n">hungry</span> <span class="kr">then</span>
+        <span class="n">bamboos_fed</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="kr">end</span>
+
+    <span class="n">OUT</span><span class="p">.</span><span class="n">coala</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">coala_name</span><span class="p">,</span>
+        <span class="n">coalafications</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">bear</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="n">bamboo_eaten</span> <span class="o">=</span> <span class="n">bamboos_fed</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">run()</span></code> will compute a few values and store the result in the output <code class="docutils literal notranslate"><span class="pre">coala</span></code>. Note that the structure of the <code class="docutils literal notranslate"><span class="pre">coala</span></code> output table is exactly the
+same as declared in the <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function. In this example we assign all properties of <code class="docutils literal notranslate"><span class="pre">coala</span></code>, but you can only set a subset of them.</p>
+<p>Furthermore, trying to declare new properties in <code class="docutils literal notranslate"><span class="pre">run()</span></code>
+will result in errors.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function is only ever executed once - during the creation of the script. The <code class="docutils literal notranslate"><span class="pre">run()</span></code>
+function is executed every time one or more of the values in <code class="docutils literal notranslate"><span class="pre">IN</span></code> changes, either when changed explicitly
+(in the <a class="reference external" href="https://github.com/bmwcarit/ramses-composer">Ramses Composer</a> or in code),
+or when any of the inputs is linked to another script’s output whose value changed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Accessing properties is quite expensive compared to a local variable access.
+If a property value needs to be used several times in <code class="docutils literal notranslate"><span class="pre">run()</span></code> (e.g. in a loop), it’s preferrable to store its value in a <code class="docutils literal notranslate"><span class="pre">local</span></code> variable.</p>
+</div>
+</section>
+<section id="global-variables-and-the-init-function">
+<h1>Global variables and the init() function<a class="headerlink" href="#global-variables-and-the-init-function" title="Permalink to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> prohibits reading and writing global variables, with a few exceptions (see <a class="reference internal" href="#environments-and-isolation"><span class="std std-ref">Environments and isolation</span></a>).
+These restrictions make sure that scripts are stateless and not execution-dependent and that they behave the same after loading from a file as when they
+were created.</p>
+<p>In order to declare global variables, use the <code class="docutils literal notranslate"><span class="pre">init()</span></code> function in conjunction with the <code class="docutils literal notranslate"><span class="pre">GLOBAL</span></code> special table for holding global symbols.
+Here is an example:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span> <span class="nf">init</span><span class="p">()</span>
+    <span class="n">GLOBAL</span><span class="p">.</span><span class="n">coala</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Mr. Worldwide&quot;</span><span class="p">,</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="mi">14</span>
+    <span class="p">}</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nf">run</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">GLOBAL</span><span class="p">.</span><span class="n">coala</span><span class="p">.</span><span class="n">name</span> <span class="o">..</span> <span class="s2">&quot; is &quot;</span> <span class="o">..</span> <span class="nb">tostring</span><span class="p">(</span><span class="n">GLOBAL</span><span class="p">.</span><span class="n">coala</span><span class="p">.</span><span class="n">age</span><span class="p">))</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">init()</span></code> function is executed exactly once right after the script is created, and once when it is loaded from binary
+data (<a class="reference internal" href="classes/logic.html#_CPPv4N6ramses11LogicEngine12loadFromFileENSt11string_viewEPN6ramses5SceneEb" title="ramses::LogicEngine::loadFromFile"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::LogicEngine::loadFromFile()</span></code></a>, <a class="reference internal" href="classes/logic.html#_CPPv4N6ramses11LogicEngine14loadFromBufferEPKv6size_tPN6ramses5SceneEb" title="ramses::LogicEngine::loadFromBuffer"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::LogicEngine::loadFromBuffer()</span></code></a>). The contents of the <code class="docutils literal notranslate"><span class="pre">GLOBAL</span></code>
+table can be modified the same way as normal global Lua variables, and can also be functions. It also allows declaring types which
+can be then used in the <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function. The <code class="docutils literal notranslate"><span class="pre">init()</span></code> function is optional, contrary to the other
+two functions - <code class="docutils literal notranslate"><span class="pre">interface()</span></code> and <code class="docutils literal notranslate"><span class="pre">run()</span></code>.</p>
+<p>You can also use modules in <code class="docutils literal notranslate"><span class="pre">init()</span></code>, see the <a class="reference internal" href="#using-lua-modules"><span class="std std-ref">modules section</span></a>.</p>
+</section>
+<section id="custom-functions">
+<h1>Custom functions<a class="headerlink" href="#custom-functions" title="Permalink to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> provides additional methods to work with extended types and modules, which are otherwise not possible with
+standard Lua. Here is a list of these methods:</p>
+<ul class="simple">
+<li><p><cite>modules</cite> function: declares dependencies to modules, can be called in Lua scripts and in modules themselves.
+Accepts a variable set of arguments, which have to be all of type string</p></li>
+<li><dl class="simple">
+<dt><cite>rl_len</cite> implements the <cite>#</cite> semantics, but also works on custom types (<code class="docutils literal notranslate"><span class="pre">IN</span></code>, <code class="docutils literal notranslate"><span class="pre">OUT</span></code> and their child types) and modules</dt><dd><ul>
+<li><p>use to obtain the size of IN, OUT or their sub-types (structs, arrays etc.) or data tables coming from modules</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>rl_next</cite> custom stateless iterator similar to <code class="docutils literal notranslate"><span class="pre">Lua</span></code> built-in <cite>next</cite></dt><dd><ul>
+<li><p>provides a way to iterate over custom types (<code class="docutils literal notranslate"><span class="pre">IN</span></code>, <code class="docutils literal notranslate"><span class="pre">OUT</span></code>, etc.) and Logic engine custom modules’ data</p></li>
+<li><p>semantically behaves exactly like next()</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>rl_pairs</cite> iterates over custom types, similar to <code class="docutils literal notranslate"><span class="pre">Lua</span></code> built-in <cite>pairs</cite></dt><dd><ul>
+<li><p>uses <cite>rl_next</cite> internally to loop over built-ins, see above</p></li>
+<li><p>semantically behaves like pairs(), yields integers [1, N] for array keys and strings for struct keys</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>rl_ipairs</cite> behaves exactly the same as rl_pairs when used on arrays</dt><dd><ul>
+<li><p>it’s there for better readibility and compatibility to plain Lua</p></li>
+<li><p>rl_ipairs(array) yields the same result as rl_pairs(array)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>All of the <code class="docutils literal notranslate"><span class="pre">rl_*</span></code> functions also work on plain Lua tables. However, we suggest to use the built-in Lua versions
+for better performance if you know that the underlying type is a plain Lua table and not a usertype (IN, OUT, a Logic Engine module, etc.).
+An exception to this is the length (<code class="docutils literal notranslate"><span class="pre">#</span></code>) operator for module data - you have to use rl_len instead as modules are write-protected and
+the <code class="docutils literal notranslate"><span class="pre">#</span></code> operator in Lua 5.1 does not support write-protected tables.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The iterator functions work in the <code class="docutils literal notranslate"><span class="pre">interface()</span></code> phase as well. However, properties there are mutable (you can add a new
+property to any container). Changing containers while iterating over them can result in undefined behavior and crashes, similar
+to other iterator implementations in C++!</p>
+</div>
+</section>
+<section id="environments-and-isolation">
+<h1>Environments and isolation<a class="headerlink" href="#environments-and-isolation" title="Permalink to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Lua</span></code> is a powerful scripting language which can do practically anything. This can be a problem sometimes - especially
+if the scripts are running in a restricted environment with strict safety and security concerns. In order to reduce the
+risk of security attacks and stability problems, the <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> isolates scripts in their own <a class="reference external" href="https://www.lua.org/pil/14.3.html">environment</a> and limits
+the access of data and code. This ensures that a script can not be influenced by other scripts, modules, or dynamically loaded
+content, unless explicitly desired by the content creator.</p>
+<p>The following set of rules describes which part of the <code class="docutils literal notranslate"><span class="pre">Lua</span></code> script is assigned to which environment:</p>
+<ul class="simple">
+<li><p>Each script has its own <code class="docutils literal notranslate"><span class="pre">runtime</span></code> environment - applied to the <code class="docutils literal notranslate"><span class="pre">run()</span></code> function</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">init()</span></code> function is also executed in the runtime environment</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function is executed in a temporary environment which is destroyed afterwards (alongside all its data!)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function has access to modules and the <code class="docutils literal notranslate"><span class="pre">GLOBAL</span></code> table, but nothing else</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Variables declared as ‘local’ but are declared in the global space (outside any function) can not be reliably isolated
+because of the way Lua works (they bypass environment boundaries). It is strongly discouraged to declare local variables
+in the global scope to avoid having undefined behavior!</p>
+</div>
+<p>Furthermore, the <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> enforces strict rules on reading and writing global variables. These are as follows:</p>
+<ul class="simple">
+<li><p>No global variables may be declared in the runtime environment, other than the special functions <code class="docutils literal notranslate"><span class="pre">init</span></code>, <code class="docutils literal notranslate"><span class="pre">interface</span></code> and <code class="docutils literal notranslate"><span class="pre">run</span></code></p></li>
+<li><p>Special functions can be declared at most once (e.g. it’s not possible to declare the <code class="docutils literal notranslate"><span class="pre">interface</span></code> function twice)</p></li>
+<li><dl class="simple">
+<dt>No global variables may be accessed, except:</dt><dd><ul>
+<li><p>Modules (they are mapped as global variables)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">GLOBAL</span></code> table in the functions where that’s allowed</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">IN</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> special tables</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>In particular, you can’t call any of the special global functions (they are called by the runtime). Doing that will result in errors!</p></li>
+</ul>
+</section>
+<section id="indexing-inside-lua">
+<h1>Indexing inside Lua<a class="headerlink" href="#indexing-inside-lua" title="Permalink to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Lua</span></code> has traditionally used array indexing starting at 1, in contrast to other popular script or
+programming languages. Thus, the syntax and type checks of the <code class="docutils literal notranslate"><span class="pre">Ramses</span> <span class="pre">Logic</span></code> runtime honours
+standard indexing used in Lua (starting by 1). This allows for example to use <code class="docutils literal notranslate"><span class="pre">Lua</span></code> tables as initializer
+lists for arrays, without having to provide indices. Take a look at the following code sample:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+<span class="linenos"> 2</span>    <span class="n">OUT</span><span class="p">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Array</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Type</span><span class="p">:</span><span class="n">Int32</span><span class="p">())</span>
+<span class="linenos"> 3</span><span class="kr">end</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kr">function</span> <span class="nf">run</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="c1">-- This will work</span>
+<span class="hll"><span class="linenos"> 7</span>    <span class="n">OUT</span><span class="p">.</span><span class="n">array</span> <span class="o">=</span> <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">}</span>
+</span><span class="linenos"> 8</span>    <span class="c1">-- This will also work and produce the same result</span>
+<span class="hll"><span class="linenos"> 9</span>    <span class="n">OUT</span><span class="p">.</span><span class="n">array</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="hll"><span class="linenos">10</span>        <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">11</span>        <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+</span><span class="hll"><span class="linenos">12</span>    <span class="p">}</span>
+</span><span class="linenos">13</span>    <span class="c1">-- This will not work and will result in error</span>
+<span class="hll"><span class="linenos">14</span>    <span class="n">OUT</span><span class="p">.</span><span class="n">array</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="hll"><span class="linenos">15</span>        <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">16</span>        <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+</span><span class="hll"><span class="linenos">17</span>    <span class="p">}</span>
+</span><span class="linenos">18</span><span class="kr">end</span>
+</pre></div>
+</div>
+<p>The first two snippets are equivalent and will work. The first syntax (line 7) is obviously most convenient - just
+provide all array elements in the Lua table. Note that <strong>Lua will implicitly index elements starting from 1 with this syntax</strong>.
+The second syntax (line 9-12) is equivalent to the first one, but explicitly sets table indices. The third syntax (line 14-17)
+is the one which feels intuitive for <code class="docutils literal notranslate"><span class="pre">C/C++</span></code> developers, but will result in errors inside Lua scripts.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Generic Lua scripts will allows any kind of index - even negative ones. In <code class="docutils literal notranslate"><span class="pre">Ramses</span> <span class="pre">Logic</span></code>, we require arrays which are
+declared over <code class="docutils literal notranslate"><span class="pre">IN</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> to be strictly indexed from 1 to N without ‘holes’ to prevent inconsistencies and ensure a
+strict and safe data transfer between the scripts and the native runtime.</p>
+</div>
+<p>In order to achieve memory efficiency, but also to be consistent with <code class="docutils literal notranslate"><span class="pre">C/C++</span></code> rules, the <code class="docutils literal notranslate"><span class="pre">C++</span></code> API of <code class="docutils literal notranslate"><span class="pre">Ramses</span> <span class="pre">Logic</span></code>
+provides index access starting from 0 on the code side. The index mapping is taken over by
+the <code class="docutils literal notranslate"><span class="pre">Ramses</span> <span class="pre">Logic</span></code> library.</p>
+</section>
+<section id="errors-in-scripts">
+<h1>Errors in scripts<a class="headerlink" href="#errors-in-scripts" title="Permalink to this heading"></a></h1>
+<p>General <code class="docutils literal notranslate"><span class="pre">Lua</span></code> syntax errors, but also violations of the <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> rules (e.g. forgetting to declare an <code class="docutils literal notranslate"><span class="pre">interface()</span></code> function)
+will be caught and reported. Scripts which contain errors will stop their execution at the line of code where the error occured.
+Other scripts which may be linked to the erroneous script will not be executed to prevent faulty results.</p>
+</section>
+<section id="using-lua-modules">
+<h1>Using Lua modules<a class="headerlink" href="#using-lua-modules" title="Permalink to this heading"></a></h1>
+<section id="standard-modules">
+<h2>Standard modules<a class="headerlink" href="#standard-modules" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> restricts which Lua modules can be used to a subset of the standard modules
+of <code class="docutils literal notranslate"><span class="pre">Lua</span> <span class="pre">5.1</span></code>:</p>
+<ul class="simple">
+<li><p>Base library</p></li>
+<li><p>String</p></li>
+<li><p>Table</p></li>
+<li><p>Math</p></li>
+<li><p>Debug</p></li>
+</ul>
+<p>For more information on the standard modules, refer to the official
+<a class="reference external" href="https://www.lua.org/manual/5.1/manual.html#5">Lua documentation</a> of the standard modules.</p>
+<p>Some of the standard modules are deliberately not supported:</p>
+<ul class="simple">
+<li><p>Security/safety concerns (loading files, getting OS/environment info)</p></li>
+<li><p>Not supported on all platforms (e.g. Android forbids direct file access)</p></li>
+<li><p>Stability/integration concerns (e.g. opening relative files in Lua makes the scripts non-relocatable)</p></li>
+</ul>
+</section>
+<section id="custom-modules">
+<h2>Custom modules<a class="headerlink" href="#custom-modules" title="Permalink to this heading"></a></h2>
+<p>It is possible to create custom user modules (see <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::LuaModule</span></code> for the <code class="docutils literal notranslate"><span class="pre">C++</span></code> docs).
+A custom module can contain any Lua source code which obeys the modern Lua module definition convention
+(i.e. declare a table, fill it with data and functions, and return the table as a result of the module
+script):</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="kd">local</span> <span class="n">coalaModule</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">coalaModule</span><span class="p">.</span><span class="n">coalaChief</span> <span class="o">=</span> <span class="s2">&quot;Alfred&quot;</span>
+<span class="linenos"> 4</span>
+<span class="hll"><span class="linenos"> 5</span><span class="n">coalaModule</span><span class="p">.</span><span class="n">coalaStruct</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="linenos"> 6</span>    <span class="n">preferredFood</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">String</span><span class="p">(),</span>
+<span class="linenos"> 7</span>    <span class="n">weight</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Int32</span><span class="p">()</span>
+<span class="linenos"> 8</span><span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="hll"><span class="linenos">10</span><span class="kr">function</span> <span class="nc">coalaModule</span><span class="p">.</span><span class="nf">bark</span><span class="p">()</span>
+</span><span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coalas don&#39;t bark...&quot;</span><span class="p">)</span>
+<span class="linenos">12</span><span class="kr">end</span>
+<span class="linenos">13</span>
+<span class="hll"><span class="linenos">14</span><span class="kr">return</span> <span class="n">coalaModule</span>
+</span></pre></div>
+</div>
+<p>The name of the module (line 1) is not of importance and won’t be visible anywhere outside of
+the module definition file. You can declare structs and other types you could otherwise use
+in the interface() functions of scripts (line 5). You can declare functions and make them part
+of the module by using the syntax on line 10. Make sure you return the module (line 14)!</p>
+<p>You can use modules in scripts as you would use a standard Lua module. The only exception
+is that you can’t import the module with the <code class="docutils literal notranslate"><span class="pre">require</span></code> keyword, but have to use a free
+function <code class="docutils literal notranslate"><span class="pre">modules()</span></code> to declare the modules needed by the script:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="n">modules</span><span class="p">(</span><span class="s2">&quot;coalas&quot;</span><span class="p">)</span>
+</span><span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kr">function</span> <span class="nf">interface</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+<span class="hll"><span class="linenos"> 4</span>    <span class="kd">local</span> <span class="n">s</span> <span class="o">=</span> <span class="n">coalas</span><span class="p">.</span><span class="n">coalaStruct</span>
+</span><span class="linenos"> 5</span>    <span class="n">OUT</span><span class="p">.</span><span class="n">coalas</span> <span class="o">=</span> <span class="n">Type</span><span class="p">:</span><span class="n">Array</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="kr">end</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="kr">function</span> <span class="nf">run</span><span class="p">(</span><span class="n">IN</span><span class="p">,</span> <span class="n">OUT</span><span class="p">)</span>
+<span class="linenos"> 9</span>    <span class="n">OUT</span><span class="p">.</span><span class="n">coalas</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">10</span>        <span class="p">{</span>
+<span class="linenos">11</span>            <span class="n">preferredFood</span> <span class="o">=</span> <span class="s2">&quot;bamboo&quot;</span><span class="p">,</span>
+<span class="linenos">12</span>            <span class="n">weight</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">13</span>        <span class="p">},</span>
+<span class="linenos">14</span>        <span class="p">{</span>
+<span class="linenos">15</span>            <span class="n">preferredFood</span> <span class="o">=</span> <span class="s2">&quot;donuts&quot;</span><span class="p">,</span>
+<span class="linenos">16</span>            <span class="n">weight</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="linenos">17</span>        <span class="p">}</span>
+<span class="linenos">18</span>    <span class="p">}</span>
+<span class="linenos">19</span>
+<span class="hll"><span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="n">coalas</span><span class="p">.</span><span class="n">chief</span> <span class="o">..</span> <span class="s2">&quot; says:&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">21</span>    <span class="n">coalas</span><span class="p">.</span><span class="n">bark</span><span class="p">()</span>
+</span><span class="linenos">22</span><span class="kr">end</span>
+</pre></div>
+</div>
+<p>The name <code class="docutils literal notranslate"><span class="pre">coalas</span></code> on line 1 is the name under which the module is mapped and available in the
+script (e.g. on lines 4, 20-21). The name obeys the same rules as Lua labels - it can only contain digits, letters and the
+underscore character, and it can’t start with a digit. Also, the names used in the mapping must
+be unique (otherwise the script won’t be able to uniquely resolve which modules are supposed to
+be used).</p>
+<p>It is also possible to use modules in other modules, like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">modules</span><span class="p">(</span><span class="s2">&quot;quaternions&quot;</span><span class="p">)</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kd">local</span> <span class="n">rotationHelper</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kr">function</span> <span class="nc">rotationHelper</span><span class="p">.</span><span class="nf">matrixFromEuler</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="kd">local</span> <span class="n">q</span> <span class="o">=</span> <span class="n">quaternions</span><span class="p">.</span><span class="n">createFromEuler</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="kr">return</span> <span class="n">q</span><span class="p">.</span><span class="n">toMatrix</span><span class="p">()</span>
+<span class="linenos"> 8</span><span class="kr">end</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="kr">return</span> <span class="n">rotationHelper</span>
+</pre></div>
+</div>
+<p>In the example above, the <code class="docutils literal notranslate"><span class="pre">rotationHelper</span></code> module uses another module <code class="docutils literal notranslate"><span class="pre">quaternions</span></code> to provide
+a new function which computes a rotation matrix using quaternions as an intermediate step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Modules are read-only to prevent misuse and guarantee safe usage.</p>
+</div>
+</section>
+</section>
+<section id="additional-lua-syntax-specifics">
+<h1>Additional Lua syntax specifics<a class="headerlink" href="#additional-lua-syntax-specifics" title="Permalink to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">RAMSES</span> <span class="pre">Logic</span></code> fuses <code class="docutils literal notranslate"><span class="pre">C++</span></code> and <code class="docutils literal notranslate"><span class="pre">Lua</span></code> code which are quite different, both in terms of language semantics,
+type system and memory management. This is mostly transparent to the user, but there are some noteworthy
+special cases worth explaining.</p>
+<section id="userdata-vs-table">
+<h2>Userdata vs. table<a class="headerlink" href="#userdata-vs-table" title="Permalink to this heading"></a></h2>
+<p>The properties declared in the <code class="docutils literal notranslate"><span class="pre">IN</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> arguments are stored as so-called <cite>usertype</cite> Lua objects, not standard tables.
+<cite>Userdata</cite> are C++ objects which are exposed to the Lua script. This limits the operations possible with
+those types - only the <cite>index</cite>, <cite>newIndex</cite> and for some containers the size (<cite>#</cite> operator) are supported.
+Using other Lua operations (e.g. pairs/ipairs) will result in errors.</p>
+</section>
+<section id="vec2-3-4-types">
+<h2>Vec2/3/4 types<a class="headerlink" href="#vec2-3-4-types" title="Permalink to this heading"></a></h2>
+<p>While the property types which reflect Lua built-in types (Bool, Int32, Int64, Float, String) inherit the standard
+Lua value semantics, the more complex types (Vec2/3/4/i/f) have no representation in Lua, and are wrapped as
+<code class="docutils literal notranslate"><span class="pre">Lua</span></code> tables. They have the additional constraint that all values must be set simultaneously. It’s not possible
+for example to set just one component of a Vec3f - all three must be set at once. The reason for this design decision
+is to ensure consistent behavior when propagating these values - for example when setting <code class="docutils literal notranslate"><span class="pre">Ramses</span></code> node properties
+or uniforms.</p>
+</section>
+<section id="numerics">
+<h2>Numerics<a class="headerlink" href="#numerics" title="Permalink to this heading"></a></h2>
+<p>Lua’s internal <cite>number</cite> type is represented by a IEEE-754 double precision float internally.
+This is very flexible for scripting, but numerically dangerous when converting to other number
+types. Examples for such types are floats (commonly used for uniforms), and unsigned integers
+(when indexing arrays). To avoid numeric issues, the <code class="docutils literal notranslate"><span class="pre">Logic</span> <span class="pre">Engine</span></code> treats all value overflows and
+automatic roundings as hard errors when implicitly rounding to ints or casting large doubles.</p>
+<p>To avoid such numeric runtime errors, make sure you are not using
+numbers larger than what a signed int32 type permits when indexing, and not rounding using
+floating point arithmetics when computing indices. One way to denote an <cite>invalid index</cite> is using a
+negative number and explicitly checking the sign of indices. Floats can be assigned
+to integers by using the <cite>math.floor/ceil</cite> Lua functions explicitly.</p>
+<p>Numeric rules apply for all number types, independent if they are part of a struct, array or component in VecXy.</p>
+</section>
+<section id="reading-error-stack-traces">
+<h2>Reading error stack traces<a class="headerlink" href="#reading-error-stack-traces" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">IN</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> parameters to the interface and run functions are of so-called usertypes, meaning that the logic to deal with
+them is in <code class="docutils literal notranslate"><span class="pre">C++</span></code> code, not in <code class="docutils literal notranslate"><span class="pre">Lua</span></code>. This means that any kind of
+error which is not strictly a <code class="docutils literal notranslate"><span class="pre">Lua</span></code> syntax error will be handled in <code class="docutils literal notranslate"><span class="pre">C++</span></code> code. For example, assigning a boolean value
+to a variable which was declared of string type is valid in <code class="docutils literal notranslate"><span class="pre">Lua</span></code>, but will cause a type error when using
+<code class="docutils literal notranslate"><span class="pre">RAMSES</span> <span class="pre">Logic</span></code>. This is intended and desired, however the <code class="docutils literal notranslate"><span class="pre">Lua</span></code> VM will not know where this error comes from
+other than “somewhere from within the overloaded <code class="docutils literal notranslate"><span class="pre">C++</span></code> code”. This, stack traces look something like this
+when such errors happen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>lua: error: Assigning boolean to string output &#39;my_property&#39;!
+stack traceback:
+    [C]: in ?
+    [string \&quot;MyScript\&quot;]:3: in function &lt;[string \&quot;MyScript\&quot;]:2&gt;
+</pre></div>
+</div>
+<p>The top line in this stack is to be interpreted like this:</p>
+<ul class="simple">
+<li><p>The error happened somewhere in the <code class="docutils literal notranslate"><span class="pre">C</span></code> code (remember, <code class="docutils literal notranslate"><span class="pre">Lua</span></code> is based on <code class="docutils literal notranslate"><span class="pre">C</span></code>, not on <code class="docutils literal notranslate"><span class="pre">C++</span></code>)</p></li>
+<li><p>The function where the error happened is not known (<strong>?</strong>) - <code class="docutils literal notranslate"><span class="pre">Lua</span></code> doesn’t know the name of the function</p></li>
+</ul>
+<p>The rest of the information is coming from <code class="docutils literal notranslate"><span class="pre">Lua</span></code>, thus it is more comprehensible - the printed error message originates
+from <code class="docutils literal notranslate"><span class="pre">C++</span></code> code, but is passed to the <code class="docutils literal notranslate"><span class="pre">Lua</span></code> VM as a verbose error. The lower parts of the stack trace are
+coming from <code class="docutils literal notranslate"><span class="pre">Lua</span></code> source code and <code class="docutils literal notranslate"><span class="pre">Lua</span></code> knows where that code is.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="examples/logic/15_meshnodebinding.html" class="btn btn-neutral float-left" title="MeshNodeBinding example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="viewer.html" class="btn btn-neutral float-right" title="ramses-logic-viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

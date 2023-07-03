@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloning &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ramses Core overview" href="core.html" />
+    <link rel="prev" title="RAMSES" href="readme_ref.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#list-of-all-logic-examples">List of all logic examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classes/index.html">Class Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Cloning</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/build.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="build-instructions">The following sections describe different build scenarios with detailed
+options and explanations. If you are a versed C++ developer and are familiar
+with CMake, consider using the quickstart guide.</p>
+<section id="cloning">
+<h1>Cloning<a class="headerlink" href="#cloning" title="Permalink to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">RAMSES</span></code> project uses <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git submodules</a>
+to bundle its dependencies. Git doesn’t automatically
+clone these, the user has to clone them explicitly like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+<p>The “recursive” option makes sure that sub-dependencies are cloned as well. Beware that using
+the <code class="docutils literal notranslate"><span class="pre">download</span> <span class="pre">as</span> <span class="pre">ZIP</span></code> option in <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> also doesn’t package dependencies, so if you go for
+this option, make sure that you download the submodules yourself, otherwise the build will fail.</p>
+</section>
+<section id="build-requirements">
+<h1>Build requirements<a class="headerlink" href="#build-requirements" title="Permalink to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">RAMSES</span></code> requires CMake 3.13 or newer and a C++17-compatible compiler:</p>
+<ul class="simple">
+<li><p>Clang6 or newer</p></li>
+<li><p>GCC7 or newer</p></li>
+<li><p>MSVC2017 (_MSC_VER &gt;= 1914)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">RAMSES</span></code> requires the following
+additional build dependencies:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Windows</dt><dd><ul>
+<li><p>A graphics card and drivers which supports OpenGL 4.2 or newer</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Linux</dt><dd><ul>
+<li><p>X11 or Wayland (or both) developer libraries</p></li>
+<li><p>OpenGL + EGL developer libraries</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>For example, for <code class="docutils literal notranslate"><span class="pre">Ubuntu</span> <span class="pre">18.04</span> <span class="pre">LTS</span></code> these can be installed like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>libx11-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>libwayland-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>libgles2-mesa-dev
+</pre></div>
+</div>
+</section>
+<section id="build-options">
+<h1>Build options<a class="headerlink" href="#build-options" title="Permalink to this heading"></a></h1>
+<p>A standard CMake build will create the shared library version of <code class="docutils literal notranslate"><span class="pre">Ramses</span></code>. You can optinally
+modify some of the build settings:</p>
+<ul>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_WARNINGS_AS_ERRORS</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>treats compiler warnings as errors and aborts the build. Use this option if your compiler generates warnings which are not fixed yet.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_INSTALL</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Set this to OFF to prevent Ramses installing its targets, headers, and documentation. Use this if you link statically and don’t
+have to expose any Ramses headers or ship the shared library with your installation.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_WITH_LTO</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: OFF</p></li>
+<li><p>turns clang’s link-time optimizations on (details <a class="reference external" href="https://llvm.org/docs/LinkTimeOptimization.html">here</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>-DCMAKE_TOOLCHAIN_FILE=&lt;file&gt;</dt><dd><ul class="simple">
+<li><p>options: any of the files in <a class="reference external" href="https://github.com/bmwcarit/ramses/tree/master/cmake/toolchain">cmake/toolchain</a> or your custom cross-compilation toolchain file</p></li>
+<li><p>default: not set</p></li>
+<li><p>This is a standard CMake feature. We provide several toolchain files for popular compilers, use them or create your own</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>-Dramses-sdk_PACKAGE_TYPE=&lt;type&gt;</dt><dd><ul class="simple">
+<li><p>options: any of the <a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cpack-generators.7.html">supported CPack generators</a></p></li>
+<li><p>default: TGZ</p></li>
+<li><p>Allows to control which type of package is built by CMake/CPack when the ‘package’ target is built. See CPack docs for ‘CPACK_GENERATOR’ for details</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Ramses</span></code> can produce two types of shared libs, and both types can be enabled or disabled independently:</p>
+<ul>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_FULL_SHARED_LIB</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Builds a version of the ramses shared library <strong>with</strong> renderer support. At least one window type must be enabled for build.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_HEADLESS_SHARED_LIB</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: OFF</p></li>
+<li><p>Builds a version of the ramses shared library <strong>without</strong> renderer support.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Ramses</span></code> needs (at least) one platform-specific window type to support rendering. Several window types can be included into one build (e.g. X11 and Wayland). By default one suitable window type will be auto-detected.
+Build will fail if dependencies for an enabled window type are not found.</p>
+<p>Supported window types can be controlled with the cmake options below:</p>
+<ul>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_DEFAULT_WINDOW_TYPE</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables a default (auto-detected) window type IF (and ONLY IF) no window type is explicitly enabled. It makes sense to disable this option if you only need a headless build.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_WINDOW_TYPE_WINDOWS</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables building window type <em>Windows</em>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_WINDOW_TYPE_X11</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables building window type <em>X11</em>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_WINDOW_TYPE_ANDROID</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables building window type <em>Android</em>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_WINDOW_TYPE_WAYLAND_IVI</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables building window type <em>Wayland with ivi_application</em>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_WINDOW_TYPE_WAYLAND_WL_SHELL</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables building window type <em>Wayland with wl_shell</em>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>You can use the following options to disable some of the Ramses features:</p>
+<ul>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_LOGIC</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables the logic subsystem of ramses alongside its dependencies (Lua, Sol, …)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_DAEMON</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Builds the ramses-daemon executable (for distributed rendering)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_TEXT_SUPPORT</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>enables the text subsystem of ramses alongside its dependencies (freetype, harfbuzz…)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_TCP_SUPPORT</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Toggle support for TCP as communication medium between the ramses components. Disables asio when turned off.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_DLT</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON</p></li>
+<li><p>Enables DLT support - a logging library for automotive/embedded logging.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Additionally, you can disable additional examples, demos and tools:</p>
+<ul>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_EXAMPLES</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON if <code class="docutils literal notranslate"><span class="pre">Ramses</span></code> is a top level project, otherwise OFF by default</p></li>
+<li><p>set to OFF if you don’t need the examples and want to reduce building time</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_DEMOS</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON if <code class="docutils literal notranslate"><span class="pre">Ramses</span></code> is a top level project, otherwise OFF by default</p></li>
+<li><p>set to OFF if you don’t need the demos and want to reduce building time</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_TOOLS</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON if <code class="docutils literal notranslate"><span class="pre">Ramses</span></code> is a top level project, otherwise OFF by default</p></li>
+<li><p>set to OFF if you don’t need the tools (e.g. imgui-based viewer) and want to reduce building time</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_BUILD_TESTS</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: ON if <code class="docutils literal notranslate"><span class="pre">Ramses</span></code> is a top level project, otherwise OFF by default</p></li>
+<li><p>Build ramses tests.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="option-list">
+<dt><kbd><span class="option">-D<var>ramses-sdk_ENABLE_TEST_COVERAGE</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>options: ON/OFF</p></li>
+<li><p>default: OFF</p></li>
+<li><p>enables clang’s options to generate code coverage from test executables</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>For other supported cmake options, please refer to CMakeLists.txt.</p>
+</section>
+<section id="project-version">
+<h1>Project version<a class="headerlink" href="#project-version" title="Permalink to this heading"></a></h1>
+<p>You can check the project version at build time and at runtime. At build time it is available
+as a CMake cache variable named <code class="docutils literal notranslate"><span class="pre">ramses_VERSION</span></code>. At runtime, you can use the
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ramses::GetRamsesVersion()</span></code> function to get the version as integer or as string.</p>
+</section>
+<section id="building-on-windows">
+<h1>Building on Windows<a class="headerlink" href="#building-on-windows" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>Start CMake GUI</p></li>
+<li><p>Select &lt;ramses-logic&gt; as source path, choose arbitrary &lt;build&gt; folder.</p></li>
+<li><p>Click ‘Configure’</p></li>
+<li><p>Optionally, set some of the options above</p></li>
+<li><p>Click ‘Generate’</p></li>
+<li><p>Open solution in Visual Studio</p></li>
+</ul>
+</section>
+<section id="building-on-linux-natively">
+<h1>Building on Linux natively<a class="headerlink" href="#building-on-linux-natively" title="Permalink to this heading"></a></h1>
+<p>Assuming you have met the <a class="reference internal" href="#build-requirements"><span class="std std-ref">Build requirements</span></a>, you can build <code class="docutils literal notranslate"><span class="pre">RAMSES</span></code> like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;ramses-src&gt;
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+<span class="nb">export</span><span class="w"> </span><span class="nv">OPTIONS</span><span class="o">=</span><span class="s2">&quot;-Dramses-sdk_OPTION_1=ON ...&quot;</span><span class="w"> </span><span class="c1"># see above for a list of options</span>
+cmake<span class="w"> </span><span class="nv">$OPTIONS</span><span class="w"> </span>../
+make
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="readme_ref.html" class="btn btn-neutral float-left" title="RAMSES" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="core.html" class="btn btn-neutral float-right" title="Ramses Core overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

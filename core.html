@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramses Core overview &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Minimal example" href="examples/core/00_minimal.html" />
+    <link rel="prev" title="Cloning" href="build.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ramses Core overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-client-component">The Client component</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#object-scopes">Object scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-object-lifecycle">API Object lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resources">Resources</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#asynchronous-processing-of-client-resources">Asynchronous processing of client resources</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#return-status">Return status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validation">Validation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#client-side-validation">Client side validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderer-side-validation">Renderer side validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#effects-and-shaders">Effects and shaders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-effects-from-glsl-source-code">Creating Effects from GLSL Source code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supported-glsl-versions-in-ramses">Supported GLSL versions in RAMSES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-binary-shaders">Using binary shaders</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#textrendering">TextRendering</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#coordinate-system">Coordinate system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#glyph-bitmaps">Glyph bitmaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geometry">Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-shaders">Text Shaders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-renderer-component">The Renderer component</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rendererapi">RendererAPI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#display-management">Display Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scene-control-and-scene-states">Scene control and scene states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderer-scene-control">Renderer Scene Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-linking">Data Linking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderer-api-calls-events">Renderer API calls &amp; Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderer-api-transactions">Renderer API transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#offscreen-buffers">Offscreen Buffers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-offscreen-buffers">Using Offscreen Buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scene-to-offscreen-buffer-assignment-rules">Scene To Offscreen Buffer Assignment Rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#offscreen-buffer-to-consumer-scene-linking-rules">Offscreen Buffer To Consumer Scene Linking Rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clearing-rules">Clearing Rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#render-order">Render Order</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#contentexpiration">ContentExpiration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-daemon-component">The Daemon component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#component-deployment-and-communication">Component deployment and communication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#advanced-concepts">Advanced concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compositing">Compositing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#embedded-compositing-api">Embedded Compositing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#list-of-all-examples">List of all examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/core/00_minimal.html">Minimal example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#list-of-all-logic-examples">List of all logic examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classes/index.html">Class Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Ramses Core overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/core.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ramses-core-overview">
+<h1>Ramses Core overview<a class="headerlink" href="#ramses-core-overview" title="Permalink to this heading"></a></h1>
+<p>This page provides an overview of the <code class="docutils literal notranslate"><span class="pre">Ramses</span></code> C++ API, primary object types, structure and interaction.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prefer learning by example? Jump straight to the <a class="reference internal" href="#list-of-all-examples"><span class="std std-ref">examples</span></a>!
+Looking for a specific class or method? Check the <a class="reference internal" href="classes/index.html#class-index"><span class="std std-ref">class index</span></a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">RAMSES</span></code> consists of three logical components:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#the-client-component"><span class="std std-ref">client</span></a> (creates and publishes 3D content)</p></li>
+<li><p><a class="reference internal" href="#the-renderer-component"><span class="std std-ref">renderer</span></a> (consumes and displays)</p></li>
+<li><p><a class="reference internal" href="#the-daemon-component"><span class="std std-ref">daemon</span></a> (global address broker, exchanges connection info between clients and renderers in case the underlying communication is TCP)</p></li>
+</ul>
+<p>These components can be deployed as separate applications and communicate over network, or can be all used in a local rendering
+setup (within a monolithic application) - or in various hybrid combinations.</p>
+<section id="the-client-component">
+<h2>The Client component<a class="headerlink" href="#the-client-component" title="Permalink to this heading"></a></h2>
+<p>Clients create scenes and manage their content, but cannot decide if and where a scene is shown (similar to a video stream which provides the video, but anyone can subscribe to it).
+The following subsections provide details on the various aspects of the client API.</p>
+<section id="object-scopes">
+<h3>Object scopes<a class="headerlink" href="#object-scopes" title="Permalink to this heading"></a></h3>
+<p>Objects of the RAMSES Client API live in different scopes, which determine</p>
+<ul class="simple">
+<li><p>who creates the object</p></li>
+<li><p>where this objects can be used</p></li>
+<li><p>who destroys the object (and when)</p></li>
+</ul>
+<p><strong>Scope: :class:`ramses::RamsesClient` Instance</strong></p>
+<ul class="simple">
+<li><p>Objects are created and destroyed with the <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a> object</p></li>
+<li><p>Examples for client objects: Scene, Client resources (immutable Textures, Vertex arrays, Effects…)</p></li>
+<li><p>On destruction of <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a>, objects of this <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a> instance will be deleted automatically</p></li>
+<li><p>To destroy objects created by <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a>, one must explicitly call <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClient7destroyER5Scene" title="ramses::RamsesClient::destroy"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RamsesClient::destroy()</span></code></a></p></li>
+<li><p>Object of this scope can be used for all operations in this <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a> instance.</p></li>
+</ul>
+<p><strong>Scope: :class:`ramses::Scene` Instance</strong></p>
+<ul class="simple">
+<li><p>Objects are created and destroyed with the Scene object</p></li>
+<li><p>Examples for scene objects: <a class="reference internal" href="classes/core.html#_CPPv4N6ramses4NodeE" title="ramses::Node"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Node</span></code></a>, <a class="reference internal" href="classes/core.html#_CPPv4N6ramses8MeshNodeE" title="ramses::MeshNode"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::MeshNode</span></code></a>, <a class="reference internal" href="classes/core.html#_CPPv4N6ramses6CameraE" title="ramses::Camera"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Camera</span></code></a>, <a class="reference internal" href="classes/core.html#_CPPv4N6ramses10AppearanceE" title="ramses::Appearance"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Appearance</span></code></a>, …</p></li>
+<li><p>On destruction of Scene, objects in this Scene instance will be deleted automatically</p></li>
+<li><p>To destroy objects created by Scene, one must explicitly call <a class="reference internal" href="classes/core.html#_CPPv4N6ramses5Scene7destroyER11SceneObject" title="ramses::Scene::destroy"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::Scene::destroy()</span></code></a></p></li>
+<li><p>Objects of this scene instance can be used only with objects of the same scene instance</p></li>
+<li><p>Mixing up objects of different scene instances will result in error status or undefined behaviour (e.g. setting a parent-child relationship between nodes of different scenes; see <a class="reference internal" href="#validation"><span class="std std-ref">Validation</span></a>)</p></li>
+</ul>
+</section>
+<section id="api-object-lifecycle">
+<h3>API Object lifecycle<a class="headerlink" href="#api-object-lifecycle" title="Permalink to this heading"></a></h3>
+<p>Object lifecycle is an important topic in any C++ framework. In the case of <code class="docutils literal notranslate"><span class="pre">Ramses</span></code>,
+creation and destruction is strict, straightforward and simple,
+but leaves the responsibility of object deletion in some cases to the user.</p>
+<p>As described in the Scopes chapter, the ownership of objects is defined by their scope.
+A <a class="reference internal" href="classes/core.html#_CPPv4N6ramses8MeshNodeE" title="ramses::MeshNode"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::MeshNode</span></code></a> is owned by a <a class="reference internal" href="classes/core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Scene</span></code></a>, which is owned by a <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a>. If a RamsesClient
+is destroyed, all of its scenes will be destroyed automatically, which in turn will
+destroy the MeshNodes in those scenes and so on. This implicit destruction done by
+RAMSES is limited to this case only, ie. when the ‘owner’ is destroyed then all the
+objects created within this owner are destroyed and any pointers to those become invalid.</p>
+<p>There is no reference counting of any sort therefore RAMSES will not automatically
+destroy an object if it is not used by any other object and therefore user is responsible
+for destroying unused content to free up resources. Creation and destruction of
+objects can cause performance hit on both client and renderer so it is recommended to consider
+some caching strategy on the application side.</p>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this heading"></a></h3>
+<p>There are 3 main types of resources in RAMSES</p>
+<ul class="simple">
+<li><p><strong>Immutable client resources</strong> (texture, index/vertex buffer, effect)</p></li>
+<li><p><strong>Scene resources</strong> (render buffer/target, stream texture, blit pass)</p></li>
+<li><p><strong>Dynamic resources</strong> (data buffer, texture buffer)</p></li>
+</ul>
+<p>These resource types differ by how are they created, owned and used for rendering a scene.
+Here are some basic rules for when to use which type:</p>
+<p>A typical use case for an <strong>immutable client resource</strong> is any resource that is created once
+and does not need to be changed for a reasonably long period of time. A client resource
+can be used by multiple scenes as it is owned by a RAMSES client instance and is typically
+transferred asynchronously (see below). Client resources are designed to efficiently handle
+large data and thus are best fit for static textures.</p>
+<p>A <strong>scene resource</strong> represents some kind of GPU buffer (render buffer/target, stream texture)
+or a rendering construct (blit pass). A scene resource has no initial user provided data
+and its usage is clearly defined by the concrete type. Scene resources are created and owned
+by a scene and can be used only within that scene, not across scenes as opposed to client resources.</p>
+<p>The content of a <strong>dynamic resource</strong> is set by user and can be modified directly at any
+time during its life cycle via RAMSES API. Even though the concrete types overlap with some of
+the concrete types of client resource (index/vertex buffer, texture), the way dynamic resources
+are handled in RAMSES is in fact closer to scene resources. Similar to a scene resource a dynamic
+resource is created
+and owned by a scene and can be used only within that scene. A typical use case is a resource that
+frequently changes (even if only partially). Dynamic resources should be kept small as they
+are processed synchronously together with other scene state changes.</p>
+<section id="asynchronous-processing-of-client-resources">
+<h4>Asynchronous processing of client resources<a class="headerlink" href="#asynchronous-processing-of-client-resources" title="Permalink to this heading"></a></h4>
+<p>One important aspect of RAMSES, which is different from most other scene graph implementations, is the fact
+that immutable client resources (Textures, Effects, Vertex arrays etc.) are
+distributed asynchronously. This means that it might happen that a scene arrived on the renderer,
+but some of its resources are still on the way and it will take more time
+until all the resources are uploaded and ready for rendering. This is true also if the renderer&lt;-&gt;client communication is
+in the same process. Resources are usually big and
+would block the entire rendering chain if they were transported/uploaded synchronously to the
+rest of the scene objects.</p>
+<p>The renderer always waits with the next content change (scene flush) until it has all the resources needed
+for the new scene content state. Note that this does not affect framerate
+on renderer side, the renderer will simply keep rendering the old state of the scene until
+it receives all the resources required for the new state. But it can delay the changes
+made in that flush as they are ‘blocked’ until all the resources are resolved.</p>
+</section>
+</section>
+<section id="return-status">
+<h3>Return status<a class="headerlink" href="#return-status" title="Permalink to this heading"></a></h3>
+<p>The RAMSES API is designed to check most errors on usage - for example trying to create <a class="reference internal" href="classes/core.html#_CPPv4N6ramses14TextureSamplerE" title="ramses::TextureSampler"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::TextureSampler</span></code></a> using a write-only
+<a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RenderBufferE" title="ramses::RenderBuffer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RenderBuffer</span></code></a>
+will result in error. The error message will appear in log and/or can be retrieved by using <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::StatusObject::getStatusMessage()</span></code> and passing
+the status code returned from the API call.</p>
+<p>It is highly recommended to check the status of every RAMSES API call, at least in debug configuration.
+See <a class="reference internal" href="#validation"><span class="std std-ref">Validation</span></a> to find out other ways of checking the state of RAMSES objects.</p>
+</section>
+<section id="validation">
+<h3>Validation<a class="headerlink" href="#validation" title="Permalink to this heading"></a></h3>
+<p>Some of the content issues are too expensive to be handled by the normal
+<a class="reference internal" href="#return-status"><span class="std std-ref">return code</span></a> of the Ramses API. Examples of such cases include:</p>
+<ul class="simple">
+<li><p>invalid states are very expensive to check, or…</p></li>
+<li><p>valid states which probably do not produce the desired result</p></li>
+<li><p>are wasting system resources: eg. having an empty <a class="reference internal" href="classes/core.html#_CPPv4N6ramses10RenderPassE" title="ramses::RenderPass"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RenderPass</span></code></a> which is being cleared every frame</p></li>
+</ul>
+<p>Another good example of an invalid state is a cyclic dependency on the node graph. If one creates three nodes A, B, C
+and sets following parent-child dependencies:</p>
+<ul class="simple">
+<li><p>A-&gt;B</p></li>
+<li><p>B-&gt;C</p></li>
+<li><p>C-&gt;A</p></li>
+</ul>
+<p>This is not an error that RAMSES checks, because it is very expensive to traverse the whole scene graph every time a new node is
+added as a child of another node.</p>
+<p>For development purposes, there are other means to check the state of the scene(s) and understand why the resulting image is not
+as expected.</p>
+<section id="client-side-validation">
+<h4>Client side validation<a class="headerlink" href="#client-side-validation" title="Permalink to this heading"></a></h4>
+<p>The state of a RAMSES object can be checked at any time by calling <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::StatusObject::validate()</span></code> method on its instance.
+The <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::StatusObject::validate()</span></code> method will do two things:</p>
+<ul class="simple">
+<li><p>return an overall result status of the object (valid or invalid)</p></li>
+<li><p>produce a human-readable report of the state of that object</p></li>
+</ul>
+<p>The report can be obtained by calling <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::StatusObject::getValidationReport()</span></code>
+immediately after calling <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::StatusObject::validate()</span></code>.</p>
+<p>The <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::StatusObject::validate()</span></code> method works hierarchically -
+each instance will recursively validate all its objects.
+For example, the <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a> version of the
+method will validate all its resources and all its scenes,
+each scene will validate all its objects created within that scene and so on.</p>
+<p>It is also possible to call validate from the shell. For that, one must enable the
+shell by calling <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RamsesFrameworkConfig::setRequestedRamsesShellType()</span></code>.
+It is also possible to call validate over the so called DLT injections.
+To do so, send the validate command to shell context “RMSH” and select service port 5000
+(WARNING this may be different based on DLT implementation).</p>
+<p>Examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prints validation report for scene with id 15</span>
+validate<span class="w"> </span><span class="m">15</span>
+
+<span class="c1"># prints validation report for object with name &quot;MyMesh&quot; from scene with id 15</span>
+validate<span class="w"> </span><span class="m">15</span><span class="w"> </span>info<span class="w"> </span>MyMesh
+</pre></div>
+</div>
+</section>
+<section id="renderer-side-validation">
+<h4>Renderer side validation<a class="headerlink" href="#renderer-side-validation" title="Permalink to this heading"></a></h4>
+<p>The <a class="reference internal" href="#the-client-component"><span class="std std-ref">RAMSES client</span></a>  has a very rich information about a scene - it knows the names of objects, it has detailed scenegraph information.
+The renderer, however, does not necessarily have all this information (the reason for that is that data sent over network to the renderer
+must be kept very minimal).</p>
+<p>There can be a case when a scene is in valid state on the client (according to validation described above),
+but it is not rendered in the the desired way. Such cases can be
+difficult to analyze. One simple tool to show the state of the renderer
+and get an overview of what is being rendered is to the “rinfo” shell command (only available on a <a class="reference internal" href="#the-renderer-component"><span class="std std-ref">renderer</span></a>).
+While <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::StatusObject::validate()</span></code> focuses on scene content, the purpose of “rinfo” is to get
+overview of how is that content interpreted. It reports all the information about displays, scenes it knows
+and their states, more or less detailed rendering queue for each shown scene and so on.</p>
+<p>Examples:&lt;br&gt;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># prints everything that the renderer knows&lt;br&gt;</span>
+rinfo
+
+<span class="c1"># prints usage of all ramses shell commands, including rinfo command&lt;br&gt;</span>
+<span class="nb">help</span>
+
+<span class="c1"># prints only errors from embedded compositor, and verbose_mode=true&lt;br&gt;</span>
+rinfo<span class="w"> </span>error<span class="w"> </span>-v<span class="w"> </span>ec
+</pre></div>
+</div>
+<p>As with validate, it is possible to invoke “rinfo” using a DLT injection to the “RMSH” log context with service number 5000.</p>
+</section>
+</section>
+<section id="effects-and-shaders">
+<h3>Effects and shaders<a class="headerlink" href="#effects-and-shaders" title="Permalink to this heading"></a></h3>
+<p>A <a class="reference internal" href="classes/core.html#_CPPv4N6ramses6EffectE" title="ramses::Effect"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Effect</span></code></a> describes how geometry is rendered to the screen. An effect
+consists mainly of vertex and fragment shaders and an optional geometry shader, written in the
+&lt;a href=”<a class="reference external" href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">https://en.wikipedia.org/wiki/OpenGL_Shading_Language</a>”&gt;OpenGL Shading Language(GLSL)&lt;/a&gt;.
+RAMSES supports shaders provided as source code strings or binary shaders.</p>
+<section id="creating-effects-from-glsl-source-code">
+<h4>Creating Effects from GLSL Source code<a class="headerlink" href="#creating-effects-from-glsl-source-code" title="Permalink to this heading"></a></h4>
+<p>Effects can be created from GLSL source code during runtime. To do so, fill out a <a class="reference internal" href="classes/core.html#_CPPv4N6ramses17EffectDescriptionE" title="ramses::EffectDescription"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::EffectDescription</span></code></a>
+instance with the required data (refer to class documentation for more details) and pass it to
+<a class="reference internal" href="classes/core.html#_CPPv4N6ramses5Scene12createEffectERK17EffectDescription19resourceCacheFlag_tNSt11string_viewE" title="ramses::Scene::createEffect"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::Scene::createEffect()</span></code></a>.</p>
+</section>
+<section id="supported-glsl-versions-in-ramses">
+<h4>Supported GLSL versions in RAMSES<a class="headerlink" href="#supported-glsl-versions-in-ramses" title="Permalink to this heading"></a></h4>
+<p>RAMSES supports the following versions of GLSL:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">GLSL Versions</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Shader language version</p></th>
+<th class="head"><p>OpenGL version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/GLSL_ES_Specification_1.00.pdf">GLSL-ES 1.00</a></p></td>
+<td><p>OpenGL ES 2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.khronos.org/registry/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf">GLSL-ES 3.00</a></p></td>
+<td><p>OpenGL ES 3.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.khronos.org/registry/OpenGL/specs/es/3.1/GLSL_ES_Specification_3.10.pdf">GLSL-ES 3.10</a></p></td>
+<td><p>OpenGL ES 3.1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.khronos.org/registry/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.pdf">GLSL-ES 3.20</a></p></td>
+<td><p>OpenGL ES 3.2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.khronos.org/registry/OpenGL/specs/gl/GLSLangSpec.4.20.pdf">GLSL 4.20</a></p></td>
+<td><p>OpenGL 4.2</p></td>
+</tr>
+</tbody>
+</table>
+<p>The platform dependent variables are set to the minimum values, depending on the used GLSL version.
+For concrete values, see chapter Built-In Constants (section 7.4 for GLSL-ES 1.00, and section 7.3
+for GLSL-ES 3.00 and GLSL 4.20) in the documents above.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because OpenGL is backwards-compatible, a GLSL-ES 1.00 shader can also be used on a GL-ES 3.0 renderer.
+Refer to OpenGL documentation for exact compatibility rules.</p>
+</div>
+</section>
+<section id="using-binary-shaders">
+<h4>Using binary shaders<a class="headerlink" href="#using-binary-shaders" title="Permalink to this heading"></a></h4>
+<p>Beside the source code GLSL shaders, RAMSES also supports the usage of binary shaders.
+There are two ways to do so:</p>
+<ul class="simple">
+<li><p>as a preprocessing step (useful for shaders known in advance)</p></li>
+<li><p>during runtime on renderer side (useful if shaders are not known in advance or coming from remote scenes)</p></li>
+</ul>
+<p>Both techniques have in common that the RAMSES application has to implement the <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses18IBinaryShaderCacheE" title="ramses::IBinaryShaderCache"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::IBinaryShaderCache</span></code></a> interface.
+The only difference is who provides the binary version of the <a class="reference internal" href="classes/core.html#_CPPv4N6ramses6EffectE" title="ramses::Effect"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Effect</span></code></a> - the ramses renderer or an offline shader compiler.</p>
+<p>For each new Effect which is not known to RAMSES renderer, the renderer will request a binary shader for this effect by
+calling <a class="reference internal" href="classes/renderer.html#_CPPv4NK6ramses18IBinaryShaderCache15hasBinaryShaderE10effectId_t" title="ramses::IBinaryShaderCache::hasBinaryShader"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::IBinaryShaderCache::hasBinaryShader()</span></code></a> with the associated ramses::effectId_t on the
+binary shader cache implementation. If the binary shader cache implementation has the precompiled binary shader for this effect,
+it will provide it to the RAMSES renderer. In case the requested shader is missing from the cache, the renderer compiles the shader
+from its own source
+and offers it to be stored in the cache.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Binary shaders once obtained from the renderer might not work anymore, when the
+graphic driver or hardware was updated in incompatible ways.</p>
+</div>
+</section>
+</section>
+<section id="textrendering">
+<h3>TextRendering<a class="headerlink" href="#textrendering" title="Permalink to this heading"></a></h3>
+<p>RAMSES SDK provides a text creation layer on top of RAMSES that allows user to create
+meshes representing text glyphs that can be used as part of a RAMSES scene.
+Freetype2 fonts are supported with optional Harfbuzz reshaping.</p>
+<section id="coordinate-system">
+<h4>Coordinate system<a class="headerlink" href="#coordinate-system" title="Permalink to this heading"></a></h4>
+<p>Text meshes are 3D meshes like any other RAMSES meshes. By using orthographic projection and
+a suitable transformation matrix text can also be renderered as an overlay on top of the screen.
+To achieve this, the transformation matrix must use the screen surface’s width and height in pixels.</p>
+</section>
+<section id="glyph-bitmaps">
+<h4>Glyph bitmaps<a class="headerlink" href="#glyph-bitmaps" title="Permalink to this heading"></a></h4>
+<p>Font provides a glyph bitmap for a glyph code for each character.
+RAMSES text layer API uses Unicode (UTF32). Upon creation, characters are cached to save
+the performance of creating the same character mutliple times.
+RAMSES stores glyph bitmaps in a special format that only uses 8 bits in the red channel.
+The values in the red channel are intepreted as alpha channel in the shader.</p>
+</section>
+<section id="geometry">
+<h4>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading"></a></h4>
+<p>Text objects are made up of lines consisting of one or multiple glyphs. Each glyph is built
+upon two triangles in the size of the glyphs bounding box. The winding of the vertices is
+counter-clockwise. ( 0-1-2 for the first triangle and 0-2-3 for the second triangle )</p>
+<figure class="align-default" id="id2">
+<img alt="_images/ramses_api_text_geometry.png" src="_images/ramses_api_text_geometry.png" />
+<figcaption>
+<p><span class="caption-text">Text geometry and winding</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>All the glyphs requested at runtime are stored in a glyph map. The glyph map is implemented
+as a texture atlas. Each vertex of the text geometry provides texture coordinates that will project
+the glyph bitmap onto the geometry. For each rasterized pixel there is a lookup in the glyph
+texture. The color provided using the input object will be used for the red, green and blue
+channels. The content of the glyph map is used for the alpha channel. This way glyphs can be
+rasterized using the color depth of the glyph map using a color provided by the user.</p>
+<p>The following diagram depicts the storage of the bitmap data in a texture atlas with the according
+geometry, drawn for the glyph. The font engine delivers a monochrome bitmap of the requested glyph.
+This data is packed into a texture atlas with an additional transparent border of one pixel
+on each side. Thus, a glyph of size 4x4 takes 6x6 texel place in the texture atlas. The vertices of the drawn
+geometry are centered into this transparent border texels, so the size of the drawn quad is 5x5 for the given example.
+The vertex positions are also centered to the midpoint of screen pixels, unless there is no additional transformation, and an orthographic
+projection is used. That way, each pixel will result in exactly the original transparency value, computed by the font engine. This is also
+true, when bilinear filtering is active. Bilinear filtering should be activated for rotated or scaled text, to achieve good rendering
+quality. The one pixel border is needed for the case, when the glyph bitmap is filtered.</p>
+<figure class="align-default" id="id3">
+<img alt="_images/glyph_atlas.png" src="_images/glyph_atlas.png" />
+<figcaption>
+<p><span class="caption-text">Glyph in texture atlas with according drawn geometry</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The picture below depicts the difference of an unscaled glyph versus the same glyph beeing scaled largely by
+a scale factor. The example glyph consists of 2x2 black texels. When it is rendered unscaled to the screen - shown on left side - it will exactly take 2x2 pixels space. The half pixel transparent border has no influence here. In contrast on right side, when a scale factor &lt;i&gt;f&lt;/i&gt; is applied to blow up the glyph’s geometry, the linear gradient between texels become visible in rendering, and now the half texel transparent border will also become visible. The rendering of the glyph takes 3x3 multiplied by the scale factor &lt;i&gt;f&lt;/i&gt; pixels on screen.</p>
+<figure class="align-default" id="id4">
+<img alt="_images/glyph_zoomed.png" src="_images/glyph_zoomed.png" />
+<figcaption>
+<p><span class="caption-text">Unscaled (Screen fitting) glyph versus scaled glyph</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Beside the bitmap data, each glyph has additional metric information (bearing, size and advance), that is needed to
+place the glyph at the right position. The following picture shows the three glyphs for the string “yes”. The geometry generation
+starts for the first glyph, with the so called current pen position in the origin (0,0). The bearing vector of the glyph is added
+to the current pen position, as shown by the red arrows. This gives the lower left corner of the positioned glyph. The size of the glyph
+is the horizontal and vertical number of pixels, which are stored for that glyph in the texture atlas.
+As described above, the final geometry is offseted by 0.5 pixel in x and y direction, because of the additional 1 pixel transparent
+border around the glyph.
+After positioning one glyph, it’s advance value is added to the current pen position for placing the next glyph.</p>
+<figure class="align-default" id="id5">
+<img alt="_images/glyph_metrics.png" src="_images/glyph_metrics.png" />
+<figcaption>
+<p><span class="caption-text">Using the metrics for positioning glyphs</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="text-shaders">
+<h4>Text Shaders<a class="headerlink" href="#text-shaders" title="Permalink to this heading"></a></h4>
+<p>In order to create a renderable mesh representing text, the mesh has to have a valid shader.
+User needs to provide a RAMSES effect that will be assigned to both GeometryBinding and Appearance
+created by the text logic. The effect has to have semantics assigned to various uniform and attribute
+inputs so that the text logic knows where to bind necessary inputs like vertices, texture coordinates
+and sampler with glyph texture.</p>
+<p>These are the semantics required for text:</p>
+<ul class="simple">
+<li><p>EEffectAttributeSemantic::TextPositions (attribute of type vec2)</p></li>
+<li><p>EEffectAttributeSemantic::TextTextureCoordinates (attribute of type vec2)</p></li>
+<li><p>EEffectUniformSemantic::TextTexture (uniform of type sampler2D)</p></li>
+</ul>
+<p>Check the text example to see typical text shader usage, generally shader can have any logic
+and can be customized to fit user’s needs. Similarily Appearance’s properties can be arbitrary
+but typically use alpha blending and no depth test if used as 2D overlay.</p>
+</section>
+</section>
+</section>
+<section id="the-renderer-component">
+<h2>The Renderer component<a class="headerlink" href="#the-renderer-component" title="Permalink to this heading"></a></h2>
+<p>Renderers act as content consumers, they can subscribe to content changes from
+clients and show it on screen. Renderers cannot change scene content directly,
+but can control when a scene is shown/hidden, in special cases can render
+<a class="reference internal" href="#offscreen-buffers"><span class="std std-ref">offscreen buffers</span></a> and link certain types of data across scenes.</p>
+<section id="rendererapi">
+<h3>RendererAPI<a class="headerlink" href="#rendererapi" title="Permalink to this heading"></a></h3>
+<p>The RAMSES Renderer API allows to</p>
+<ul class="simple">
+<li><p>create displays and offscreen buffers</p></li>
+<li><p>control rendering states of scenes</p></li>
+<li><p>link data between scenes</p></li>
+<li><p>control render looping, timing, limits</p></li>
+<li><p>access/control to the system compositor controller</p></li>
+</ul>
+<section id="display-management">
+<h4>Display Management<a class="headerlink" href="#display-management" title="Permalink to this heading"></a></h4>
+<p>The renderer setup consists of a <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRendererE" title="ramses::RamsesRenderer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesRenderer</span></code></a> object and a set of displays belonging to it.
+Every display can be configured through an individual <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses13DisplayConfigE" title="ramses::DisplayConfig"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::DisplayConfig</span></code></a>.</p>
+</section>
+<section id="scene-control-and-scene-states">
+<h4>Scene control and scene states<a class="headerlink" href="#scene-control-and-scene-states" title="Permalink to this heading"></a></h4>
+<p>A renderer offers a separate API to control the scene states, the RendererSceneControl. It can be obtained
+using the <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRenderer18getSceneControlAPIEv" title="ramses::RamsesRenderer::getSceneControlAPI"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RamsesRenderer::getSceneControlAPI()</span></code></a> function.</p>
+</section>
+<section id="renderer-scene-control">
+<h4>Renderer Scene Control<a class="headerlink" href="#renderer-scene-control" title="Permalink to this heading"></a></h4>
+<p>Graphical content (a <a class="reference internal" href="classes/core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Scene</span></code></a> provided from <a class="reference internal" href="classes/core.html#_CPPv4N6ramses12RamsesClientE" title="ramses::RamsesClient"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesClient</span></code></a>) is always in a certain state,
+a state in the context of single <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRendererE" title="ramses::RamsesRenderer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesRenderer</span></code></a> instance.
+Typically the desired state to reach is that the scene is rendered, however the scene has to go through
+several other states to reach that:</p>
+<ul class="simple">
+<li><p>scene is published, i.e. client announced that the scene can be requested from one or more renderers</p></li>
+<li><p>renderer requests scene and its data, any change to scene data will be transferred to renderer</p></li>
+<li><p>renderer maps scene to a display, assigns to framebuffer or offscreen buffer and uploads all scene resources</p></li>
+<li><p>renderer starts to render scene</p></li>
+</ul>
+<p>These states and other parameters can be set/requested using <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses20RendererSceneControlE" title="ramses::RendererSceneControl"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RendererSceneControl</span></code></a>, see its documentation
+for more details.</p>
+<img alt="_images/renderer_scene_states.png" src="_images/renderer_scene_states.png" />
+</section>
+<section id="data-linking">
+<h4>Data Linking<a class="headerlink" href="#data-linking" title="Permalink to this heading"></a></h4>
+<p>In order to achieve scene interaction, it is possible to attach scene content of one scene to scene content
+of another scene. There are several types of data links,
+all of them have a data provider on one side and one or more consumers on the other side,
+the consumers then use the data of the provider.</p>
+<p>Provider and consumer data is tagged with an ID on RAMSES client scene side and then can be linked on RAMSES
+renderer side. Scenes with provider and consumer data can come
+from different clients that do not have to know each other (only the tagged data IDs are globally known)
+and once the scenes are subscribed (mapped in case of texture linking)
+on renderer they can be linked together.</p>
+<p>Data links are dynamic so any change to provider data (including animations) will be reflected to all its consumers.</p>
+<p>Data links of any kind can only be established if provider scene and consumer scene are mapped to the
+same display via <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses20RendererSceneControl15setSceneMappingE9sceneId_t11displayId_t" title="ramses::RendererSceneControl::setSceneMapping"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RendererSceneControl::setSceneMapping()</span></code></a>.</p>
+<p><strong>Transformation Linking</strong></p>
+<p>For transformation data linking the provided scene content is the transformation matrix of a
+scenegraph node (any <a class="reference internal" href="classes/core.html#_CPPv4N6ramses4NodeE" title="ramses::Node"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Node</span></code></a> typed object in scene),
+which can be consumed by node(s) of consumer scene(s).
+The consumer node (and all its children in scenegraph topology) will transform using
+the provider node’s transformation.</p>
+<p><strong>DataObject Linking</strong></p>
+<p><a class="reference internal" href="classes/core.html#_CPPv4N6ramses10DataObjectE" title="ramses::DataObject"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::DataObject</span></code></a> can be used to set values of <a class="reference internal" href="classes/core.html#_CPPv4N6ramses10AppearanceE" title="ramses::Appearance"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Appearance</span></code></a> uniforms or
+<a class="reference internal" href="classes/core.html#_CPPv4N6ramses6CameraE" title="ramses::Camera"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Camera</span></code></a> parameters which can also be linked across scenes.
+As long as data type is matched a data value stored in a <a class="reference internal" href="classes/core.html#_CPPv4N6ramses10DataObjectE" title="ramses::DataObject"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::DataObject</span></code></a> of one scene can
+be used as uniform input of an <a class="reference internal" href="classes/core.html#_CPPv4N6ramses10AppearanceE" title="ramses::Appearance"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::Appearance</span></code></a> in another scene.</p>
+<p><strong>Texture Linking</strong></p>
+<p>Texture resources can be tagged as data providers and can be consumed in another scene by <a class="reference internal" href="classes/core.html#_CPPv4N6ramses14TextureSamplerE" title="ramses::TextureSampler"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::TextureSampler</span></code></a>.</p>
+</section>
+<section id="renderer-api-calls-events">
+<h4>Renderer API calls &amp; Events<a class="headerlink" href="#renderer-api-calls-events" title="Permalink to this heading"></a></h4>
+<p>Renderer API calls are handled asynchronously. This means that the result or information about success
+of the requested renderer operation is not available
+immediately after the API call.
+The result of the API call will be delivered via renderer events. The <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRendererE" title="ramses::RamsesRenderer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesRenderer</span></code></a> and
+<a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses20RendererSceneControlE" title="ramses::RendererSceneControl"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RendererSceneControl</span></code></a> each offer its own event dispatching mechanism,
+such that an object implementing <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses21IRendererEventHandlerE" title="ramses::IRendererEventHandler"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::IRendererEventHandler</span></code></a> / <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses33IRendererSceneControlEventHandlerE" title="ramses::IRendererSceneControlEventHandler"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::IRendererSceneControlEventHandler</span></code></a>
+interface can handle and process renderer/scene control events.</p>
+<p>Events generated as a result of a <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRendererE" title="ramses::RamsesRenderer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesRenderer</span></code></a> or <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses20RendererSceneControlE" title="ramses::RendererSceneControl"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RendererSceneControl</span></code></a>
+API call can have different statuses reported:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">OK</span></code>: the Renderer API call was successful</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAIL</span></code>: the Renderer API call was unsuccessful, check logs for error message</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INDIRECT</span></code>: the event was generated as consequence of another event from Ramses client side (e.g. scene unpublish or disconnect) or some other internal event</p></li>
+<li><div class="line-block">
+<div class="line">A special case of status report is ‘no status’ - scene state change requests (<a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses20RendererSceneControl13setSceneStateE9sceneId_t18RendererSceneState" title="ramses::RendererSceneControl::setSceneState"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RendererSceneControl::setSceneState()</span></code></a>) might not generate any event</div>
+<div class="line">in case that a condition to reach desired state is not met (e.g. scene not published, display not created, etc.). Note that these will not timeout explicitly,</div>
+<div class="line">it is responsibility of the application to implement timeout logic.</div>
+</div>
+</li>
+</ul>
+</section>
+<section id="renderer-api-transactions">
+<h4>Renderer API transactions<a class="headerlink" href="#renderer-api-transactions" title="Permalink to this heading"></a></h4>
+<p>The <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRendererE" title="ramses::RamsesRenderer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesRenderer</span></code></a> and <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses20RendererSceneControlE" title="ramses::RendererSceneControl"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RendererSceneControl</span></code></a> calls are queued and
+only executed when committed. To commit a batch of calls use <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRenderer5flushEv" title="ramses::RamsesRenderer::flush"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RamsesRenderer::flush()</span></code></a>
+and <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses20RendererSceneControl5flushEv" title="ramses::RendererSceneControl::flush"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RendererSceneControl::flush()</span></code></a> respectively. All calls since the last flush
+will then be executed together (preserving order) in the very next
+renderer update loop (either <a class="reference internal" href="classes/renderer.html#_CPPv4N6ramses14RamsesRenderer9doOneLoopEv" title="ramses::RamsesRenderer::doOneLoop"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::RamsesRenderer::doOneLoop()</span></code></a> or in render thread).</p>
+</section>
+</section>
+<section id="offscreen-buffers">
+<h3>Offscreen Buffers<a class="headerlink" href="#offscreen-buffers" title="Permalink to this heading"></a></h3>
+<p>When a RAMSES Client Scene is subscribed, mapped to display and shown, RAMSES Renderer renders it directly into the display’s framebuffer.
+This default behaviour can be modified by assigning the scene to an offscreen buffer using Renderer API, scene will then not be rendered directly
+to display’s framebuffer anymore but to a buffer that can be used as texture input in another scene.</p>
+<section id="using-offscreen-buffers">
+<h4>Using Offscreen Buffers<a class="headerlink" href="#using-offscreen-buffers" title="Permalink to this heading"></a></h4>
+<p>All scenes that are supposed to be assigned to an offscreen buffer have to be mapped to the same display where the offscreen buffer was created.
+There can be multiple scenes rendered to the same offscreen buffer but a scene can be rendered to exactly one buffer or framebuffer.</p>
+<p>An offscreen buffer can then be linked to another scene’s (consumer scene) texture input similar to Texture Data Linking.
+Consumer scene where the offscreen buffer is to be used as texture has to have a Texture Consumer which is in fact a TextureSampler with a Data Consumer Id.
+Consumer scene has to also be mapped to the same display as the offscreen buffer (and scenes rendered into it).</p>
+</section>
+<section id="scene-to-offscreen-buffer-assignment-rules">
+<h4>Scene To Offscreen Buffer Assignment Rules<a class="headerlink" href="#scene-to-offscreen-buffer-assignment-rules" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>Scene has to be mapped to the same display where offscreen buffer was created.</p></li>
+<li><p>If the assigned scene is hidden or unpublished by the client it stops being rendered into the offscreen buffer.</p></li>
+<li><p>If the assigned scene is unmapped from display, it is unassigned from its offscreen buffer. Next time the scene is mapped to a display it will be assigned to the display’s framebuffer (even if it is the same display as before).</p></li>
+<li><p>Scene can be reassigned to another offscreen buffer or display’s framebuffer, then it stops being rendered into the original offscreen buffer.</p></li>
+<li><p>Offscreen buffer cannot be destroyed if there are any scene assigned to it.</p></li>
+</ul>
+</section>
+<section id="offscreen-buffer-to-consumer-scene-linking-rules">
+<h4>Offscreen Buffer To Consumer Scene Linking Rules<a class="headerlink" href="#offscreen-buffer-to-consumer-scene-linking-rules" title="Permalink to this heading"></a></h4>
+<p>These rules are analogical to scene to scene Texture Data Linking.</p>
+<ul class="simple">
+<li><p>The consumer scene has to be mapped to the same display where the linked offscreen buffer was created.</p></li>
+<li><p>The consumer scene has to have a Texture Consumer which is not linked to any provider or another offscreen buffer.</p></li>
+<li><p>When a linked consumer scene is unmapped from its display, the offscreen buffer is unlinked. Next time the scene is mapped to a display it will have no links (even if it is the same display as before).</p></li>
+<li><p>If an offscreen buffer is destroyed, it is unlinked from any linked scenes. Previously linked consumer scene(s) will then use their original texture.</p></li>
+</ul>
+</section>
+<section id="clearing-rules">
+<h4>Clearing Rules<a class="headerlink" href="#clearing-rules" title="Permalink to this heading"></a></h4>
+<p>Clearing of offscreen buffers is currently implicit and cannot be controlled by user explicitly.
+An offscreen buffer will be cleared at the beginning of every frame only if there is any scene mapped to it.
+This means that if a single scene that is mapped to the offscreen buffer gets unmapped for any of the reasons
+mentioned above, the offscreen buffer will not be cleared until there is another scene assigned to it.
+However the offscreen buffer would be cleared if it has hidden scenes assigned to it.</p>
+</section>
+<section id="render-order">
+<h4>Render Order<a class="headerlink" href="#render-order" title="Permalink to this heading"></a></h4>
+<p>RAMSES Renderer allows user to define scene render order when mapping a scene to a display.
+Assigning a scene to offscreen buffer or linking an offscreen buffer to a consumer scene <strong>does not affect</strong>
+the render order of any of the scenes involved.
+It is user’s responsibility to define the render order so that desired result is achieved,
+this in most cases means to render the scene(s) assigned to an offscreen buffer <strong>before</strong>
+the consumer scene using the contents of the offscreen buffer.</p>
+</section>
+</section>
+<section id="contentexpiration">
+<h3>ContentExpiration<a class="headerlink" href="#contentexpiration" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="the-daemon-component">
+<h2>The Daemon component<a class="headerlink" href="#the-daemon-component" title="Permalink to this heading"></a></h2>
+<p>In TCP-based a network deployment, the daemon “broadcasts” the existence of clients and renderers to each other
+(providers and consumers of scenes, respectively).
+This allows clients and renderers connected to the same daemon to find each other.
+After this initial discovery the communication is via a direct connection between to the clients and renderers.</p>
+<p>Other communication middlewares normally include a discovery mechanism already and make the ramses daemon superfluous.</p>
+<p>In a purely local rendering setup where the only clients and renderers are within
+a single process the daemon is normally also not needed.</p>
+</section>
+<section id="component-deployment-and-communication">
+<h2>Component deployment and communication<a class="headerlink" href="#component-deployment-and-communication" title="Permalink to this heading"></a></h2>
+<p>The three RAMSES components (client, renderer, daemon) can all live in the same process, or can be deployed across different processes or
+even different hardware units. Depending on the concrete deployment, Ramses will use different communication channels to send data from the client to the renderer.
+If the client and renderer are in the same process, they will not use any network communication, but will exchange data over local memory. If the client and renderer are not
+in the same process, the connection will be established over a network protocol (TCP by default).</p>
+</section>
+</section>
+<section id="advanced-concepts">
+<h1>Advanced concepts<a class="headerlink" href="#advanced-concepts" title="Permalink to this heading"></a></h1>
+<p>Ramses offers some additional features and concepts which are specific to distributed rendering and designed to make it easier
+to share, link, composit visually demanding content in a environment with strict timing and performance constraints.</p>
+<section id="compositing">
+<h2>Compositing<a class="headerlink" href="#compositing" title="Permalink to this heading"></a></h2>
+<p>In addition to distributing 3D scenes, Ramses can composite other OpenGL native applications using the Wayland protocol.
+The Wayland protocol enables efficient compositing
+of 2D images with zero copy (i.e. no pixel buffers are copied throughout the system unless when directly rendered to
+the screen). In the RAMSES case, it is called “embedded compositing” because the RAMSES renderer is itself
+composited into the system compositor. Thus, applications which connect to RAMSES via Wayland are
+“embedded” into the RAMSES renderer, which is in turn “embedded” into the system compositor final
+rendering.</p>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h3>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h3>
+</section>
+<section id="embedded-compositing-api">
+<h3>Embedded Compositing API<a class="headerlink" href="#embedded-compositing-api" title="Permalink to this heading"></a></h3>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+</section>
+<section id="list-of-all-examples">
+<h1>List of all examples<a class="headerlink" href="#list-of-all-examples" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/core/00_minimal.html">Minimal example</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="build.html" class="btn btn-neutral float-left" title="Cloning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples/core/00_minimal.html" class="btn btn-neutral float-right" title="Minimal example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

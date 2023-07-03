@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic animation (animateTo) example &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Modules example" href="09_modules.html" />
+    <link rel="prev" title="Animation example" href="08a_static_animation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#performance">Performance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../logic.html#list-of-all-logic-examples">List of all logic examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="00_minimal.html">Minimal logic example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01a_primitive_properties.html">Example with primitive properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01b_struct_properties.html">Example with structured properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01c_array_properties.html">Example with indexed (vector, array) properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_errors_compile_time.html">Handling compilation errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_errors_runtime.html">Handling runtime errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ramses_scene.html">Example with Ramses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_serialization.html">Save/load from file example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_links.html">Links example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08a_static_animation.html">Animation example</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dynamic animation (animateTo) example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_modules.html">Modules example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_globals.html">Globals example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_interfaces.html">Interfaces example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_anchor_point.html">Anchor points example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_render_order.html">Render order example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_skinbinding.html">SkinBinding example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_meshnodebinding.html">MeshNodeBinding example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../classes/index.html">Class Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../logic.html">Overview</a></li>
+      <li class="breadcrumb-item active">Dynamic animation (animateTo) example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/logic/08b_dynamic_animation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dynamic-animation-animateto-example">
+<h1>Dynamic animation (animateTo) example<a class="headerlink" href="#dynamic-animation-animateto-example" title="Permalink to this heading"></a></h1>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* This example demonstrates an &#39;animate to&#39; functionality using a &#39;dynamic&#39; AnimationNode.</span>
+<span class="cm">* Dynamic animation node is a variant of AnimationNode which allows to change the animation keyframes in runtime. An &#39;animate to&#39; functionality</span>
+<span class="cm">* refers to a logic which is able to smoothly animate to any given value at any point in time, even if already in middle of animation to another value.</span>
+<span class="cm">* This examples uses only 2 keyframes animation to achieve the &#39;animate to&#39; functionality, this should be sufficient even for real world</span>
+<span class="cm">* use cases but can be arbitrarily extended to more complex setups if needed.</span>
+<span class="cm">*/</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">SceneAndNode</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">Scene</span><span class="o">*</span><span class="w"> </span><span class="n">scene</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm">* Helper method which creates a simple ramses scene. For more ramses</span>
+<span class="cm">* examples, check the ramses docs at https://bmwcarit.github.io/ramses</span>
+<span class="cm">*/</span>
+<span class="n">SceneAndNode</span><span class="w"> </span><span class="nf">CreateSceneWithTriangle</span><span class="p">(</span><span class="n">ramses</span><span class="o">::</span><span class="n">RamsesClient</span><span class="o">&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Use simple class to create ramses framework objects which are not essential for this example.</span>
+<span class="cm">     * For more info on those, please refer to the ramses docs: https://bmwcarit.github.io/ramses</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">SimpleRenderer</span><span class="w"> </span><span class="n">renderer</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Create a simple Ramses scene with a triangle.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">scene</span><span class="p">,</span><span class="w"> </span><span class="n">tri</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CreateSceneWithTriangle</span><span class="p">(</span><span class="o">*</span><span class="n">renderer</span><span class="p">.</span><span class="n">getClient</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">LogicEngine</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">{</span><span class="w"> </span><span class="n">ramses</span><span class="o">::</span><span class="n">EFeatureLevel_Latest</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Create a binding object which serves as a bridge between logic nodes and animations on one end</span>
+<span class="cm">    * and a Ramses scene on the other end.</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">RamsesNodeBinding</span><span class="o">*</span><span class="w"> </span><span class="n">nodeBinding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">createRamsesNodeBinding</span><span class="p">(</span><span class="o">*</span><span class="n">tri</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Create data arrays which contain the time stamp data and the keyframe data points.</span>
+<span class="cm">     * Unlike with static animations the actual keyframe values will be set and dynamically changed from control script.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">DataArray</span><span class="o">*</span><span class="w"> </span><span class="n">animTimestamps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">createDataArray</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">{</span><span class="w"> </span><span class="mf">0.f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.f</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">DataArray</span><span class="o">*</span><span class="w"> </span><span class="n">animKeyframes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">createDataArray</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ramses</span><span class="o">::</span><span class="n">vec3f</span><span class="o">&gt;</span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="mf">0.f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.f</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mf">1.f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.f</span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Create a channel for animation.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ramses</span><span class="o">::</span><span class="n">AnimationChannel</span><span class="w"> </span><span class="n">animChannel</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;translation&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">animTimestamps</span><span class="p">,</span><span class="w"> </span><span class="n">animKeyframes</span><span class="p">,</span><span class="w"> </span><span class="n">ramses</span><span class="o">::</span><span class="n">EInterpolationType</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Create a &#39;dynamic&#39; animation node by passing in the channel data via config</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">AnimationNodeConfig</span><span class="w"> </span><span class="n">animConfig</span><span class="p">;</span>
+<span class="w">    </span><span class="n">animConfig</span><span class="p">.</span><span class="n">addChannel</span><span class="p">(</span><span class="n">animChannel</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">/// In order to implement &#39;animateTo&#39; logic with dynamic changes of keyframes we need to create AnimationNode that allows</span>
+<span class="w">    </span><span class="c1">/// modifications of animation data</span>
+<span class="w">    </span><span class="n">animConfig</span><span class="p">.</span><span class="n">setExposingOfChannelDataAsProperties</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">AnimationNode</span><span class="o">*</span><span class="w"> </span><span class="n">animNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">createAnimationNode</span><span class="p">(</span><span class="n">animConfig</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Connect the animation channel &#39;translation&#39; output with the translation property of the RamsesNodeBinding object.</span>
+<span class="cm">    * After this, the value computed in the animation output channel will be propagated to the ramses node&#39;s rotation property.</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">link</span><span class="p">(</span>
+<span class="w">        </span><span class="o">*</span><span class="n">animNode</span><span class="o">-&gt;</span><span class="n">getOutputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;translation&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="o">*</span><span class="n">nodeBinding</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;translation&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Create an &#39;animate to&#39; control script which will control not only the animation progress but also modify animation data when needed</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">LuaConfig</span><span class="w"> </span><span class="n">scriptConfig</span><span class="p">;</span>
+<span class="w">    </span><span class="n">scriptConfig</span><span class="p">.</span><span class="n">addStandardModuleDependency</span><span class="p">(</span><span class="n">ramses</span><span class="o">::</span><span class="n">EStandardModule</span><span class="o">::</span><span class="n">Math</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">LuaScript</span><span class="o">*</span><span class="w"> </span><span class="n">controlScript</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">createLuaScript</span><span class="p">(</span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span>
+<span class="s">        function init()</span>
+<span class="s">            GLOBAL.startTick = nil</span>
+<span class="s">            GLOBAL.currentDirection = 0</span>
+<span class="s">        end</span>
+
+<span class="s">        function interface(IN,OUT)</span>
+<span class="s">            IN.ticker = Type:Int64()</span>
+<span class="s">            IN.animationDirection = Type:Int32()    -- represents animateTo target, -1 for left, 1 for right direction in X axis translation animation</span>
+<span class="s">            IN.currentAnimationValue = Type:Vec3f() -- current animation value output (see below how it is used and how to get the value)</span>
+
+<span class="s">            OUT.animProgress = Type:Float()</span>
+<span class="s">            OUT.keyframeFrom = Type:Vec3f()  -- keyframe value to animate from (will be linked to animation node&#39;s data)</span>
+<span class="s">            OUT.keyframeTo = Type:Vec3f()    -- keyframe value to animate to (will be linked to animation node&#39;s data)</span>
+<span class="s">        end</span>
+
+<span class="s">        function run(IN,OUT)</span>
+<span class="s">            -- initialize internal and some output values</span>
+<span class="s">            if GLOBAL.startTick == nil then</span>
+<span class="s">                GLOBAL.startTick = IN.ticker</span>
+<span class="s">                OUT.keyframeFrom = {0, 0, 0}</span>
+<span class="s">                OUT.keyframeTo = {0, 0, 0}</span>
+<span class="s">            end</span>
+
+<span class="s">            -- core &#39;animateTo&#39; logic, check if animation target changed</span>
+<span class="s">            -- (in this simplified case represented as &#39;direction&#39; of triangle movement)</span>
+<span class="s">            if IN.animationDirection ~= GLOBAL.currentDirection then</span>
+<span class="s">                -- reset ticker to now (we reset animation and start from beginning</span>
+<span class="s">                -- (this is just one possible solution how to handle time in an animateTo script)</span>
+<span class="s">                GLOBAL.startTick = IN.ticker</span>
+<span class="s">                -- reset source keyframe to current value, this is crucial so that the animation continues</span>
+<span class="s">                -- where it was to new target (otherwise it would &#39;jump&#39; to initial starting keyframe)</span>
+<span class="s">                OUT.keyframeFrom = IN.currentAnimationValue</span>
+<span class="s">                -- set new animation target (in this example we just animate to left or right edge of screen</span>
+<span class="s">                -- which is defined by X translation axis)</span>
+<span class="s">                OUT.keyframeTo = {IN.animationDirection, 0, 0}</span>
+
+<span class="s">                GLOBAL.currentDirection = IN.animationDirection</span>
+<span class="s">            end</span>
+
+<span class="s">            local elapsedTime = IN.ticker - GLOBAL.startTick</span>
+<span class="s">            -- ticker from TimerNode is in microseconds, our animation duration is in seconds, conversion is needed</span>
+<span class="s">            elapsedTime = elapsedTime / 1000000</span>
+
+<span class="s">            local duration = 5   -- means 5 seconds for animation to reach target value, adjust to make animation slower/faster</span>
+<span class="s">            local animProgress = elapsedTime / duration</span>
+
+<span class="s">            -- clamp normalized progress</span>
+<span class="s">            OUT.animProgress = math.min(math.max(animProgress, 0), 1)</span>
+<span class="s">        end</span>
+<span class="s">    </span><span class="dl">)</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">scriptConfig</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * We need to provide time information to the control script, we can either provide system or custom time ticker from application</span>
+<span class="cm">    * or we can create a TimerNode which generates system time for us. Note that its &#39;ticker_us&#39; output is in microseconds, control script needs</span>
+<span class="cm">    * to convert it to whatever units are used in the animation timestamps (in this example seconds).</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">TimerNode</span><span class="o">*</span><span class="w"> </span><span class="n">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">createTimerNode</span><span class="p">();</span>
+<span class="w">    </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">link</span><span class="p">(</span>
+<span class="w">        </span><span class="o">*</span><span class="n">timer</span><span class="o">-&gt;</span><span class="n">getOutputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;ticker_us&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="o">*</span><span class="n">controlScript</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;ticker&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Whenever changing a direction of the triangle animation the script logic needs to reset several values (see script code above),</span>
+<span class="cm">    * one of them (keyframeFrom) depends on the current (or rather last produced) value of animation output.</span>
+<span class="cm">    * Note that the default data flow in this example logic network is control script -&gt; animation node -&gt; binding/meshnode. In order to get</span>
+<span class="cm">    * the last animation output we need to create a link which goes against this data flow and creates a loop in logic network dependency graph, this is not allowed</span>
+<span class="cm">    * unless we use a &#39;weak&#39; link, which this example is a perfect use case for. See ramses::LogicEngine::linkWeak for more details and limitations.</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">linkWeak</span><span class="p">(</span>
+<span class="w">        </span><span class="o">*</span><span class="n">animNode</span><span class="o">-&gt;</span><span class="n">getOutputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;translation&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="o">*</span><span class="n">controlScript</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;currentAnimationValue&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Link animation data from control script to animation node so that control script can dynamically change keyframes of the animation</span>
+<span class="cm">    **/</span>
+<span class="w">    </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">link</span><span class="p">(</span>
+<span class="w">        </span><span class="o">*</span><span class="n">controlScript</span><span class="o">-&gt;</span><span class="n">getOutputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;keyframeFrom&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="o">*</span><span class="n">animNode</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;channelsData&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;translation&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;keyframes&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="mi">0u</span><span class="p">));</span><span class="w"> </span><span class="c1">// value of first keyframe (animate from)</span>
+<span class="w">    </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">link</span><span class="p">(</span>
+<span class="w">        </span><span class="o">*</span><span class="n">controlScript</span><span class="o">-&gt;</span><span class="n">getOutputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;keyframeTo&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="o">*</span><span class="n">animNode</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;channelsData&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;translation&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;keyframes&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="mi">1u</span><span class="p">));</span><span class="w"> </span><span class="c1">// value of second keyframe (animate to)</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * And finally, link control script to animation node to control its progress</span>
+<span class="cm">    **/</span>
+<span class="w">    </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">link</span><span class="p">(</span>
+<span class="w">        </span><span class="o">*</span><span class="n">controlScript</span><span class="o">-&gt;</span><span class="n">getOutputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;animProgress&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="o">*</span><span class="n">animNode</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;progress&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Show the scene on the renderer</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">renderer</span><span class="p">.</span><span class="n">showScene</span><span class="p">(</span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">getSceneId</span><span class="p">());</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Simulate an application loop.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nextChangeLoop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numChanges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">renderer</span><span class="p">.</span><span class="n">isWindowClosed</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// change direction every now and then</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">loop</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nextChangeLoop</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">currentDirection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">controlScript</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;animationDirection&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">get</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentDirection</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="n">currentDirection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">            </span><span class="n">controlScript</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;animationDirection&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">set</span><span class="p">(</span><span class="o">-</span><span class="n">currentDirection</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">nextChangeLoop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loop</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">}[</span><span class="n">numChanges</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span>
+<span class="w">            </span><span class="n">numChanges</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * Update the LogicEngine. This will apply changes to Ramses scene from any running animation.</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * In order to commit the changes to Ramses scene caused by animations logic we need to &quot;flush&quot; them.</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">flush</span><span class="p">();</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * Process window events, check if window was closed</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">renderer</span><span class="p">.</span><span class="n">processEvents</span><span class="p">();</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * Throttle the simulation loop by sleeping for a bit.</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">loop</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="08a_static_animation.html" class="btn btn-neutral float-left" title="Animation example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="09_modules.html" class="btn btn-neutral float-right" title="Modules example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

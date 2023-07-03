@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Render order example &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SkinBinding example" href="14_skinbinding.html" />
+    <link rel="prev" title="Anchor points example" href="12_anchor_point.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic.html#performance">Performance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../logic.html#list-of-all-logic-examples">List of all logic examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="00_minimal.html">Minimal logic example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01a_primitive_properties.html">Example with primitive properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01b_struct_properties.html">Example with structured properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01c_array_properties.html">Example with indexed (vector, array) properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_errors_compile_time.html">Handling compilation errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_errors_runtime.html">Handling runtime errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_ramses_scene.html">Example with Ramses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_serialization.html">Save/load from file example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_links.html">Links example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08a_static_animation.html">Animation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08b_dynamic_animation.html">Dynamic animation (animateTo) example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09_modules.html">Modules example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_globals.html">Globals example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_interfaces.html">Interfaces example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_anchor_point.html">Anchor points example</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Render order example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14_skinbinding.html">SkinBinding example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15_meshnodebinding.html">MeshNodeBinding example</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../classes/index.html">Class Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../logic.html">Overview</a></li>
+      <li class="breadcrumb-item active">Render order example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/logic/13_render_order.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="render-order-example">
+<h1>Render order example<a class="headerlink" href="#render-order-example" title="Permalink to this heading"></a></h1>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* This example demonstrates how to use AnchorPoint to track</span>
+<span class="cm">* Ramses scene content in 2D.</span>
+<span class="cm">*/</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">SceneAndNodes</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">Scene</span><span class="o">*</span><span class="w"> </span><span class="n">scene</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">RenderGroup</span><span class="o">*</span><span class="w"> </span><span class="n">renderGroup</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">MeshNode</span><span class="o">*</span><span class="w"> </span><span class="n">triangle1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">MeshNode</span><span class="o">*</span><span class="w"> </span><span class="n">triangle2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm">* Helper method which creates a simple ramses scene. For more ramses</span>
+<span class="cm">* examples, check the ramses docs at https://bmwcarit.github.io/ramses</span>
+<span class="cm">*/</span>
+<span class="n">SceneAndNodes</span><span class="w"> </span><span class="nf">CreateSceneWithTriangles</span><span class="p">(</span><span class="n">ramses</span><span class="o">::</span><span class="n">RamsesClient</span><span class="o">&amp;</span><span class="w"> </span><span class="n">client</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Use simple class to create ramses framework objects which are not essential for this example.</span>
+<span class="cm">    * For more info on those, please refer to the ramses docs: https://bmwcarit.github.io/ramses</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">SimpleRenderer</span><span class="w"> </span><span class="n">renderer</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Create a simple Ramses scene with two alpha blended triangles.</span>
+<span class="cm">     * We will control the render order of the triangles using the render group they are in.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">scene</span><span class="p">,</span><span class="w"> </span><span class="n">renderGroup</span><span class="p">,</span><span class="w"> </span><span class="n">triMesh1</span><span class="p">,</span><span class="w"> </span><span class="n">triMesh2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CreateSceneWithTriangles</span><span class="p">(</span><span class="o">*</span><span class="n">renderer</span><span class="p">.</span><span class="n">getClient</span><span class="p">());</span>
+
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">LogicEngine</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">{</span><span class="w"> </span><span class="n">ramses</span><span class="o">::</span><span class="n">EFeatureLevel_Latest</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * In order to create a render group binding we need to first specify what elements we want to expose for render order control,</span>
+<span class="cm">    * in our case it is the two triangles.</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">RamsesRenderGroupBindingElements</span><span class="w"> </span><span class="n">renderGroupElements</span><span class="p">;</span>
+<span class="w">    </span><span class="n">renderGroupElements</span><span class="p">.</span><span class="n">addElement</span><span class="p">(</span><span class="o">*</span><span class="n">triMesh1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tri1&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">renderGroupElements</span><span class="p">.</span><span class="n">addElement</span><span class="p">(</span><span class="o">*</span><span class="n">triMesh2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tri2&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ramses</span><span class="o">::</span><span class="n">RamsesRenderGroupBinding</span><span class="o">*</span><span class="w"> </span><span class="n">renderGroupBinding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">createRamsesRenderGroupBinding</span><span class="p">(</span><span class="o">*</span><span class="n">renderGroup</span><span class="p">,</span><span class="w"> </span><span class="n">renderGroupElements</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Show the scene on the renderer</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="n">renderer</span><span class="p">.</span><span class="n">showScene</span><span class="p">(</span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">getSceneId</span><span class="p">());</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Simulate an application loop.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">frameCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0u</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">renderer</span><span class="p">.</span><span class="n">isWindowClosed</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * Update the LogicEngine. This will apply changes to Ramses scene from any running animation.</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">logicEngine</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * In this example we change the render order directly using input property API, we swap the render order of the two triangles</span>
+<span class="cm">        * every few frames to show the difference. In real world application this would be managed by a more complex logic</span>
+<span class="cm">        * (e.g. sorting based on distance to camera) in another logic node (e.g. LuaScript) that would link to these property inputs.</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">++</span><span class="n">frameCounter</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">renderGroupBinding</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;renderOrders&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;tri1&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">set</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">renderGroupBinding</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;renderOrders&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;tri2&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">renderGroupBinding</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;renderOrders&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;tri1&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">renderGroupBinding</span><span class="o">-&gt;</span><span class="n">getInputs</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;renderOrders&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="s">&quot;tri2&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">set</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * In order to commit the changes to Ramses scene caused by animations logic we need to &quot;flush&quot; them.</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">flush</span><span class="p">();</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * Process window events, check if window was closed</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">renderer</span><span class="p">.</span><span class="n">processEvents</span><span class="p">();</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">        * Throttle the simulation loop by sleeping for a bit.</span>
+<span class="cm">        */</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="12_anchor_point.html" class="btn btn-neutral float-left" title="Anchor points example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="14_skinbinding.html" class="btn btn-neutral float-right" title="SkinBinding example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

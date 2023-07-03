@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ramses-logic-viewer &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Class Index" href="classes/index.html" />
+    <link rel="prev" title="Quick start" href="lua_syntax.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic.html#list-of-all-logic-examples">List of all logic examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ramses-logic-viewer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#lua-configuration-api">Lua configuration API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logic-nodes">Logic Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic-properties">Logic Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#views">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#screenshots">Screenshots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic-engine-update">Logic Engine Update</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classes/index.html">Class Index</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ramses-logic-viewer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/viewer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ramses-logic-viewer">
+<h1>ramses-logic-viewer<a class="headerlink" href="#ramses-logic-viewer" title="Permalink to this heading"></a></h1>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<p><strong>ramses-logic-viewer</strong> [options] &lt;ramsesfile&gt; [&lt;logicfile&gt; &lt;luafile&gt;]</p>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p><strong class="program">ramses-logic-viewer</strong> is a tool which can load, configure and display
+Ramses (<code class="docutils literal notranslate"><span class="pre">&lt;ramsesfile&gt;</span></code>) and Ramses Logic (<code class="docutils literal notranslate"><span class="pre">&lt;logicfile&gt;</span></code>) binary files alongside with a custom configuration (<code class="docutils literal notranslate"><span class="pre">&lt;luafile&gt;</span></code>).
+It also provides a GUI to inspect the displayed scene.</p>
+<ul class="simple">
+<li><p>Both <code class="docutils literal notranslate"><span class="pre">&lt;ramsesfile&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;logicfile&gt;</span></code> are typically created by the Ramses Composer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;luafile&gt;</span></code> is an optional configuration file written in lua to modify the scene view
+(see <a class="reference internal" href="#lua-configuration-api"><span class="std std-ref">Lua configuration API</span></a> for details)</p></li>
+<li><p>Both <code class="docutils literal notranslate"><span class="pre">&lt;logicfile&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;luafile&gt;</span></code> are found in the same path as <code class="docutils literal notranslate"><span class="pre">&lt;ramsesfile&gt;</span></code> if not provided as arguments.
+For auto-detection the file extensions <cite>rlogic</cite> and <cite>lua</cite> are expected.</p></li>
+<li><p>If no <code class="docutils literal notranslate"><span class="pre">&lt;luafile&gt;</span></code> is found, the viewer will show the scene and propose to store a default configuration.</p></li>
+<li><p>Display size is auto-detected based on the first camera viewport found in the scene.
+This can be overridden by the options <a class="reference internal" href="#cmdoption-ramses-logic-viewer-width"><code class="xref std std-option docutils literal notranslate"><span class="pre">ramses-logic-viewer</span> <span class="pre">--width</span></code></a> and <a class="reference internal" href="#cmdoption-ramses-logic-viewer-height"><code class="xref std std-option docutils literal notranslate"><span class="pre">ramses-logic-viewer</span> <span class="pre">--height</span></code></a>.</p></li>
+</ul>
+<p>The tool’s intended use-cases are primarily:</p>
+<ul class="simple">
+<li><p>Inspect binary files (as a simplified version of the Ramses Composer,
+or for platforms where the Ramses Composer is not available)</p></li>
+<li><p>Demonstrate or test scene behavior for different input values</p></li>
+<li><p>Make screenshots of scenes (e.g. to perform automated image-based tests in build jobs)</p></li>
+</ul>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h2>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-no-offscreen">
+<span class="sig-name descname"><span class="pre">--no-offscreen</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-no-offscreen" title="Permalink to this definition"></a></dt>
+<dd><p>Renders the scene directly to the window’s framebuffer. Screenshot size will be the current window size.
+If switched off (default), the scene is rendered to an offscreen buffer with the initial scene size.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-exec">
+<span class="sig-name descname"><span class="pre">--exec</span></span><span class="sig-prename descclassname"><span class="pre">=&lt;luafunction&gt;</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-exec" title="Permalink to this definition"></a></dt>
+<dd><p>Calls the given &lt;luafunction&gt; defined in <code class="docutils literal notranslate"><span class="pre">&lt;luafile&gt;</span></code> and exits. This can be e.g. used to run a test case
+and/or to make a screenshot</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-exec-lua">
+<span class="sig-name descname"><span class="pre">--exec-lua</span></span><span class="sig-prename descclassname"><span class="pre">=&lt;lua&gt;</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-exec-lua" title="Permalink to this definition"></a></dt>
+<dd><p>Runs the given lua source code and exits. The code is executed after parsing <code class="docutils literal notranslate"><span class="pre">&lt;luafile&gt;</span></code> (if available)
+and runs in the same context, i.e.: all functions from <code class="docutils literal notranslate"><span class="pre">&lt;luafile&gt;</span></code> and the <a class="reference internal" href="#lua-configuration-api"><span class="std std-ref">Lua configuration API</span></a> can be used</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-headless">
+<span class="sig-name descname"><span class="pre">--headless</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-headless" title="Permalink to this definition"></a></dt>
+<dd><p>Runs the viewer without user interface and renderer. This can be useful for CI environments to run tests
+(<a class="reference internal" href="#cmdoption-ramses-logic-viewer-exec"><code class="xref std std-option docutils literal notranslate"><span class="pre">ramses-logic-viewer</span> <span class="pre">--exec</span></code></a> <a class="reference internal" href="#cmdoption-ramses-logic-viewer-exec-lua"><code class="xref std std-option docutils literal notranslate"><span class="pre">ramses-logic-viewer</span> <span class="pre">--exec-lua</span></code></a>).
+Screenshots will not work in this mode though.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-width">
+<span class="sig-name descname"><span class="pre">--width</span></span><span class="sig-prename descclassname"> <span class="pre">WIDTH</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-width" title="Permalink to this definition"></a></dt>
+<dd><p>overrides the auto-detected display width</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-height">
+<span class="sig-name descname"><span class="pre">--height</span></span><span class="sig-prename descclassname"> <span class="pre">HEIGHT</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-height" title="Permalink to this definition"></a></dt>
+<dd><p>overrides the auto-detected display height</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-msaa">
+<span class="sig-name descname"><span class="pre">--msaa</span></span><span class="sig-prename descclassname"> <span class="pre">SAMPLES</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-msaa" title="Permalink to this definition"></a></dt>
+<dd><p>Instructs the renderer to apply multisampling (Valid values: 1, 2, 4, 8)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-clear-color">
+<span class="sig-name descname"><span class="pre">--clear-color</span></span><span class="sig-prename descclassname"> <span class="pre">R</span> <span class="pre">G</span> <span class="pre">B</span> <span class="pre">A</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-clear-color" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the display clear color to other than the default black (e.g.: <code class="code docutils literal notranslate"><span class="pre">ramses-logic-viewer</span> <span class="pre">--clear-color</span> <span class="pre">0</span> <span class="pre">0.5</span> <span class="pre">0.8</span> <span class="pre">1</span></code>)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-write-config">
+<span class="sig-name descname"><span class="pre">--write-config</span></span><span class="sig-prename descclassname"> <span class="pre">[filename]</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-write-config" title="Permalink to this definition"></a></dt>
+<dd><p>Writes the default lua configuration to the given filename. If the filename is omitted, the viewer will use
+the <code class="docutils literal notranslate"><span class="pre">&lt;logicfile&gt;</span></code>’s name with lua extension.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-ramses-logic-viewer-log-level-console">
+<span class="sig-name descname"><span class="pre">--log-level-console</span></span><span class="sig-prename descclassname"> <span class="pre">[off|fatal|error|warn|info|debug|trace]</span></span><a class="headerlink" href="#cmdoption-ramses-logic-viewer-log-level-console" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the log level for console messages. <cite>error</cite> is used by default.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="lua-configuration-api">
+<span id="id1"></span><h1>Lua configuration API<a class="headerlink" href="#lua-configuration-api" title="Permalink to this heading"></a></h1>
+<p>The <strong class="program">ramses-logic-viewer</strong> exposes a lua module <code class="docutils literal notranslate"><span class="pre">rlogic</span></code> that allows to interact with the viewer’s
+logic engine instance. <code class="docutils literal notranslate"><span class="pre">rlogic</span></code> mimics the Ramses Logic C++ API and provides some extra interfaces to take
+screenshots and define interactive views.</p>
+<section id="logic-nodes">
+<h2>Logic Nodes<a class="headerlink" href="#logic-nodes" title="Permalink to this heading"></a></h2>
+<p>The module <code class="docutils literal notranslate"><span class="pre">rlogic</span></code> provides members to access all Logic Node types:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.interfaces</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::LuaInterface</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.scripts</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::LuaScript</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.animationNodes</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::AnimationNode</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.timerNodes</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::TimerNode</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.nodeBindings</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesNodeBinding</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.appearanceBindings</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesAppearanceBinding</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.cameraBindings</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesCameraBinding</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.renderPassBindings</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesRenderPassBinding</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.renderGroupBindings</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesRenderGroupBinding</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.meshNodeBindings</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::RamsesMeshNodeBinding</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.anchorPoints</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::AnchorPoint</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rlogic.skinBindings</span></code> (<code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">ramses::SkinBinding</span></code>)</p></li>
+</ul>
+<p>The Logic Node instances can be either found by name or by object id.
+Alternatively the node list can be iterated.</p>
+<p>Example:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- returns the LuaScript node with the name `foo` or nil if it does not exist</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span>
+
+<span class="c1">-- returns the LuaScript node with the object id `42` or nil if it does not exist</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span>
+
+<span class="c1">-- returns the LuaScript node with the name `name with spaces` or nil if it does not exist</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">[</span><span class="s2">&quot;name with spaces&quot;</span><span class="p">]</span>
+
+<span class="c1">-- iterates through all LuaScript instances</span>
+<span class="kr">for</span> <span class="n">script</span> <span class="kr">in</span> <span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">()</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ramses Logic does not guarantee unique names.
+Also empty names are possible.</p>
+</div>
+</section>
+<section id="logic-properties">
+<h2>Logic Properties<a class="headerlink" href="#logic-properties" title="Permalink to this heading"></a></h2>
+<p>Logic Nodes own Logic Properties. They are accessed like this:</p>
+<ul class="simple">
+<li><p><em>struct</em> property children are indexed by name</p></li>
+<li><p><em>array</em> property children are indexed by number (first element has index 1 by lua convention)</p></li>
+<li><p>property <em>values</em> are indexed by the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">integerProperty</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">stringProperty</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">structProperty</span><span class="p">.</span><span class="n">vec3iChild</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">arrayProperty</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">integerChild</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1">-- returns the property&#39;s value</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">integerProperty</span><span class="p">.</span><span class="n">value</span>
+<span class="c1">-- returns the property object</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">integerProperty</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Properties can be readonly if they are output properties or linked to an output property.
+Trying to set values to them will cause a runtime error.</p>
+</div>
+</section>
+<section id="views">
+<h2>Views<a class="headerlink" href="#views" title="Permalink to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rlogic.views</span></code> can be used to demonstrate typical scene configurations to the user.
+If the lua script defines views, the user can simply switch between them in the UI
+and does not need to know how to configure all the corresponding properties.</p>
+<p>A view is a lua table that contains the following members:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">name</span></code></dt><dd><p>A string attribute that contains the view’s name</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">update(time_ms)</span></code></dt><dd><p>A function that is called for every frame by the <strong class="program">ramses-logic-viewer</strong>.
+The <code class="docutils literal notranslate"><span class="pre">time_ms</span></code> parameter is a monotonic time value in milliseconds.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">description</span></code></dt><dd><p>An optional string attribute that may contain a longer text to describe the view.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">inputs</span></code></dt><dd><p>An optional array of writable (input) properties. The user will see a dedicated UI to modify these properties.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">simpleView</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Simple View&quot;</span><span class="p">,</span>
+    <span class="n">update</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">time_ms</span><span class="p">)</span>
+        <span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="kr">end</span>
+<span class="p">}</span>
+
+<span class="n">animatedView</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Animated View&quot;</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Scene animates based on the input time value&quot;</span><span class="p">,</span>
+    <span class="n">update</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">time_ms</span><span class="p">)</span>
+        <span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">time</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">time_ms</span>
+    <span class="kr">end</span>
+<span class="p">}</span>
+
+<span class="n">interactiveView</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Interactive View&quot;</span><span class="p">,</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Scene animates based on the input time value. User can modify the color by UI&quot;</span><span class="p">,</span>
+    <span class="n">update</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">time_ms</span><span class="p">)</span>
+        <span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">time</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">time_ms</span>
+        <span class="c1">-- description could optionally be updated based on the current state:</span>
+        <span class="c1">-- interactiveView.description = &quot;...&quot;</span>
+    <span class="kr">end</span><span class="p">,</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">color</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">-- assigns the view list</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">views</span> <span class="o">=</span> <span class="p">{</span><span class="n">simpleView</span><span class="p">,</span> <span class="n">animatedView</span><span class="p">,</span> <span class="n">interactiveView</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="screenshots">
+<h2>Screenshots<a class="headerlink" href="#screenshots" title="Permalink to this heading"></a></h2>
+<p>Screenshots can be taken by the <code class="docutils literal notranslate"><span class="pre">rlogic.screenshot(filename)</span></code> function.
+The <strong class="program">ramses-logic-viewer</strong> will implicitly update the logic state before.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">screenshot</span><span class="p">(</span><span class="n">foo_red</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">screenshot</span><span class="p">(</span><span class="n">foo_green</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default the Logic Viewer creates an offscreen buffer for the scene.
+That’s why the screenshot’s size is independent of the window size and does not contain the Logic Viewer’s UI.</p>
+</div>
+</section>
+<section id="logic-engine-update">
+<h2>Logic Engine Update<a class="headerlink" href="#logic-engine-update" title="Permalink to this heading"></a></h2>
+<p>The logic engine is automatically updated (<a class="reference internal" href="classes/logic.html#_CPPv4N6ramses11LogicEngine6updateEv" title="ramses::LogicEngine::update"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">ramses::LogicEngine::update()</span></code></a>) before
+a new frame is drawn or before a screenshot is stored.
+In batch mode (<a class="reference internal" href="#cmdoption-ramses-logic-viewer-exec"><code class="xref std std-option docutils literal notranslate"><span class="pre">ramses-logic-viewer</span> <span class="pre">--exec</span></code></a> <a class="reference internal" href="#cmdoption-ramses-logic-viewer-exec-lua"><code class="xref std std-option docutils literal notranslate"><span class="pre">ramses-logic-viewer</span> <span class="pre">--exec-lua</span></code></a>) it’s sometimes useful to explicitly update
+the logic engine state by calling <code class="docutils literal notranslate"><span class="pre">rlogic.update()</span></code>:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">IN</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+<span class="n">rlogic</span><span class="p">.</span><span class="n">update</span><span class="p">()</span>
+<span class="kr">if</span> <span class="ow">not</span> <span class="n">rlogic</span><span class="p">.</span><span class="n">scripts</span><span class="p">.</span><span class="n">foo</span><span class="p">.</span><span class="n">OUT</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">value</span> <span class="o">==</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span> <span class="kr">then</span>
+    <span class="nb">error</span><span class="p">(</span><span class="s2">&quot;unexpected value&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lua_syntax.html" class="btn btn-neutral float-left" title="Quick start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classes/index.html" class="btn btn-neutral float-right" title="Class Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

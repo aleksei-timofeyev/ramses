@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramses Text API &mdash; ramses 28.0.0-rc1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ramses Logic API" href="logic.html" />
+    <link rel="prev" title="Ramses Rendeer API" href="renderer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quickstart</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../readme_ref.html">RAMSES</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Building</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Cloning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#build-requirements">Build requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#build-options">Build options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#project-version">Project version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#building-on-windows">Building on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html#building-on-linux-natively">Building on Linux natively</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core.html">Ramses Core overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#advanced-concepts">Advanced concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core.html#list-of-all-examples">List of all examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logic API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#logic-node-creation">Logic node creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#object-lifecycle">Object lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#creating-links-between-nodes">Creating links between nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#linking-logic-nodes-to-ramses-scenes">Linking logic nodes to Ramses scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#dynamic-sorting-of-content">Dynamic sorting of content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#animations">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#error-handling">Error handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#iterating-over-object-collections">Iterating over object collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#saving-loading-from-file">Saving/Loading from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#logging">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#security-and-memory-safety">Security and memory safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#performance">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic.html#list-of-all-logic-examples">List of all logic examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lua Syntax</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#basics-of-lua">Basics of Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#declaring-an-interface-and-a-run-function">Declaring an interface() and a run() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#global-variables-and-the-init-function">Global variables and the init() function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#custom-functions">Custom functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#environments-and-isolation">Environments and isolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#indexing-inside-lua">Indexing inside Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#errors-in-scripts">Errors in scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#using-lua-modules">Using Lua modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua_syntax.html#additional-lua-syntax-specifics">Additional Lua syntax specifics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Viewer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../viewer.html">ramses-logic-viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewer.html#lua-configuration-api">Lua configuration API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class Index</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Class Index</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core.html">Ramses Core API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="renderer.html">Ramses Rendeer API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ramses Text API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">Ramses Logic API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Ramses Utils API</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ChangeLog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog_ref.html">Ramses Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html">Understand RAMSES Logic architecture and design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#developer-guidelines">Developer guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#pull-requests">Pull requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#commit-guidelines">Commit guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#review">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#code-style">Code style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#continuous-integration">Continuous integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev.html#branching">Branching</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ramses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Class Index</a></li>
+      <li class="breadcrumb-item active">Ramses Text API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/classes/text.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ramses-text-api">
+<h1>Ramses Text API<a class="headerlink" href="#ramses-text-api" title="Permalink to this heading"></a></h1>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv46FontId">
+<span id="_CPPv36FontId"></span><span id="_CPPv26FontId"></span><span class="target" id="group__TextAPI_1ga9e71bf1963aa3e607ac625a84f66143e"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontId</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">StronglyTypedValue</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">numeric_limits</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">max</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">FontIdTag</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv46FontId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A strongly typed integer to distinguish between different fonts. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414FontInstanceId">
+<span id="_CPPv314FontInstanceId"></span><span id="_CPPv214FontInstanceId"></span><span class="target" id="group__TextAPI_1ga7a1f3ed855229ca4ac9a0729ecb5e54d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontInstanceId</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">StronglyTypedValue</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">numeric_limits</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">max</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">FontInstanceIdTag</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv414FontInstanceId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A strongly typed integer to distinguish between different font instances. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423GetBoundingBoxForStringN18GlyphMetricsVector14const_iteratorEN18GlyphMetricsVector14const_iteratorE">
+<span id="_CPPv323GetBoundingBoxForStringN18GlyphMetricsVector14const_iteratorEN18GlyphMetricsVector14const_iteratorE"></span><span id="_CPPv223GetBoundingBoxForStringN18GlyphMetricsVector14const_iteratorEN18GlyphMetricsVector14const_iteratorE"></span><span id="GetBoundingBoxForString__GlyphMetricsVector::const_iterator.GlyphMetricsVector::const_iterator"></span><span class="target" id="group__TextAPI_1ga68775a8f3742a86550377313ec8f89a6"></span><span class="n"><span class="pre">StringBoundingBox</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetBoundingBoxForString</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">first</span></span>, <span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">last</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423GetBoundingBoxForStringN18GlyphMetricsVector14const_iteratorEN18GlyphMetricsVector14const_iteratorE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Compute a bounding box for a string represented by a range of <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> – <strong>[in]</strong> Beginning of range of <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a> to compute bounding box </p></li>
+<li><p><strong>last</strong> – <strong>[in]</strong> End of range of <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a> to compute bounding box, glyph pointed to by last is not included </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bounding box of the provided string, or bounding box of Zero values on failure </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423GetBoundingBoxForStringRKN18GlyphMetricsVector22const_reverse_iteratorERKN18GlyphMetricsVector22const_reverse_iteratorE">
+<span id="_CPPv323GetBoundingBoxForStringRKN18GlyphMetricsVector22const_reverse_iteratorERKN18GlyphMetricsVector22const_reverse_iteratorE"></span><span id="_CPPv223GetBoundingBoxForStringRKN18GlyphMetricsVector22const_reverse_iteratorERKN18GlyphMetricsVector22const_reverse_iteratorE"></span><span id="GetBoundingBoxForString__GlyphMetricsVector::const_reverse_iteratorCR.GlyphMetricsVector::const_reverse_iteratorCR"></span><span class="target" id="group__TextAPI_1ga5405194ca4f415422605014048c2cc37"></span><span class="n"><span class="pre">StringBoundingBox</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetBoundingBoxForString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_reverse_iterator</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">first</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_reverse_iterator</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">last</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423GetBoundingBoxForStringRKN18GlyphMetricsVector22const_reverse_iteratorERKN18GlyphMetricsVector22const_reverse_iteratorE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Compute a bounding box for a string represented by a range of <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> – <strong>[in]</strong> Beginning of range of <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a> to compute bounding box </p></li>
+<li><p><strong>last</strong> – <strong>[in]</strong> End of range of <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a> to compute bounding box, glyph pointed to by last is not included </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bounding box of the provided string, or bounding box of Zero values on failure </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11FontCascadeE">
+<span id="_CPPv3N6ramses11FontCascadeE"></span><span id="_CPPv2N6ramses11FontCascadeE"></span><span id="ramses::FontCascade"></span><span class="target" id="structramses_1_1FontCascade"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontCascade</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11FontCascadeE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;FontCascade.h&gt;</em></div>
+<p>struct to define a font cascade </p>
+<p>Allows to define a list of fonts that are tried sequentially for character availability. The first font that supports a given character is returned. Also supports generic fallback characters and blacklisted characters. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11FontCascade12fontAccessorE">
+<span id="_CPPv3N6ramses11FontCascade12fontAccessorE"></span><span id="_CPPv2N6ramses11FontCascade12fontAccessorE"></span><span id="ramses::FontCascade::fontAccessor__IFontAccessorCR"></span><span class="target" id="structramses_1_1FontCascade_1a5209d51ab55218e70ecdf37b69e802c5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses13IFontAccessorE" title="ramses::IFontAccessor"><span class="n"><span class="pre">IFontAccessor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">fontAccessor</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11FontCascade12fontAccessorE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>interface to use to resolve FontInstanceId to a FontInstance </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11FontCascade13charsToRemoveE">
+<span id="_CPPv3N6ramses11FontCascade13charsToRemoveE"></span><span id="_CPPv2N6ramses11FontCascade13charsToRemoveE"></span><span id="ramses::FontCascade::charsToRemove__std::u32string"></span><span class="target" id="structramses_1_1FontCascade_1ad69941b09409c48814ef316c18a4a49d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">u32string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">charsToRemove</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11FontCascade13charsToRemoveE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String of characters that will be removed from a processed string. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11FontCascade16fontPriorityListE">
+<span id="_CPPv3N6ramses11FontCascade16fontPriorityListE"></span><span id="_CPPv2N6ramses11FontCascade16fontPriorityListE"></span><span id="ramses::FontCascade::fontPriorityList__OrderedFontList"></span><span class="target" id="structramses_1_1FontCascade_1a24c4a08516f9937d082a6d782489db75"></span><span class="n"><span class="pre">OrderedFontList</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fontPriorityList</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11FontCascade16fontPriorityListE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Ordered list of font instance ids to try for each character. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11FontCascade12fallbackFontE">
+<span id="_CPPv3N6ramses11FontCascade12fallbackFontE"></span><span id="_CPPv2N6ramses11FontCascade12fallbackFontE"></span><span id="ramses::FontCascade::fallbackFont__FontInstanceId"></span><span class="target" id="structramses_1_1FontCascade_1af17b2779abb143a29e81a165a1226a18"></span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fallbackFont</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11FontCascade12fallbackFontE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Fallback font used for fallbackChar when none in fontPriorityList matched. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11FontCascade12fallbackCharE">
+<span id="_CPPv3N6ramses11FontCascade12fallbackCharE"></span><span id="_CPPv2N6ramses11FontCascade12fallbackCharE"></span><span id="ramses::FontCascade::fallbackChar__char32_t"></span><span class="target" id="structramses_1_1FontCascade_1a58cdc92cc37b770939b15c305896daaf"></span><span class="kt"><span class="pre">char32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fallbackChar</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11FontCascade12fallbackCharE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Fallback character when no match was found in fontPriorityList. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11FontCascade35FilterAndFindFontInstancesForStringERK11FontCascadeRKNSt9u32stringER19FontInstanceOffsets">
+<span id="_CPPv3N6ramses11FontCascade35FilterAndFindFontInstancesForStringERK11FontCascadeRKNSt9u32stringER19FontInstanceOffsets"></span><span id="_CPPv2N6ramses11FontCascade35FilterAndFindFontInstancesForStringERK11FontCascadeRKNSt9u32stringER19FontInstanceOffsets"></span><span id="ramses::FontCascade::FilterAndFindFontInstancesForString__FontCascadeCR.std::u32stringCR.FontInstanceOffsetsR"></span><span class="target" id="structramses_1_1FontCascade_1ae645c41c410ec869a4b3ea5091b2bb7b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">u32string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FilterAndFindFontInstancesForString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses11FontCascadeE" title="ramses::FontCascade"><span class="n"><span class="pre">FontCascade</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fontCascade</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">u32string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span>, <span class="n"><span class="pre">FontInstanceOffsets</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fontOffsets</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses11FontCascade35FilterAndFindFontInstancesForStringERK11FontCascadeRKNSt9u32stringER19FontInstanceOffsets" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Process a character string according to given <a class="reference internal" href="#structramses_1_1FontCascade"><span class="std std-ref">FontCascade</span></a>. </p>
+<p>Creates a string with characters removed or replaced according to given FontInstance. Additionally creates FontInstanceOffsets specifying the font instance to use for all returned characters. Intended to be used in conjunction with <a class="reference internal" href="#classramses_1_1TextCache_1a88bc354d00c7421056dee81e7a9709c0"><span class="std std-ref">TextCache::getPositionedGlyphs</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontCascade</strong> – <strong>[in]</strong> the font cascade used to process str </p></li>
+<li><p><strong>str</strong> – <strong>[in]</strong> the character string to process </p></li>
+<li><p><strong>fontOffsets</strong> – <strong>[out]</strong> vector of FontOffset describing the font to use </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The processed string </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses17FontInstanceIdTagE">
+<span id="_CPPv3N6ramses17FontInstanceIdTagE"></span><span id="_CPPv2N6ramses17FontInstanceIdTagE"></span><span id="ramses::FontInstanceIdTag"></span><span class="target" id="structramses_1_1FontInstanceIdTag"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontInstanceIdTag</span></span></span><a class="headerlink" href="#_CPPv4N6ramses17FontInstanceIdTagE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;FontInstanceId.h&gt;</em></div>
+<p>An empty struct to make FontInstanceId a strong type. </p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses18FontInstanceOffsetE">
+<span id="_CPPv3N6ramses18FontInstanceOffsetE"></span><span id="_CPPv2N6ramses18FontInstanceOffsetE"></span><span id="ramses::FontInstanceOffset"></span><span class="target" id="structramses_1_1FontInstanceOffset"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontInstanceOffset</span></span></span><a class="headerlink" href="#_CPPv4N6ramses18FontInstanceOffsetE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;FontInstanceOffsets.h&gt;</em></div>
+<p>A list of tuples from font instances and offsets into a string. </p>
+<p>Used to tell the text API which font should be used for which substring when creating glyphs for a string. The list is used as this: take entry N of the list, start at string offset ‘N:beginOffset’ and use font ‘N:fontInstance’ until offset ‘N+1:beginOffset’. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses18FontInstanceOffset12fontInstanceE">
+<span id="_CPPv3N6ramses18FontInstanceOffset12fontInstanceE"></span><span id="_CPPv2N6ramses18FontInstanceOffset12fontInstanceE"></span><span id="ramses::FontInstanceOffset::fontInstance__FontInstanceId"></span><span class="target" id="structramses_1_1FontInstanceOffset_1ab0e6bc316c3520e5ed84ecaa64c26657"></span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fontInstance</span></span></span><a class="headerlink" href="#_CPPv4N6ramses18FontInstanceOffset12fontInstanceE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Font instance to use starting at this offset. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses18FontInstanceOffset11beginOffsetE">
+<span id="_CPPv3N6ramses18FontInstanceOffset11beginOffsetE"></span><span id="_CPPv2N6ramses18FontInstanceOffset11beginOffsetE"></span><span id="ramses::FontInstanceOffset::beginOffset__std::s"></span><span class="target" id="structramses_1_1FontInstanceOffset_1a0445c8376dbfbad749a49c27c52e3b94"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">beginOffset</span></span></span><a class="headerlink" href="#_CPPv4N6ramses18FontInstanceOffset11beginOffsetE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Offset into string where to start. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistryE">
+<span id="_CPPv3N6ramses12FontRegistryE"></span><span id="_CPPv2N6ramses12FontRegistryE"></span><span id="ramses::FontRegistry"></span><span class="target" id="classramses_1_1FontRegistry"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontRegistry</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">ramses</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N6ramses13IFontAccessorE" title="ramses::IFontAccessor"><span class="n"><span class="pre">IFontAccessor</span></span></a><a class="headerlink" href="#_CPPv4N6ramses12FontRegistryE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;FontRegistry.h&gt;</em></div>
+<p>Font registry can be used to load Freetype2 fonts and create font instances (optionally with Harfbuzz). These are owned and managed by <a class="reference internal" href="#classramses_1_1FontRegistry"><span class="std std-ref">FontRegistry</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry12FontRegistryEv">
+<span id="_CPPv3N6ramses12FontRegistry12FontRegistryEv"></span><span id="_CPPv2N6ramses12FontRegistry12FontRegistryEv"></span><span id="ramses::FontRegistry::FontRegistry"></span><span class="target" id="classramses_1_1FontRegistry_1a1478b00490feaea32708faa8d3896f22"></span><span class="sig-name descname"><span class="n"><span class="pre">FontRegistry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry12FontRegistryEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Constructor for <a class="reference internal" href="#classramses_1_1FontRegistry"><span class="std std-ref">FontRegistry</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistryD0Ev">
+<span id="_CPPv3N6ramses12FontRegistryD0Ev"></span><span id="_CPPv2N6ramses12FontRegistryD0Ev"></span><span id="ramses::FontRegistry::~FontRegistry"></span><span class="target" id="classramses_1_1FontRegistry_1a7dd87bf2d913d79a1c431ffa835dc0a4"></span><span class="sig-name descname"><span class="n"><span class="pre">~FontRegistry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistryD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Destructor for <a class="reference internal" href="#classramses_1_1FontRegistry"><span class="std std-ref">FontRegistry</span></a>. Destroys all created fonts. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses12FontRegistry15getFontInstanceE14FontInstanceId">
+<span id="_CPPv3NK6ramses12FontRegistry15getFontInstanceE14FontInstanceId"></span><span id="_CPPv2NK6ramses12FontRegistry15getFontInstanceE14FontInstanceId"></span><span id="ramses::FontRegistry::getFontInstance__FontInstanceIdC"></span><span class="target" id="classramses_1_1FontRegistry_1a397677cb63e8684509f036a3172b39d6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses13IFontInstanceE" title="ramses::IFontInstance"><span class="n"><span class="pre">IFontInstance</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFontInstance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fontInstanceId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK6ramses12FontRegistry15getFontInstanceE14FontInstanceId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get font instance object corresponding to given id. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fontInstanceId</strong> – <strong>[in]</strong> The id of font instance </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The font instance object, nullptr if not found </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry19createFreetype2FontENSt11string_viewE">
+<span id="_CPPv3N6ramses12FontRegistry19createFreetype2FontENSt11string_viewE"></span><span id="_CPPv2N6ramses12FontRegistry19createFreetype2FontENSt11string_viewE"></span><span id="ramses::FontRegistry::createFreetype2Font__std::string_view"></span><span class="target" id="classramses_1_1FontRegistry_1ac67161f4ce2e6af4a541347245019cee"></span><a class="reference internal" href="#_CPPv46FontId" title="FontId"><span class="n"><span class="pre">FontId</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createFreetype2Font</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fontPath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry19createFreetype2FontENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Load Freetype2 font from file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fontPath</strong> – <strong>[in]</strong> The file path to the font </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The font id, FontId::Invalid() on error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry37createFreetype2FontFromFileDescriptorEi6size_t6size_t">
+<span id="_CPPv3N6ramses12FontRegistry37createFreetype2FontFromFileDescriptorEi6size_t6size_t"></span><span id="_CPPv2N6ramses12FontRegistry37createFreetype2FontFromFileDescriptorEi6size_t6size_t"></span><span id="ramses::FontRegistry::createFreetype2FontFromFileDescriptor__i.s.s"></span><span class="target" id="classramses_1_1FontRegistry_1a379788dc72589522f27d71b5a9479ab0"></span><a class="reference internal" href="#_CPPv46FontId" title="FontId"><span class="n"><span class="pre">FontId</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createFreetype2FontFromFileDescriptor</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fd</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry37createFreetype2FontFromFileDescriptorEi6size_t6size_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Load Freetype2 font from an open file descriptor. </p>
+<p>The font file must be in the already opened filedescriptor at absolute position offset within the file. The filedescriptor must be opened for read access and may not be modified anymore after this call. The filedescriptor must support seeking. Ramses takes ownership of the filedescriptor and will close it when not needed anymore.</p>
+<p>The behavior is undefined if the filedescriptor does not contain a complete and valid font at offset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fd</strong> – <strong>[in]</strong> Open and readable filedescriptor. </p></li>
+<li><p><strong>offset</strong> – <strong>[in]</strong> Absolute starting position of the font data within fd. </p></li>
+<li><p><strong>length</strong> – <strong>[in]</strong> Size of the font data within fd. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The font id, FontId::Invalid() on error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry27createFreetype2FontInstanceE6FontId8uint32_tb">
+<span id="_CPPv3N6ramses12FontRegistry27createFreetype2FontInstanceE6FontId8uint32_tb"></span><span id="_CPPv2N6ramses12FontRegistry27createFreetype2FontInstanceE6FontId8uint32_tb"></span><span id="ramses::FontRegistry::createFreetype2FontInstance__FontId.uint32_t.b"></span><span class="target" id="classramses_1_1FontRegistry_1a47e62f1d6b99fcaeded6929a93128e6d"></span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createFreetype2FontInstance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46FontId" title="FontId"><span class="n"><span class="pre">FontId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fontId</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">forceAutohinting</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry27createFreetype2FontInstanceE6FontId8uint32_tb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Create Freetype2 font instance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontId</strong> – <strong>[in]</strong> The id of the font from which to create a font instance </p></li>
+<li><p><strong>size</strong> – <strong>[in]</strong> Size (height in rasterized texels of glyphs) of the font </p></li>
+<li><p><strong>forceAutohinting</strong> – <strong>[in]</strong> Force autohinting (a flag for FT2 library) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The font instance id, FontInstanceId::Invalid() on error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry39createFreetype2FontInstanceWithHarfBuzzE6FontId8uint32_tb">
+<span id="_CPPv3N6ramses12FontRegistry39createFreetype2FontInstanceWithHarfBuzzE6FontId8uint32_tb"></span><span id="_CPPv2N6ramses12FontRegistry39createFreetype2FontInstanceWithHarfBuzzE6FontId8uint32_tb"></span><span id="ramses::FontRegistry::createFreetype2FontInstanceWithHarfBuzz__FontId.uint32_t.b"></span><span class="target" id="classramses_1_1FontRegistry_1a5a700987b41214ff19f794cc1b234c72"></span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createFreetype2FontInstanceWithHarfBuzz</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46FontId" title="FontId"><span class="n"><span class="pre">FontId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fontId</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">forceAutohinting</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry39createFreetype2FontInstanceWithHarfBuzzE6FontId8uint32_tb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Create Freetype2 font instance with Harfbuzz shaping. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontId</strong> – <strong>[in]</strong> The id of the font from which to create a font instance </p></li>
+<li><p><strong>size</strong> – <strong>[in]</strong> Size (in rasterized texels of glyphs) of the font </p></li>
+<li><p><strong>forceAutohinting</strong> – <strong>[in]</strong> Force autohinting (a flag for FT2 library) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The font instance id, FontInstanceId::Invalid() on error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry10deleteFontE6FontId">
+<span id="_CPPv3N6ramses12FontRegistry10deleteFontE6FontId"></span><span id="_CPPv2N6ramses12FontRegistry10deleteFontE6FontId"></span><span id="ramses::FontRegistry::deleteFont__FontId"></span><span class="target" id="classramses_1_1FontRegistry_1a130d5c85ea19bba6956b4661835c249e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deleteFont</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46FontId" title="FontId"><span class="n"><span class="pre">FontId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fontId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry10deleteFontE6FontId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Delete an existing font. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fontId</strong> – <strong>[in]</strong> The id of the font to be deleted </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry18deleteFontInstanceE14FontInstanceId">
+<span id="_CPPv3N6ramses12FontRegistry18deleteFontInstanceE14FontInstanceId"></span><span id="_CPPv2N6ramses12FontRegistry18deleteFontInstanceE14FontInstanceId"></span><span id="ramses::FontRegistry::deleteFontInstance__FontInstanceId"></span><span class="target" id="classramses_1_1FontRegistry_1a18d7f3790e53b484fa2d224cc40f79a4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deleteFontInstance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fontInstance</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry18deleteFontInstanceE14FontInstanceId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Delete an existing font instance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fontInstance</strong> – <strong>[in]</strong> The id of the font instance to be deleted </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry12FontRegistryERK12FontRegistry">
+<span id="_CPPv3N6ramses12FontRegistry12FontRegistryERK12FontRegistry"></span><span id="_CPPv2N6ramses12FontRegistry12FontRegistryERK12FontRegistry"></span><span id="ramses::FontRegistry::FontRegistry__FontRegistryCR"></span><span class="target" id="classramses_1_1FontRegistry_1ac6e238b5b87bf14c6dacd2cb75de61c0"></span><span class="sig-name descname"><span class="n"><span class="pre">FontRegistry</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses12FontRegistry12FontRegistryERK12FontRegistry" title="ramses::FontRegistry::FontRegistry"><span class="n"><span class="pre">FontRegistry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry12FontRegistryERK12FontRegistry" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Deleted copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – unused </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistryaSERK12FontRegistry">
+<span id="_CPPv3N6ramses12FontRegistryaSERK12FontRegistry"></span><span id="_CPPv2N6ramses12FontRegistryaSERK12FontRegistry"></span><span id="ramses::FontRegistry::assign-operator__FontRegistryCR"></span><span class="target" id="classramses_1_1FontRegistry_1a68422dd1edfa5f0baf543e1de1f181ae"></span><a class="reference internal" href="#_CPPv4N6ramses12FontRegistryE" title="ramses::FontRegistry"><span class="n"><span class="pre">FontRegistry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses12FontRegistryE" title="ramses::FontRegistry"><span class="n"><span class="pre">FontRegistry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistryaSERK12FontRegistry" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Deleted copy assignment. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – unused </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>unused </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12FontRegistry4implE">
+<span id="_CPPv3N6ramses12FontRegistry4implE"></span><span id="_CPPv2N6ramses12FontRegistry4implE"></span><span id="ramses::FontRegistry::impl__FontRegistryImplR"></span><span class="target" id="classramses_1_1FontRegistry_1a7781a98feddf1482265657b074da80d8"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="n"><span class="pre">FontRegistryImpl</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">impl</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12FontRegistry4implE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Stores internal data for implementation specifics of <a class="reference internal" href="#classramses_1_1FontRegistry"><span class="std std-ref">FontRegistry</span></a>. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8GlyphKeyE">
+<span id="_CPPv3N6ramses8GlyphKeyE"></span><span id="_CPPv2N6ramses8GlyphKeyE"></span><span id="ramses::GlyphKey"></span><span class="target" id="structramses_1_1GlyphKey"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GlyphKey</span></span></span><a class="headerlink" href="#_CPPv4N6ramses8GlyphKeyE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;Glyph.h&gt;</em></div>
+<p><a class="reference internal" href="#structramses_1_1GlyphKey"><span class="std std-ref">GlyphKey</span></a> identifies a glyph with a specific font instance. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8GlyphKey8GlyphKeyEv">
+<span id="_CPPv3N6ramses8GlyphKey8GlyphKeyEv"></span><span id="_CPPv2N6ramses8GlyphKey8GlyphKeyEv"></span><span id="ramses::GlyphKey::GlyphKey"></span><span class="target" id="structramses_1_1GlyphKey_1a1aa0af1b0a31fcd93f0ab013892022d6"></span><span class="sig-name descname"><span class="n"><span class="pre">GlyphKey</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6ramses8GlyphKey8GlyphKeyEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Constructor for <a class="reference internal" href="#structramses_1_1GlyphKey"><span class="std std-ref">GlyphKey</span></a> that initializes members to default values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8GlyphKey8GlyphKeyE7GlyphId14FontInstanceId">
+<span id="_CPPv3N6ramses8GlyphKey8GlyphKeyE7GlyphId14FontInstanceId"></span><span id="_CPPv2N6ramses8GlyphKey8GlyphKeyE7GlyphId14FontInstanceId"></span><span id="ramses::GlyphKey::GlyphKey__GlyphId.FontInstanceId"></span><span class="target" id="structramses_1_1GlyphKey_1abf598307c0959d0c9597dacb42ab64cd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GlyphKey</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GlyphId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_identifier</span></span>, <a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">_fontInstanceId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses8GlyphKey8GlyphKeyE7GlyphId14FontInstanceId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Constructor for <a class="reference internal" href="#structramses_1_1GlyphKey"><span class="std std-ref">GlyphKey</span></a> that initializes members to passed values. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_identifier</strong> – <strong>[in]</strong> The glyph id </p></li>
+<li><p><strong>_fontInstanceId</strong> – <strong>[in]</strong> The font instance id </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses8GlyphKeyeqERK8GlyphKey">
+<span id="_CPPv3NK6ramses8GlyphKeyeqERK8GlyphKey"></span><span id="_CPPv2NK6ramses8GlyphKeyeqERK8GlyphKey"></span><span id="ramses::GlyphKey::eq-operator__GlyphKeyCRC"></span><span class="target" id="structramses_1_1GlyphKey_1a75cf48c56cb08f5fb91f3fdd9b7c1667"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses8GlyphKeyE" title="ramses::GlyphKey"><span class="n"><span class="pre">GlyphKey</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses8GlyphKeyeqERK8GlyphKey" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Equal comparison operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rhs</strong> – <strong>[in]</strong> The glyph key to be compared with </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if glyph keys are identical, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses8GlyphKeyneERK8GlyphKey">
+<span id="_CPPv3NK6ramses8GlyphKeyneERK8GlyphKey"></span><span id="_CPPv2NK6ramses8GlyphKeyneERK8GlyphKey"></span><span id="ramses::GlyphKey::neq-operator__GlyphKeyCRC"></span><span class="target" id="structramses_1_1GlyphKey_1af94bf42fd9b8c24eb6a138133fce58ee"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses8GlyphKeyE" title="ramses::GlyphKey"><span class="n"><span class="pre">GlyphKey</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses8GlyphKeyneERK8GlyphKey" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Unequal comparison operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rhs</strong> – <strong>[in]</strong> The glyph key to be compared with </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>False if glyph keys are identical, true otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8GlyphKey10identifierE">
+<span id="_CPPv3N6ramses8GlyphKey10identifierE"></span><span id="_CPPv2N6ramses8GlyphKey10identifierE"></span><span id="ramses::GlyphKey::identifier__GlyphId"></span><span class="target" id="structramses_1_1GlyphKey_1ad0ad048fca81a3b3a45bb7f523fe9f91"></span><span class="n"><span class="pre">GlyphId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">identifier</span></span></span><a class="headerlink" href="#_CPPv4N6ramses8GlyphKey10identifierE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph id. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8GlyphKey14fontInstanceIdE">
+<span id="_CPPv3N6ramses8GlyphKey14fontInstanceIdE"></span><span id="_CPPv2N6ramses8GlyphKey14fontInstanceIdE"></span><span id="ramses::GlyphKey::fontInstanceId__FontInstanceId"></span><span class="target" id="structramses_1_1GlyphKey_1ace0830d16f32d89b2e509ed3c6b477e4"></span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fontInstanceId</span></span></span><a class="headerlink" href="#_CPPv4N6ramses8GlyphKey14fontInstanceIdE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Font instance id. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12GlyphMetricsE">
+<span id="_CPPv3N6ramses12GlyphMetricsE"></span><span id="_CPPv2N6ramses12GlyphMetricsE"></span><span id="ramses::GlyphMetrics"></span><span class="target" id="structramses_1_1GlyphMetrics"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GlyphMetrics</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12GlyphMetricsE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;GlyphMetrics.h&gt;</em></div>
+<p><a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a> describes a glyph’s position and dimensions in the rasterized glyph bitmap space. </p>
+<p>Width and height are the pixel dimensions of the glyph - must match the pixel data of the glyph provided by its corresponding font instance. <a class="reference internal" href="#structramses_1_1GlyphKey"><span class="std std-ref">GlyphKey</span></a> uniquely identifies the glyph by referencing its origin character and font instance. The posX/posY values are local pixel values in the coordinate system of the text line. The advance value is the local advance (see Freetype2 docs) for each glyph. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12GlyphMetrics3keyE">
+<span id="_CPPv3N6ramses12GlyphMetrics3keyE"></span><span id="_CPPv2N6ramses12GlyphMetrics3keyE"></span><span id="ramses::GlyphMetrics::key__GlyphKey"></span><span class="target" id="structramses_1_1GlyphMetrics_1abe364880bc65d831a30eb10b412e37e5"></span><a class="reference internal" href="#_CPPv4N6ramses8GlyphKeyE" title="ramses::GlyphKey"><span class="n"><span class="pre">GlyphKey</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">key</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12GlyphMetrics3keyE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph key (GlyphId + FontInstanceId) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12GlyphMetrics5widthE">
+<span id="_CPPv3N6ramses12GlyphMetrics5widthE"></span><span id="_CPPv2N6ramses12GlyphMetrics5widthE"></span><span id="ramses::GlyphMetrics::width__uint32_t"></span><span class="target" id="structramses_1_1GlyphMetrics_1ad933fe7aae26e2f0193e8fe22fccc608"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">width</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12GlyphMetrics5widthE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph width. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12GlyphMetrics6heightE">
+<span id="_CPPv3N6ramses12GlyphMetrics6heightE"></span><span id="_CPPv2N6ramses12GlyphMetrics6heightE"></span><span id="ramses::GlyphMetrics::height__uint32_t"></span><span class="target" id="structramses_1_1GlyphMetrics_1a57910e18d12ba10d4e376f3879a3b3fe"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">height</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12GlyphMetrics6heightE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph height. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12GlyphMetrics4posXE">
+<span id="_CPPv3N6ramses12GlyphMetrics4posXE"></span><span id="_CPPv2N6ramses12GlyphMetrics4posXE"></span><span id="ramses::GlyphMetrics::posX__int32_t"></span><span class="target" id="structramses_1_1GlyphMetrics_1a6dfca783cfc8e391c61f5e04cf15b2d1"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">posX</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12GlyphMetrics4posXE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph offset on x-axis. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12GlyphMetrics4posYE">
+<span id="_CPPv3N6ramses12GlyphMetrics4posYE"></span><span id="_CPPv2N6ramses12GlyphMetrics4posYE"></span><span id="ramses::GlyphMetrics::posY__int32_t"></span><span class="target" id="structramses_1_1GlyphMetrics_1a458fca6f806158182de64ccbfdc5b111"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">posY</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12GlyphMetrics4posYE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph offset on y-axis. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses12GlyphMetrics7advanceE">
+<span id="_CPPv3N6ramses12GlyphMetrics7advanceE"></span><span id="_CPPv2N6ramses12GlyphMetrics7advanceE"></span><span id="ramses::GlyphMetrics::advance__int32_t"></span><span class="target" id="structramses_1_1GlyphMetrics_1aa3d5b8894162d40478602a8502cecc41"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">advance</span></span></span><a class="headerlink" href="#_CPPv4N6ramses12GlyphMetrics7advanceE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph advance (distance from origin of this glyph to where origin of next glyph should start) </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses13IFontAccessorE">
+<span id="_CPPv3N6ramses13IFontAccessorE"></span><span id="_CPPv2N6ramses13IFontAccessorE"></span><span id="ramses::IFontAccessor"></span><span class="target" id="classramses_1_1IFontAccessor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IFontAccessor</span></span></span><a class="headerlink" href="#_CPPv4N6ramses13IFontAccessorE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;IFontAccessor.h&gt;</em></div>
+<p>Interface for getting font instances using font instance ids. </p>
+<p>This interface allows overriding the standard Freetype/Harfbuzz logic to create and access fonts and e.g. replace with other implementations, or just override behavior/settings. Can be also used to pre-load font instances and a predefined set of glyphs statically (or load from file). </p>
+<p>Subclassed by <a class="reference internal" href="#classramses_1_1FontRegistry"><span class="std std-ref">ramses::FontRegistry</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses13IFontAccessorD0Ev">
+<span id="_CPPv3N6ramses13IFontAccessorD0Ev"></span><span id="_CPPv2N6ramses13IFontAccessorD0Ev"></span><span id="ramses::IFontAccessor::~IFontAccessor"></span><span class="target" id="classramses_1_1IFontAccessor_1ad1464d965e0a9a1fe52cf715b12c0d94"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~IFontAccessor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6ramses13IFontAccessorD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Empty destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses13IFontAccessor15getFontInstanceE14FontInstanceId">
+<span id="_CPPv3NK6ramses13IFontAccessor15getFontInstanceE14FontInstanceId"></span><span id="_CPPv2NK6ramses13IFontAccessor15getFontInstanceE14FontInstanceId"></span><span id="ramses::IFontAccessor::getFontInstance__FontInstanceIdC"></span><span class="target" id="classramses_1_1IFontAccessor_1a77c02dd23139043e5fd20866e7aab068"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses13IFontInstanceE" title="ramses::IFontInstance"><span class="n"><span class="pre">IFontInstance</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFontInstance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fontInstanceId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK6ramses13IFontAccessor15getFontInstanceE14FontInstanceId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Gets a font instance object using font instance id. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fontInstanceId</strong> – <strong>[in]</strong> The id of font instance </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The font instance object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses13IFontInstanceE">
+<span id="_CPPv3N6ramses13IFontInstanceE"></span><span id="_CPPv2N6ramses13IFontInstanceE"></span><span id="ramses::IFontInstance"></span><span class="target" id="classramses_1_1IFontInstance"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IFontInstance</span></span></span><a class="headerlink" href="#_CPPv4N6ramses13IFontInstanceE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;IFontInstance.h&gt;</em></div>
+<p>Interface for font instance that can be used to query glyph metadata and bitmaps. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses13IFontInstanceD0Ev">
+<span id="_CPPv3N6ramses13IFontInstanceD0Ev"></span><span id="_CPPv2N6ramses13IFontInstanceD0Ev"></span><span id="ramses::IFontInstance::~IFontInstance"></span><span class="target" id="classramses_1_1IFontInstance_1aee96c9c3995846143b565cf7bd0e906f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~IFontInstance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6ramses13IFontInstanceD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Empty destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses13IFontInstance17supportsCharacterEDi">
+<span id="_CPPv3NK6ramses13IFontInstance17supportsCharacterEDi"></span><span id="_CPPv2NK6ramses13IFontInstance17supportsCharacterEDi"></span><span id="ramses::IFontInstance::supportsCharacter__char32_tC"></span><span class="target" id="classramses_1_1IFontInstance_1a86d3640d63a5325c6fbbe6ff164d2b90"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supportsCharacter</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">character</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK6ramses13IFontInstance17supportsCharacterEDi" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if font instance supports a char using it’s UTF32 char code and cache the result. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character</strong> – <strong>[in]</strong> The UTF32 char code of the character </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the character is supported, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses13IFontInstance25getAllSupportedCharactersEv">
+<span id="_CPPv3N6ramses13IFontInstance25getAllSupportedCharactersEv"></span><span id="_CPPv2N6ramses13IFontInstance25getAllSupportedCharactersEv"></span><span id="ramses::IFontInstance::getAllSupportedCharacters"></span><span class="target" id="classramses_1_1IFontInstance_1aee981a0ef891369f50e38367277df303"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAllSupportedCharacters</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N6ramses13IFontInstance25getAllSupportedCharactersEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get all characters that are supported (mapped to a glyph) by <a class="reference internal" href="#classramses_1_1IFontInstance"><span class="std std-ref">IFontInstance</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>set with all supported UTF32 char codes </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses13IFontInstance9getHeightEv">
+<span id="_CPPv3NK6ramses13IFontInstance9getHeightEv"></span><span id="_CPPv2NK6ramses13IFontInstance9getHeightEv"></span><span id="ramses::IFontInstance::getHeightC"></span><span class="target" id="classramses_1_1IFontInstance_1a9968e91bdd069c7b97c3ac662d1c1c5f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHeight</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK6ramses13IFontInstance9getHeightEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the line height of the font instance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Line height (in rasterized texels of glyphs) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses13IFontInstance11getAscenderEv">
+<span id="_CPPv3NK6ramses13IFontInstance11getAscenderEv"></span><span id="_CPPv2NK6ramses13IFontInstance11getAscenderEv"></span><span id="ramses::IFontInstance::getAscenderC"></span><span class="target" id="classramses_1_1IFontInstance_1a4cd837f9bb535970a36fc70c58827739"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAscender</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK6ramses13IFontInstance11getAscenderEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the line ascender of the font instance (see Freetype2 docs) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Line ascender (in rasterized texels of glyphs) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses13IFontInstance12getDescenderEv">
+<span id="_CPPv3NK6ramses13IFontInstance12getDescenderEv"></span><span id="_CPPv2NK6ramses13IFontInstance12getDescenderEv"></span><span id="ramses::IFontInstance::getDescenderC"></span><span class="target" id="classramses_1_1IFontInstance_1a8984eb1dc527c66106a0d2bd0a074ed6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDescender</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK6ramses13IFontInstance12getDescenderEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the line descender of the font instance (see Freetype2 docs) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Line descender (in rasterized texels of glyphs) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses13IFontInstance25loadAndAppendGlyphMetricsENSt9u32string14const_iteratorENSt9u32string14const_iteratorER18GlyphMetricsVector">
+<span id="_CPPv3N6ramses13IFontInstance25loadAndAppendGlyphMetricsENSt9u32string14const_iteratorENSt9u32string14const_iteratorER18GlyphMetricsVector"></span><span id="_CPPv2N6ramses13IFontInstance25loadAndAppendGlyphMetricsENSt9u32string14const_iteratorENSt9u32string14const_iteratorER18GlyphMetricsVector"></span><span id="ramses::IFontInstance::loadAndAppendGlyphMetrics__std::u32string::const_iterator.std::u32string::const_iterator.GlyphMetricsVectorR"></span><span class="target" id="classramses_1_1IFontInstance_1ae7fab9c165ad1f1c4ea926983c0955bf"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadAndAppendGlyphMetrics</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">u32string</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">charsBegin</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">u32string</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">charsEnd</span></span>, <span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">positionedGlyphs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N6ramses13IFontInstance25loadAndAppendGlyphMetricsENSt9u32string14const_iteratorENSt9u32string14const_iteratorER18GlyphMetricsVector" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Load the glyphs metrics for all characters in a string and appends them to the provided vector of GLYPHS. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charsBegin</strong> – <strong>[in]</strong> Iterator for the beginning of characters from UTF32 string that should be loaded </p></li>
+<li><p><strong>charsEnd</strong> – <strong>[in]</strong> Iterator for the end of characters from UTF32 string that should be loaded </p></li>
+<li><p><strong>positionedGlyphs</strong> – <strong>[out]</strong> Vector of glyphs to which newly loaded glyph metrics are appended </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses13IFontInstance19loadGlyphBitmapDataE7GlyphIdR8uint32_tR8uint32_t">
+<span id="_CPPv3N6ramses13IFontInstance19loadGlyphBitmapDataE7GlyphIdR8uint32_tR8uint32_t"></span><span id="_CPPv2N6ramses13IFontInstance19loadGlyphBitmapDataE7GlyphIdR8uint32_tR8uint32_t"></span><span id="ramses::IFontInstance::loadGlyphBitmapData__GlyphId.uint32_tR.uint32_tR"></span><span class="target" id="classramses_1_1IFontInstance_1a61f73ab2f5c31c214d3f6e140c661f05"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">GlyphData</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">loadGlyphBitmapData</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GlyphId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">glyphId</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sizeX</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sizeY</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N6ramses13IFontInstance19loadGlyphBitmapDataE7GlyphIdR8uint32_tR8uint32_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Load the glyph data for a specific glyph id. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>glyphId</strong> – <strong>[in]</strong> Id of glyph for which to load data </p></li>
+<li><p><strong>sizeX</strong> – <strong>[out]</strong> Width of glyph data </p></li>
+<li><p><strong>sizeY</strong> – <strong>[out]</strong> Height of glyph data </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The glyph data if glyphId is found, or empty glyph data otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LayoutUtils17StringBoundingBoxE">
+<span id="_CPPv3N6ramses11LayoutUtils17StringBoundingBoxE"></span><span id="_CPPv2N6ramses11LayoutUtils17StringBoundingBoxE"></span><span id="ramses::LayoutUtils::StringBoundingBox"></span><span class="target" id="structramses_1_1LayoutUtils_1_1StringBoundingBox"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StringBoundingBox</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LayoutUtils17StringBoundingBoxE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;LayoutUtils.h&gt;</em></div>
+<p>Helper data structure describing multiple glyphs metrics. </p>
+<p><a class="reference internal" href="#structramses_1_1LayoutUtils_1_1StringBoundingBox"><span class="std std-ref">StringBoundingBox</span></a> is essentially a union of a set of <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a>. It describes a bounding box of renderable glyphs (glyphs with non-empty bitmap data). Width and height are dimensions of the bounding box. The bounding box can be offset from origin using offsetX/Y. Combined advance is X axis offset from origin where next <a class="reference internal" href="#structramses_1_1LayoutUtils_1_1StringBoundingBox"><span class="std std-ref">StringBoundingBox</span></a> would be if put on same line. Similarly to <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a>, even when <a class="reference internal" href="#structramses_1_1LayoutUtils_1_1StringBoundingBox"><span class="std std-ref">StringBoundingBox</span></a> have zero width/height (which means there is no renderable data) it can still have non-zero advance which should be taken into account by other <a class="reference internal" href="#structramses_1_1LayoutUtils_1_1StringBoundingBox"><span class="std std-ref">StringBoundingBox</span></a> if combined. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LayoutUtils17StringBoundingBox7offsetXE">
+<span id="_CPPv3N6ramses11LayoutUtils17StringBoundingBox7offsetXE"></span><span id="_CPPv2N6ramses11LayoutUtils17StringBoundingBox7offsetXE"></span><span id="ramses::LayoutUtils::StringBoundingBox::offsetX__int32_t"></span><span class="target" id="structramses_1_1LayoutUtils_1_1StringBoundingBox_1af96719a1f22da5e54218b4204347bd9b"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">offsetX</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LayoutUtils17StringBoundingBox7offsetXE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>X axis offset of bounding box from origin. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LayoutUtils17StringBoundingBox7offsetYE">
+<span id="_CPPv3N6ramses11LayoutUtils17StringBoundingBox7offsetYE"></span><span id="_CPPv2N6ramses11LayoutUtils17StringBoundingBox7offsetYE"></span><span id="ramses::LayoutUtils::StringBoundingBox::offsetY__int32_t"></span><span class="target" id="structramses_1_1LayoutUtils_1_1StringBoundingBox_1aed2a0c27233e9ca6f50de9f9fd14e42c"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">offsetY</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LayoutUtils17StringBoundingBox7offsetYE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Y axis offset of bounding box from origin. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LayoutUtils17StringBoundingBox5widthE">
+<span id="_CPPv3N6ramses11LayoutUtils17StringBoundingBox5widthE"></span><span id="_CPPv2N6ramses11LayoutUtils17StringBoundingBox5widthE"></span><span id="ramses::LayoutUtils::StringBoundingBox::width__uint32_t"></span><span class="target" id="structramses_1_1LayoutUtils_1_1StringBoundingBox_1af1d842cd5c3aad8ddedb09db39c87e16"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">width</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LayoutUtils17StringBoundingBox5widthE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Bounding box width. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LayoutUtils17StringBoundingBox6heightE">
+<span id="_CPPv3N6ramses11LayoutUtils17StringBoundingBox6heightE"></span><span id="_CPPv2N6ramses11LayoutUtils17StringBoundingBox6heightE"></span><span id="ramses::LayoutUtils::StringBoundingBox::height__uint32_t"></span><span class="target" id="structramses_1_1LayoutUtils_1_1StringBoundingBox_1a9398cc2598fd8c0d3bb2360608b5b911"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">height</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LayoutUtils17StringBoundingBox6heightE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Bounding box height. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses11LayoutUtils17StringBoundingBox15combinedAdvanceE">
+<span id="_CPPv3N6ramses11LayoutUtils17StringBoundingBox15combinedAdvanceE"></span><span id="_CPPv2N6ramses11LayoutUtils17StringBoundingBox15combinedAdvanceE"></span><span id="ramses::LayoutUtils::StringBoundingBox::combinedAdvance__int32_t"></span><span class="target" id="structramses_1_1LayoutUtils_1_1StringBoundingBox_1ae434e71be10b3ae881c8be81339637f1"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combinedAdvance</span></span></span><a class="headerlink" href="#_CPPv4N6ramses11LayoutUtils17StringBoundingBox15combinedAdvanceE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Advance to next <a class="reference internal" href="#structramses_1_1LayoutUtils_1_1StringBoundingBox"><span class="std std-ref">StringBoundingBox</span></a>. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCacheE">
+<span id="_CPPv3N6ramses9TextCacheE"></span><span id="_CPPv2N6ramses9TextCacheE"></span><span id="ramses::TextCache"></span><span class="target" id="classramses_1_1TextCache"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextCache</span></span></span><a class="headerlink" href="#_CPPv4N6ramses9TextCacheE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;TextCache.h&gt;</em></div>
+<p>Stores text data - texture atlas, meshes, glyph bitmap data. It is a cache because the content can be re-generated when necessary, e.g. when cached glyphs take up too much memory. </p>
+<p>The <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> class keeps hold of following data:<ul class="simple">
+<li><p>The texture atlas pages (array of textures) which holds the glyph bitmaps for different glyphs</p></li>
+<li><p>The scene objects which represent a “text line” - an array of sized and positioned characters</p></li>
+</ul>
+</p>
+<p>The <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> uses <a class="reference internal" href="#classramses_1_1IFontAccessor"><span class="std std-ref">IFontAccessor</span></a> (provided in constructor) to obtain glyph data for various fonts but has otherwise no dependencies to fonts - it treats glyphs as a simple bitmap image placed in one of the texture atlas pages.</p>
+<p>The scene objects created for each texture atlas page with glyphs is:<ul class="simple">
+<li><p>A 2D texture with a single channel (intensity of text pixel)</p></li>
+<li><p>A texture sampler with bilinear filtering (to blur out edges)</p></li>
+</ul>
+</p>
+<p>The scene objects created for each text line are:<ul class="simple">
+<li><p>a <a class="reference internal" href="core.html#classramses_1_1GeometryBinding"><span class="std std-ref">GeometryBinding</span></a> with Vertex/Index arrays (holding a list of quads for each glyph in the text line)</p></li>
+<li><p>an <a class="reference internal" href="core.html#classramses_1_1Appearance"><span class="std std-ref">Appearance</span></a> (based off the effect provided in <a class="reference internal" href="#classramses_1_1TextCache_1a48f40b9454de876a81bcf6f010da07e8"><span class="std std-ref">createTextLine()</span></a>). The appearance will have it’s semantic texture sampler pointing to the texture atlas page where the text line’s glyphs are located</p></li>
+<li><p>a <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">MeshNode</span></a> which holds above objects together for rendering</p></li>
+</ul>
+</p>
+<p>It’s important to note that the <a class="reference internal" href="core.html#classramses_1_1Appearance"><span class="std std-ref">Appearance</span></a> of each <a class="reference internal" href="#structramses_1_1TextLine"><span class="std std-ref">TextLine</span></a> has a reference to the texture page holding its glyph data, and the <a class="reference internal" href="core.html#classramses_1_1GeometryBinding"><span class="std std-ref">GeometryBinding</span></a> has links to the texture quad data generated by <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a>. We highly recommend not to tamper with these objects, unless you have in-depth understanding of how text rendering works and know what you are doing. However, setting custom uniforms in the <a class="reference internal" href="core.html#classramses_1_1Appearance"><span class="std std-ref">Appearance</span></a> is valid, as long as you are not touching the semantic texture sampler which was provided when creating the text line.</p>
+<p>The <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> has a limitation that all characters of a <a class="reference internal" href="#structramses_1_1TextLine"><span class="std std-ref">TextLine</span></a> must fit in one (empty) texture atlas page. This means that if a <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> was created with size 16x16 and a <a class="reference internal" href="#structramses_1_1TextLine"><span class="std std-ref">TextLine</span></a> with single glyph of size 32 is created, the call to <a class="reference internal" href="#classramses_1_1TextCache_1a48f40b9454de876a81bcf6f010da07e8"><span class="std std-ref">createTextLine()</span></a> will fail because it can’t fit a single glyph in a texture atlas page - it’s too small. Therefore, pay special attention to the size of <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> and the size of text rendered. If you want to optimize memory usage across different and wildly heterogeneous text sizes, it’s suggested to use multiple <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> instances with different sizes if in order to avoid inefficient memory partitioning.</p>
+<p>To understand better how <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> internally works, consider following case. You create a <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> with size 20x20. You use a latin font with uniform character size 10x10 for all letters. You can thus only create <a class="reference internal" href="#structramses_1_1TextLine"><span class="std std-ref">TextLine</span></a>’s with a maximum of 4 letters. If you create two lines with size 4 which use the same 4 characters, the <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> will create a single texture page and use the glyphs for both lines. If you create two lines with different, but partially overlapping characters, like this: line1 = ‘ABC’ line2 = ‘AXY’</p>
+<p>the <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> will not be able to create a page with all 5 characters (A, B, C, X and Y) and will need to create two pages. The first page will put the letters ‘ABC’ in one page which will have one empty slot. The second line will not fit in the first page, so the <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> will create a second page and put the characters ‘AXY’ there. Note that the character ‘A’ will be in in both pages, so that each line can be rendered with a single draw call using exactly one mesh and one texture. One may argue that copying glyphs across different pages is bad, but trying to implement a <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> which creates multiple MeshNodes and partitions them in the worst case across all texture pages quickly leads to the awareness that it’s much better to just forbid it and sacriface a bit of memory in favor of much simpler implementation.</p>
+<p>The above limitation ensures that each <a class="reference internal" href="#structramses_1_1TextLine"><span class="std std-ref">TextLine</span></a> receives exactly one <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">MeshNode</span></a> which makes the rendering setup much easier. However, it requires that multi-language texts with large amount of glyphs may result in suboptimal texture atlas layout. This memory overhead can be overcome by either using a texture atlas size large enough to hold any text line or implementing a more sophisticated partitioning of <a class="reference internal" href="#structramses_1_1TextLine"><span class="std std-ref">TextLine</span></a>’s to ensure atlas pages are filled proportionally.</p>
+<p>Finally, the <a class="reference internal" href="#structramses_1_1TextLine"><span class="std std-ref">TextLine</span></a> object holds pointers to the original vector of glyphs which were used to create it. Be careful to not tamper with it, as it is used when destroying the text line to obtain information which glyphs can be freed. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache9TextCacheER5SceneR13IFontAccessor8uint32_t8uint32_t">
+<span id="_CPPv3N6ramses9TextCache9TextCacheER5SceneR13IFontAccessor8uint32_t8uint32_t"></span><span id="_CPPv2N6ramses9TextCache9TextCacheER5SceneR13IFontAccessor8uint32_t8uint32_t"></span><span id="ramses::TextCache::TextCache__SceneR.IFontAccessorR.uint32_t.uint32_t"></span><span class="target" id="classramses_1_1TextCache_1a6b122d9a0b5071f74d1d3849aa99f75f"></span><span class="sig-name descname"><span class="n"><span class="pre">TextCache</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="core.html#_CPPv4N6ramses5SceneE" title="ramses::Scene"><span class="n"><span class="pre">Scene</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">scene</span></span>, <a class="reference internal" href="#_CPPv4N6ramses13IFontAccessorE" title="ramses::IFontAccessor"><span class="n"><span class="pre">IFontAccessor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fontAccessor</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasTextureWidth</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasTextureHeight</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache9TextCacheER5SceneR13IFontAccessor8uint32_t8uint32_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Constructor for text cache. </p>
+<p>Choose carefully the size of the atlas textures. Too small will prevent creation of larger strings, because not all of the glyphs will fit on a single page. Too large pages take up more memory than actually needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scene</strong> – <strong>[in]</strong> <a class="reference internal" href="core.html#classramses_1_1Scene"><span class="std std-ref">Scene</span></a> to use when creating meshes from string glyphs. </p></li>
+<li><p><strong>fontAccessor</strong> – <strong>[in]</strong> Font accessor to be used for getting font instance objects </p></li>
+<li><p><strong>atlasTextureWidth</strong> – <strong>[in]</strong> Width for the texture atlas that gets created to store glyphs </p></li>
+<li><p><strong>atlasTextureHeight</strong> – <strong>[in]</strong> Height for the texture atlas that gets created to store glyphs </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCacheD0Ev">
+<span id="_CPPv3N6ramses9TextCacheD0Ev"></span><span id="_CPPv2N6ramses9TextCacheD0Ev"></span><span id="ramses::TextCache::~TextCache"></span><span class="target" id="classramses_1_1TextCache_1a0ea13b7b25528cf51313d2073d5c2cc9"></span><span class="sig-name descname"><span class="n"><span class="pre">~TextCache</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCacheD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Destructor for text cache that cleans up any objects created using the text cache. The scene object passed to the text cache constructor must be still valid at the time of the text cache destruction. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringE14FontInstanceId">
+<span id="_CPPv3N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringE14FontInstanceId"></span><span id="_CPPv2N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringE14FontInstanceId"></span><span id="ramses::TextCache::getPositionedGlyphs__std::u32stringCR.FontInstanceId"></span><span class="target" id="classramses_1_1TextCache_1a88bc354d00c7421056dee81e7a9709c0"></span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPositionedGlyphs</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">u32string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span>, <a class="reference internal" href="#_CPPv414FontInstanceId" title="FontInstanceId"><span class="n"><span class="pre">FontInstanceId</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">font</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringE14FontInstanceId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Create and get glyph metrics for a string using a font instance. </p>
+<p>Use this call to obtain glyph metadata - positions, sizes, language and font origin (contained in <a class="reference internal" href="#structramses_1_1GlyphKey"><span class="std std-ref">GlyphKey</span></a>). You can change the positions if you need to, e.g. if you need to do funky things like re-aligning glyphs coming from different fonts with incompatible baselines. But in the regular case, you just pass the glyphs to <a class="reference internal" href="#classramses_1_1TextCache_1a48f40b9454de876a81bcf6f010da07e8"><span class="std std-ref">createTextLine()</span></a> as-is.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong> – <strong>[in]</strong> The string for which to create glyph metrics </p></li>
+<li><p><strong>font</strong> – <strong>[in]</strong> Id of the font instance to be used for creating the glyph metrics vector. The font instance must be available at the font accessor passed in the constructor of the text cache. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The glyph metrics vector created </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringERK19FontInstanceOffsets">
+<span id="_CPPv3N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringERK19FontInstanceOffsets"></span><span id="_CPPv2N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringERK19FontInstanceOffsets"></span><span id="ramses::TextCache::getPositionedGlyphs__std::u32stringCR.FontInstanceOffsetsCR"></span><span class="target" id="classramses_1_1TextCache_1a7c9a4c4bf1c27a53183dbf7d4f1ff586"></span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPositionedGlyphs</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">u32string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">FontInstanceOffsets</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fontOffsets</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache19getPositionedGlyphsERKNSt9u32stringERK19FontInstanceOffsets" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Create and get glyph metrics for a string using a list of font instances and offsets. </p>
+<p>Use this version of getPositionedGlyphs if you need more fine-grained control over how glyphs are resolved from multiple fonts. See also documentation of <a class="reference internal" href="#structramses_1_1FontInstanceOffset"><span class="std std-ref">FontInstanceOffset</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong> – <strong>[in]</strong> The string for which to create glyph metrics </p></li>
+<li><p><strong>fontOffsets</strong> – <strong>[in]</strong> The font offsets created from font cascade to be used for creating the glyph metrics vector. The font instances within the font cascade must all be available at the font accessor passed in the constructor of the text cache. Also see docs of FontInstanceOffsets </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The glyph metrics created </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache14createTextLineERK18GlyphMetricsVectorRK6Effect">
+<span id="_CPPv3N6ramses9TextCache14createTextLineERK18GlyphMetricsVectorRK6Effect"></span><span id="_CPPv2N6ramses9TextCache14createTextLineERK18GlyphMetricsVectorRK6Effect"></span><span id="ramses::TextCache::createTextLine__GlyphMetricsVectorCR.EffectCR"></span><span class="target" id="classramses_1_1TextCache_1a48f40b9454de876a81bcf6f010da07e8"></span><span class="n"><span class="pre">TextLineId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createTextLine</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">glyphs</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="core.html#_CPPv4N6ramses6EffectE" title="ramses::Effect"><span class="n"><span class="pre">Effect</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">effect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache14createTextLineERK18GlyphMetricsVectorRK6Effect" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Create the scene objects, e.g., mesh and appearance…etc, needed for rendering a text line (represented by glyph metrics). If the provided string of glyphs contains no render-able characters (e.g. it has only white spaces), the method will fail with an error. If you want to avoid having such errors, filter out the <code class="docutils literal notranslate"><span class="pre">glyphs</span></code> with no visual representation (e.g. control characters) and use the helper method ContainsRenderableGlyphs on top to check if the remaining glyphs contain at least one renderable (size not zero) glyph so they can be used as input for createTextLine. </p>
+<p>This method will always produce exactly one <a class="reference internal" href="core.html#classramses_1_1MeshNode"><span class="std std-ref">MeshNode</span></a>. We do this by enforcing that all glyphs are rendered in the same texture atlas page, thus making it possible to create one mesh instead of several. The effect argument has special requirements - it needs to have three semantic uniforms:<ul class="simple">
+<li><p>EEffectAttributeSemantic::TextTexture - this is where <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a> will link the texture atlas page with glyph data</p></li>
+<li><p><a class="reference internal" href="core.html#group__CoreAPI_1ggad7f84ff9db0a84f73a32b87d330a5c79a369e2a044160ddd2d81c5e4c0cf69312"><span class="std std-ref">EEffectAttributeSemantic::TextPositions</span></a> - this is where the text quad vertices are linked</p></li>
+<li><p><a class="reference internal" href="core.html#group__CoreAPI_1ggad7f84ff9db0a84f73a32b87d330a5c79aac59542a4a9e3bc336ceb15e7fff0e44"><span class="std std-ref">EEffectAttributeSemantic::TextTextureCoordinates</span></a> - this is where texture coordinates are linked</p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>glyphs</strong> – <strong>[in]</strong> The glyph metrics for which to create a text line </p></li>
+<li><p><strong>effect</strong> – <strong>[in]</strong> The effect used for creating the appearance of the text line and rendering the meshes </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Id of the text line created </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6ramses9TextCache11getTextLineE10TextLineId">
+<span id="_CPPv3NK6ramses9TextCache11getTextLineE10TextLineId"></span><span id="_CPPv2NK6ramses9TextCache11getTextLineE10TextLineId"></span><span id="ramses::TextCache::getTextLine__TextLineIdC"></span><span class="target" id="classramses_1_1TextCache_1a4fa4d50a62b936f9afcf8e261f34a42f"></span><a class="reference internal" href="#_CPPv4N6ramses8TextLineE" title="ramses::TextLine"><span class="n"><span class="pre">TextLine</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTextLine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TextLineId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">textId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6ramses9TextCache11getTextLineE10TextLineId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get a const pointer to a (previously created) text line object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>textId</strong> – <strong>[in]</strong> Id of the text line object to get </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pointer to the text line object, or nullptr on failure </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache11getTextLineE10TextLineId">
+<span id="_CPPv3N6ramses9TextCache11getTextLineE10TextLineId"></span><span id="_CPPv2N6ramses9TextCache11getTextLineE10TextLineId"></span><span id="ramses::TextCache::getTextLine__TextLineId"></span><span class="target" id="classramses_1_1TextCache_1afe5ca8d4907a84308372c4dfa6a3bf17"></span><a class="reference internal" href="#_CPPv4N6ramses8TextLineE" title="ramses::TextLine"><span class="n"><span class="pre">TextLine</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTextLine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TextLineId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">textId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache11getTextLineE10TextLineId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get a (non-const) pointer to a (previously created) text line object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>textId</strong> – <strong>[in]</strong> Id of the text line object to get </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pointer to the text line object, or nullptr on failure </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache14deleteTextLineE10TextLineId">
+<span id="_CPPv3N6ramses9TextCache14deleteTextLineE10TextLineId"></span><span id="_CPPv2N6ramses9TextCache14deleteTextLineE10TextLineId"></span><span id="ramses::TextCache::deleteTextLine__TextLineId"></span><span class="target" id="classramses_1_1TextCache_1a46b53966c777bec2374b8926814a8ed4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deleteTextLine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TextLineId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">textId</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache14deleteTextLineE10TextLineId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Delete an existing text line object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>textId</strong> – <strong>[in]</strong> Id of the text line object to delete </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True on success, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache9TextCacheERK9TextCache">
+<span id="_CPPv3N6ramses9TextCache9TextCacheERK9TextCache"></span><span id="_CPPv2N6ramses9TextCache9TextCacheERK9TextCache"></span><span id="ramses::TextCache::TextCache__TextCacheCR"></span><span class="target" id="classramses_1_1TextCache_1a971368ee3dc5e405bcb961d5f91ce01d"></span><span class="sig-name descname"><span class="n"><span class="pre">TextCache</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses9TextCache9TextCacheERK9TextCache" title="ramses::TextCache::TextCache"><span class="n"><span class="pre">TextCache</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6ramses9TextCache9TextCacheERK9TextCache" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Deleted copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – unused </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCacheaSERK9TextCache">
+<span id="_CPPv3N6ramses9TextCacheaSERK9TextCache"></span><span id="_CPPv2N6ramses9TextCacheaSERK9TextCache"></span><span id="ramses::TextCache::assign-operator__TextCacheCR"></span><span class="target" id="classramses_1_1TextCache_1a00d42ce852d91d4c01e3bb6f55eb71da"></span><a class="reference internal" href="#_CPPv4N6ramses9TextCacheE" title="ramses::TextCache"><span class="n"><span class="pre">TextCache</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6ramses9TextCacheE" title="ramses::TextCache"><span class="n"><span class="pre">TextCache</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N6ramses9TextCacheaSERK9TextCache" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Deleted copy assignment. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – unused </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>unused </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache4implE">
+<span id="_CPPv3N6ramses9TextCache4implE"></span><span id="_CPPv2N6ramses9TextCache4implE"></span><span id="ramses::TextCache::impl__TextCacheImplP"></span><span class="target" id="classramses_1_1TextCache_1ad206606dc39fbcf10c7149d9ec661161"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="n"><span class="pre">TextCacheImpl</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">impl</span></span></span><a class="headerlink" href="#_CPPv4N6ramses9TextCache4implE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Stores internal data for implementation specifics of <a class="reference internal" href="#classramses_1_1TextCache"><span class="std std-ref">TextCache</span></a>. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache24ContainsRenderableGlyphsERK18GlyphMetricsVector">
+<span id="_CPPv3N6ramses9TextCache24ContainsRenderableGlyphsERK18GlyphMetricsVector"></span><span id="_CPPv2N6ramses9TextCache24ContainsRenderableGlyphsERK18GlyphMetricsVector"></span><span id="ramses::TextCache::ContainsRenderableGlyphs__GlyphMetricsVectorCR"></span><span class="target" id="classramses_1_1TextCache_1afeb86f28787e7acf77d0fd6c7e2c0f7f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ContainsRenderableGlyphs</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">glyphMetrics</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache24ContainsRenderableGlyphsERK18GlyphMetricsVector" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if provided GlyphMetricsVector contains at least one renderable glyph If this functions returns false, the provided input cannot be used as input for the function createTextLine. The function call will simply fail. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>glyphMetrics</strong> – <strong>[in]</strong> <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a> to be checked &#64; return True if the provided vector contains at least one renderable glyph </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses9TextCache21ApplyTrackingToGlyphsER18GlyphMetricsVector7int32_t7int32_t">
+<span id="_CPPv3N6ramses9TextCache21ApplyTrackingToGlyphsER18GlyphMetricsVector7int32_t7int32_t"></span><span id="_CPPv2N6ramses9TextCache21ApplyTrackingToGlyphsER18GlyphMetricsVector7int32_t7int32_t"></span><span id="ramses::TextCache::ApplyTrackingToGlyphs__GlyphMetricsVectorR.int32_t.int32_t"></span><span class="target" id="classramses_1_1TextCache_1a1d9b1d89118efce8cd6d1df1dfdc7a99"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ApplyTrackingToGlyphs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">glyphMetrics</span></span>, <span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">trackingFactor</span></span>, <span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fontSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6ramses9TextCache21ApplyTrackingToGlyphsER18GlyphMetricsVector7int32_t7int32_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Apply character tracking (positive or negative) to each glyph in provided GlyphMetricsVector. This means that that the space between the individual glyphs can be increased (positive tracking) or decreased (negative tracking). The tracking factor is calculated in em, so it’s relative to the font size (1/1000 of font size in pixels). So having a tracking factor of 1000 and a font size of 10 would result in an extra of 10 pixels space between every glyph (1000/1000 * 10 = 10px). Overdoing the negative tracking is not advised, as the glyphs will then potentially be printed on top of each other. This helper function should only be used on Latin fonts as for all other font types this kind of tracking may lead to unexpected visual output. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>glyphMetrics</strong> – <strong>[in]</strong> <a class="reference internal" href="#structramses_1_1GlyphMetrics"><span class="std std-ref">GlyphMetrics</span></a> that get tracking applied on </p></li>
+<li><p><strong>trackingFactor</strong> – <strong>[in]</strong> factor of tracking intensity (higher –&gt; bigger tracking effect) </p></li>
+<li><p><strong>fontSize</strong> – <strong>[in]</strong> size of the font that contains the glyphs to be tracked </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8TextLineE">
+<span id="_CPPv3N6ramses8TextLineE"></span><span id="_CPPv2N6ramses8TextLineE"></span><span id="ramses::TextLine"></span><span class="target" id="structramses_1_1TextLine"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextLine</span></span></span><a class="headerlink" href="#_CPPv4N6ramses8TextLineE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;TextLine.h&gt;</em></div>
+<p>Groups the scene objects needed to render a text line. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8TextLine8meshNodeE">
+<span id="_CPPv3N6ramses8TextLine8meshNodeE"></span><span id="_CPPv2N6ramses8TextLine8meshNodeE"></span><span id="ramses::TextLine::meshNode__MeshNodeP"></span><span class="target" id="structramses_1_1TextLine_1a04c8cacfcad1da07b04228156ac04822"></span><a class="reference internal" href="core.html#_CPPv4N6ramses8MeshNodeE" title="ramses::MeshNode"><span class="n"><span class="pre">MeshNode</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">meshNode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N6ramses8TextLine8meshNodeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Mesh node that represents the text. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8TextLine9atlasPageE">
+<span id="_CPPv3N6ramses8TextLine9atlasPageE"></span><span id="_CPPv2N6ramses8TextLine9atlasPageE"></span><span id="ramses::TextLine::atlasPage__std::s"></span><span class="target" id="structramses_1_1TextLine_1a9f6fe9af5eff1eb159bd869618ade822"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atlasPage</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">numeric_limits</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">max</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N6ramses8TextLine9atlasPageE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Index to the atlas page containing the glyphs. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8TextLine6glyphsE">
+<span id="_CPPv3N6ramses8TextLine6glyphsE"></span><span id="_CPPv2N6ramses8TextLine6glyphsE"></span><span id="ramses::TextLine::glyphs__GlyphMetricsVector"></span><span class="target" id="structramses_1_1TextLine_1a0aea101ab0af788272fe93e9a8f9309e"></span><span class="n"><span class="pre">GlyphMetricsVector</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">glyphs</span></span></span><a class="headerlink" href="#_CPPv4N6ramses8TextLine6glyphsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Glyph metrics of the original string characters. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8TextLine9positionsE">
+<span id="_CPPv3N6ramses8TextLine9positionsE"></span><span id="_CPPv2N6ramses8TextLine9positionsE"></span><span id="ramses::TextLine::positions__ArrayBufferP"></span><span class="target" id="structramses_1_1TextLine_1a5448b107556dc06a66ee65050d80b5c2"></span><a class="reference internal" href="core.html#_CPPv4N6ramses11ArrayBufferE" title="ramses::ArrayBuffer"><span class="n"><span class="pre">ArrayBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">positions</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N6ramses8TextLine9positionsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Stores vertex data for the text line quads. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8TextLine18textureCoordinatesE">
+<span id="_CPPv3N6ramses8TextLine18textureCoordinatesE"></span><span id="_CPPv2N6ramses8TextLine18textureCoordinatesE"></span><span id="ramses::TextLine::textureCoordinates__ArrayBufferP"></span><span class="target" id="structramses_1_1TextLine_1a46a26a7c2a67ab3c52f64b8567ffd2c1"></span><a class="reference internal" href="core.html#_CPPv4N6ramses11ArrayBufferE" title="ramses::ArrayBuffer"><span class="n"><span class="pre">ArrayBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">textureCoordinates</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N6ramses8TextLine18textureCoordinatesE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Stores texture coordinate data for the text line quads. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses8TextLine7indicesE">
+<span id="_CPPv3N6ramses8TextLine7indicesE"></span><span id="_CPPv2N6ramses8TextLine7indicesE"></span><span id="ramses::TextLine::indices__ArrayBufferP"></span><span class="target" id="structramses_1_1TextLine_1a86627eb98c6e83a676b268cdacf91006"></span><a class="reference internal" href="core.html#_CPPv4N6ramses11ArrayBufferE" title="ramses::ArrayBuffer"><span class="n"><span class="pre">ArrayBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">indices</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N6ramses8TextLine7indicesE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Stores index data for the text line quads. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses21ExtractedUnicodePointE">
+<span id="_CPPv3N6ramses21ExtractedUnicodePointE"></span><span id="_CPPv2N6ramses21ExtractedUnicodePointE"></span><span id="ramses::ExtractedUnicodePoint"></span><span class="target" id="structramses_1_1ExtractedUnicodePoint"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ExtractedUnicodePoint</span></span></span><a class="headerlink" href="#_CPPv4N6ramses21ExtractedUnicodePointE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;UtfUtils.h&gt;</em></div>
+<p>Stores an extracted Unicode/UTF32 code-point and corresponding meta-data resulting from the conversion to Unicode (see also UtfUtils) </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses21ExtractedUnicodePoint20extractionSuccessfulE">
+<span id="_CPPv3N6ramses21ExtractedUnicodePoint20extractionSuccessfulE"></span><span id="_CPPv2N6ramses21ExtractedUnicodePoint20extractionSuccessfulE"></span><span id="ramses::ExtractedUnicodePoint::extractionSuccessful__b"></span><span class="target" id="structramses_1_1ExtractedUnicodePoint_1abcdb9e7e29376e3abd8ac9e15476d409"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extractionSuccessful</span></span></span><a class="headerlink" href="#_CPPv4N6ramses21ExtractedUnicodePoint20extractionSuccessfulE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>true if the extraction was successful. Otherwise: false and codePoint is undefined </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses21ExtractedUnicodePoint9codePointE">
+<span id="_CPPv3N6ramses21ExtractedUnicodePoint9codePointE"></span><span id="_CPPv2N6ramses21ExtractedUnicodePoint9codePointE"></span><span id="ramses::ExtractedUnicodePoint::codePoint__uint32_t"></span><span class="target" id="structramses_1_1ExtractedUnicodePoint_1ada39bb84f2a7c29f13a6bdc6ec84b3b2"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">codePoint</span></span></span><a class="headerlink" href="#_CPPv4N6ramses21ExtractedUnicodePoint9codePointE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The unicode-point storing the unique id of a character (UTF32) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6ramses21ExtractedUnicodePoint18inputCharsConsumedE">
+<span id="_CPPv3N6ramses21ExtractedUnicodePoint18inputCharsConsumedE"></span><span id="_CPPv2N6ramses21ExtractedUnicodePoint18inputCharsConsumedE"></span><span id="ramses::ExtractedUnicodePoint::inputCharsConsumed__s"></span><span class="target" id="structramses_1_1ExtractedUnicodePoint_1adb357b9313478143d2a08ea11a9799cb"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inputCharsConsumed</span></span></span><a class="headerlink" href="#_CPPv4N6ramses21ExtractedUnicodePoint18inputCharsConsumedE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Stores how many input characters were read to resolve the unicode point (bytes in UTF8 case and words in UTF16 case) </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="renderer.html" class="btn btn-neutral float-left" title="Ramses Rendeer API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="logic.html" class="btn btn-neutral float-right" title="Ramses Logic API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BMW AG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
